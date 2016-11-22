@@ -5,9 +5,28 @@
     xmlns:local="using:RAMSS_v2"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+    mc:Ignorable="d" ScrollViewer.HorizontalScrollBarVisibility="Auto"
+    
+    >
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <RelativePanel Canvas.ZIndex="1">
+            <Button Name="homeButton" Background="Transparent" Click="homeButton_Click" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignLeftWithPanel="True" Height="75" Margin="20,20,0,0">
+                <Image Name="ryersonLogo" Source="Assets/Ryerson-rgb.png"  />
+            </Button>
+            <AutoSuggestBox RelativePanel.AlignRightWithPanel="True" FontFamily="Segoe MDL2 Assets" FontSize="30" Margin="0,20,20,0" Background="Transparent" FontWeight="Light" Width="402" QueryIcon="Find" Opacity="0.4"/>
+        </RelativePanel>
+
+        <RelativePanel Grid.Row="0" Canvas.ZIndex="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <Frame Name="myFrame" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignRightWithPanel="True">
+
+            </Frame>
+        </RelativePanel>
 
     </Grid>
+
+
 </Page>
