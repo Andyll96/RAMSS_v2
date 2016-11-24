@@ -8,19 +8,25 @@
     mc:Ignorable="d">
 
     <Grid Background="#0077c8">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="4*"/>
-            <RowDefinition Height="2*"/>
+            <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
+        
         <CalendarView HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,100,0,0"/>
-        <TextBlock Margin="20,0,0,0" Text="Today's Events" Grid.Row="1" Height="Auto" FontSize="30" FontWeight="Light" />
-        <ScrollViewer Margin="20,60,0,0" Grid.Row="1" VerticalScrollBarVisibility="Hidden">
+        <TextBlock Margin="20,100,0,0" Text="Today's Events" Grid.Column="1" Height="Auto" FontSize="30" FontWeight="Light" />
+        <ScrollViewer Margin="20,140,0,0" Grid.Column="1" VerticalScrollBarVisibility="Hidden" Grid.RowSpan="2">
             <TextBlock   FontSize="25" TextWrapping="WrapWholeWords" FontWeight="Light">
             Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque
                 eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut,
-                imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.
+                imperdiet a, venenatis vitae, justo. eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo
+                Nullam dictum felis eu pede mollis pretium.  eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo
         </TextBlock>
         </ScrollViewer>
-        
+        <Button Name="listViewButton" Content="List View" FontSize="50"  Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
     </Grid>
 </Page>

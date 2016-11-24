@@ -12,11 +12,13 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <RelativePanel Canvas.ZIndex="1" Height="100" VerticalAlignment="Top">
+            <Button Name="backButton" Foreground="White" Height="60" FontSize="30" FontFamily="Segoe MDL2 Assets" Content="&#xE112;" Background="Transparent" Click="backButton_Click" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignLeftWith="homeButton" Margin="175,23,0,0" FontWeight="Bold"/>
+            <Button Name="forwardButton" Foreground="white" Height="60" FontSize="30" FontFamily="Segoe MDL2 Assets" Content="&#xE111;" Background="Transparent" Click="forwardButton_Click" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignLeftWith="homeButton" Margin="226,23,0,0" FontWeight="Bold"/>
             <Button Name="homeButton" Background="Transparent" Click="homeButton_Click" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignLeftWithPanel="True" Height="75" Margin="20,10,0,0">
                 <Image Name="ryersonLogo" Source="Assets/Ryerson-rgb.png"  />
             </Button>
             <AutoSuggestBox Name="searchBar" RelativePanel.AlignRightWithPanel="True" FontFamily="Segoe MDL2 Assets" FontSize="30" Margin="0,30,80,0" Background="Transparent" FontWeight="Light" Width="402" QueryIcon="Find" Opacity="0.4"/>
-            <Button Name="hamburgerMenuButton" Click="hamburgerMenuButton_Click" Content="&#xE700;" Background="Transparent" Foreground="DarkGray" FontSize="40" Height="50" Width="50" RelativePanel.AlignRightWith="searchBar" RelativePanel.AlignTopWithPanel="True" Margin="0,20,20,0" FontFamily="Segoe MDL2 Assets"/>
+            <Button Name="hamburgerMenuButton" Click="hamburgerMenuButton_Click" Content="&#xE700;" Background="Transparent" Foreground="white" FontSize="40" Height="50" Width="50" RelativePanel.AlignRightWith="searchBar" RelativePanel.AlignTopWithPanel="True" Margin="0,20,20,0" FontFamily="Segoe MDL2 Assets"/>
         </RelativePanel>
 
             <SplitView Name="splitView" Margin="0,0,0,0" Canvas.ZIndex="2"  VerticalAlignment="Stretch" PanePlacement="Right" DisplayMode="Overlay" OpenPaneLength="200" >

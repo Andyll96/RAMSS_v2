@@ -30,13 +30,11 @@ namespace RAMSS_v2
         private void courseScheduleButton_Click(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(CourseSchedulePage));
-
         }
 
         private void studentFeesButton_Click(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(FinancialPage));
-
         }
 
         private void academicsButton_Click(object sender, RoutedEventArgs e)

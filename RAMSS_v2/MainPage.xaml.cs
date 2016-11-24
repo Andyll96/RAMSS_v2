@@ -28,13 +28,15 @@ namespace RAMSS_v2
         {
             this.InitializeComponent();
             myFrame.Navigate(typeof(HomePage));
-
             ApplicationViewTitleBar titleBar = ApplicationView.GetForCurrentView().TitleBar;
             titleBar.BackgroundColor = Color.FromArgb(0,63,63,63);
             titleBar.ForegroundColor = Colors.White;
             titleBar.ButtonBackgroundColor = Color.FromArgb(0, 63, 63, 63);
             titleBar.ButtonForegroundColor = Colors.White;
+            
         }
+
+       
 
         private void homeButton_Click(object sender, RoutedEventArgs e)
         {
@@ -80,6 +82,18 @@ namespace RAMSS_v2
         {
             myFrame.Navigate(typeof(MyGradesPage));
             splitView.IsPaneOpen = !splitView.IsPaneOpen;
+        }
+
+        private void backButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (myFrame.CanGoBack)
+                myFrame.GoBack();
+        }
+
+        private void forwardButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (myFrame.CanGoForward)
+                myFrame.GoForward();
         }
     }
 }
