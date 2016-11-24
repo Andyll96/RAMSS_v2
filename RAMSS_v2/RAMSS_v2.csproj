@@ -116,6 +116,9 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MyGradesPage.xaml.cs">
+      <DependentUpon>MyGradesPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -125,17 +128,26 @@
     <None Include="RAMSS_v2_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\examination-512.png" />
+    <Content Include="Assets\exam_result-512.png" />
+    <Content Include="Assets\icon.png" />
     <Content Include="Assets\Alert.png" />
     <Content Include="Assets\calendar-icon.png" />
     <Content Include="Assets\Corruption-512.png" />
     <Content Include="Assets\heroImage.jpg" />
     <Content Include="Assets\heroSample2.jpg" />
+    <Content Include="Assets\icon.scale-100.png" />
+    <Content Include="Assets\icon.scale-200.png" />
     <Content Include="Assets\notebook-icon-73156.png" />
     <Content Include="Assets\Ryerson-rgb.png" />
     <Content Include="Assets\RyersonRams.gif" />
     <Content Include="Assets\RyersonRLogo.gif" />
     <Content Include="Assets\sampleHeroImage.jpeg" />
+    <Content Include="Assets\SplashScreen.png" />
+    <Content Include="Assets\SplashScreen.scale-100.png" />
+    <Content Include="Assets\SplashScreen.scale-400.png" />
     <Content Include="Assets\star1.png" />
+    <Content Include="Assets\test_medical-512.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -177,6 +189,10 @@
     <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MyGradesPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">

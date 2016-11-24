@@ -6,8 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-
-    <Grid Background="#999999">
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
             <RowDefinition Height="4*" MaxHeight="320"/>
             <RowDefinition Height="2*"/>
@@ -36,7 +35,7 @@
                 </Grid.ColumnDefinitions>
                 <RelativePanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
                     <Button Name="courseScheduleButton" Click="courseScheduleButton_Click" FontSize="40" Background="#0077c8" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignRightWithPanel="True">
-                            <StackPanel RelativePanel.AlignBottomWithPanel="True">
+                            <StackPanel>
                                 <Image Source="Assets/calendar-icon.png" Height="100" VerticalAlignment="Top"/>
                             <TextBlock Text="Course Schedule" FontWeight="Light"/>
                             </StackPanel>
@@ -44,13 +43,16 @@
                     </Button>
 
                 </RelativePanel>
-                <RelativePanel Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
-                    <TextBlock Grid.Column="1" Foreground="LightGray" FontSize="18" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TextWrapping="Wrap" Margin="10">
+                <RelativePanel Background="#002d72" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
+                    <ScrollViewer VerticalScrollBarVisibility="Hidden">
+                         <TextBlock Grid.Column="1" Foreground="#999999" FontSize="18" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TextWrapping="WrapWholeWords" Margin="10">
                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy
                 survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised
                 in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software 
                 like Aldus PageMaker including versions of Lorem Ipsum.
                     </TextBlock>
+                    </ScrollViewer>
+                       
                 </RelativePanel>
             </Grid>
         </RelativePanel>
@@ -91,8 +93,13 @@
                             <TextBlock Text="Student Fees" FontWeight="Light"/>
                         </StackPanel>
                     </Button>
-                <Button Content="IDK" FontWeight="Light" Background="#002d72" FontSize="40" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0"/>
-                    <Button Name="alertsButton" Click="alertsButton_Click" FontWeight="Light" Background="#ffee00" FontSize="40" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0">
+                    <Button Name="myGradesButton" Click="myGradesButton_Click" FontWeight="Light" Background="#0077c8" FontSize="40" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0">
+                        <StackPanel>
+                            <Image Source="Assets/test_medical-512.png" Height="60" VerticalAlignment="Top"/>
+                            <TextBlock Text="My Grades" FontWeight="Light"/>
+                        </StackPanel>
+                    </Button>
+                    <Button Name="alertsButton" Click="alertsButton_Click" FontWeight="Light" Background="#ffc609" FontSize="40" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0">
                         <StackPanel RelativePanel.AlignBottomWithPanel="True">
                             <Image Source="Assets/Alert.png" Height="60" VerticalAlignment="Top"/>
                             <TextBlock Text="Alerts" FontWeight="Light"/>
