@@ -17,7 +17,7 @@
             <Button Name="homeButton" Background="Transparent" Click="homeButton_Click" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignLeftWithPanel="True" Height="75" Margin="20,10,0,0">
                 <Image Name="ryersonLogo" Source="Assets/Ryerson-rgb.png"  />
             </Button>
-            <AutoSuggestBox Name="searchBar" RelativePanel.AlignRightWithPanel="True" FontFamily="Segoe MDL2 Assets" FontSize="30" Margin="0,30,80,0" Background="Transparent" FontWeight="Light" Width="402" QueryIcon="Find" Opacity="0.4"/>
+            <AutoSuggestBox Name="searchBar" PlaceholderText="Find a Page" TextChanged="searchBar_TextChanged" QuerySubmitted="searchBar_QuerySubmitted" SuggestionChosen="searchBar_SuggestionChosen" RelativePanel.AlignRightWithPanel="True" FontFamily="Segoe MDL2 Assets" FontSize="30" Margin="0,30,80,0" Background="Transparent" FontWeight="Light" Width="402" QueryIcon="Find" Opacity="0.4"/>
             <Button Name="hamburgerMenuButton" Click="hamburgerMenuButton_Click" Content="&#xE700;" Background="Transparent" Foreground="white" FontSize="40" Height="50" Width="50" RelativePanel.AlignRightWith="searchBar" RelativePanel.AlignTopWithPanel="True" Margin="0,20,20,0" FontFamily="Segoe MDL2 Assets"/>
         </RelativePanel>
 

@@ -1,0 +1,32 @@
+﻿{
+  "pages": [
+    {
+      "name": "Home",
+      "class": "HomePage"
+    },
+    {
+      "name": "Academics",
+      "class": "AcademicsPage"
+    },
+    {
+      "name": "Alerts",
+      "class": "AlertsPage"
+    },
+    {
+      "name": "Course Schedule",
+      "class": "CourseSchedulePage"
+    },
+    {
+      "name": "Favourites",
+      "class": "FavouritesPage"
+    },
+    {
+      "name": "Student Fees",
+      "class": "FinancialPage"
+    },
+    {
+      "name": "My Grades",
+      "class": "MyGradesPage"
+    }
+  ]
+}

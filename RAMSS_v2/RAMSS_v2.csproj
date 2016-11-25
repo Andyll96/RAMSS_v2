@@ -89,6 +89,7 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <None Include="PageDataSource\results.json" />
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
@@ -119,6 +120,8 @@
     <Compile Include="MyGradesPage.xaml.cs">
       <DependentUpon>MyGradesPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PageDataSource\Pages.cs" />
+    <Compile Include="PageDataSource\SearchQueries.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -195,6 +198,7 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

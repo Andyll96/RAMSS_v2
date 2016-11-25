@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI;
@@ -23,20 +25,19 @@ namespace RAMSS_v2
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
     public sealed partial class MainPage : Page
-    {
+    {         
         public MainPage()
         {
             this.InitializeComponent();
+
             myFrame.Navigate(typeof(HomePage));
+
             ApplicationViewTitleBar titleBar = ApplicationView.GetForCurrentView().TitleBar;
             titleBar.BackgroundColor = Color.FromArgb(0,63,63,63);
             titleBar.ForegroundColor = Colors.White;
             titleBar.ButtonBackgroundColor = Color.FromArgb(0, 63, 63, 63);
-            titleBar.ButtonForegroundColor = Colors.White;
-            
+            titleBar.ButtonForegroundColor = Colors.White;            
         }
-
-       
 
         private void homeButton_Click(object sender, RoutedEventArgs e)
         {
@@ -94,6 +95,21 @@ namespace RAMSS_v2
         {
             if (myFrame.CanGoForward)
                 myFrame.GoForward();
+        }
+
+        private void searchBar_TextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
+        {
+            
+        } 
+
+        private void searchBar_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBoxQuerySubmittedEventArgs args)
+        {
+
+        }
+
+        private void searchBar_SuggestionChosen(AutoSuggestBox sender, AutoSuggestBoxSuggestionChosenEventArgs args)
+        {
+
         }
     }
 }
