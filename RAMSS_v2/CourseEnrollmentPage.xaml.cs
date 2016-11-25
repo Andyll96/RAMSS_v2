@@ -20,21 +20,31 @@ namespace RAMSS_v2
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class AcademicsPage : Page
+    public sealed partial class CourseEnrollmentPage : Page
     {
-        public AcademicsPage()
+        public CourseEnrollmentPage()
         {
             this.InitializeComponent();
         }
 
-        private void courseEnrollmentButton_Click(object sender, RoutedEventArgs e)
+        private void enrollButton_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(CourseEnrollmentPage));
+            enrollmentView.IsPaneOpen = !enrollmentView.IsPaneOpen;
         }
 
-        private void academciCareerOptionsButton_Click(object sender, RoutedEventArgs e)
+        private void dropButton_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(AcademicCareerOptions));
+
+        }
+
+        private void swapButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void viewScheduleButton_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

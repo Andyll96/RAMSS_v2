@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RAMSS_v2.PageDataSource;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
@@ -25,7 +26,9 @@ namespace RAMSS_v2
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
     public sealed partial class MainPage : Page
-    {         
+    {
+        SearchQueries squeries = new SearchQueries();
+
         public MainPage()
         {
             this.InitializeComponent();
@@ -99,17 +102,41 @@ namespace RAMSS_v2
 
         private void searchBar_TextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
         {
-            
+            if(args.Reason == AutoSuggestionBoxTextChangeReason.UserInput)
+            {
+                var matchingPages = squeries.getMatchingPages(sender.Text);
+                sender.ItemsSource = matchingPages.ToList();
+            }
         } 
 
         private void searchBar_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBoxQuerySubmittedEventArgs args)
         {
+            if(args.ChosenSuggestion != null)
+            {
+                SelectPages(args.ChosenSuggestion as Pages);
+            }
+            else
+            {
+                var matchingPages = squeries.getMatchingPages(args.QueryText);
+                if(matchingPages.Count() >= 1)
+                {
+                    SelectPages(matchingPages.FirstOrDefault());
+                }
+            }
+        }
 
+        private void SelectPages(Pages pages)
+        {
+            if(pages != null)
+            {
+                searchBar.Text = pages.name;
+            }
         }
 
         private void searchBar_SuggestionChosen(AutoSuggestBox sender, AutoSuggestBoxSuggestionChosenEventArgs args)
         {
-
+            var pages = args.SelectedItem as Pages;
+            sender.Text = string.Format("{0}", pages.name);
         }
     }
 }
