@@ -19,27 +19,20 @@ namespace RAMSS_v2.PageDataSource
         public async void setResults()
         {
             list.Clear();
-
-            if (File.Exists("PageDataSource/results.json"))
-            {
-                Uri dataUri = new Uri("PageDataSource/results.json");
+ 
+                Uri dataUri = new Uri("ms-appx:///PageDataSource/results.json");
                 System.Diagnostics.Debug.WriteLine("Something happened");
 
                 StorageFile file = await StorageFile.GetFileFromApplicationUriAsync(dataUri);
                 string jsonText = await FileIO.ReadTextAsync(file);
                 JsonObject jsonObject = JsonObject.Parse(jsonText);
-                JsonArray jsonArray = jsonObject["Pages"].GetArray();
+                JsonArray jsonArray = jsonObject["pages"].GetArray();
 
                 foreach (JsonValue groupValue in jsonArray)
                 {
                     JsonObject groupObject = groupValue.GetObject();
                     list.Add(new Pages() { name = groupObject.GetNamedString("name") });
                 }
-            }
-            else
-            {
-                System.Diagnostics.Debug.WriteLine("Nope not happening, FIX");
-            }
            
         }
 
