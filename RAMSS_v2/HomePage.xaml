@@ -6,6 +6,17 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
+
+    <Page.Transitions>
+        <TransitionCollection>
+            <NavigationThemeTransition>
+                <NavigationThemeTransition.DefaultNavigationTransitionInfo>
+                    <CommonNavigationTransitionInfo IsStaggeringEnabled="False"/>
+                </NavigationThemeTransition.DefaultNavigationTransitionInfo>
+            </NavigationThemeTransition>
+        </TransitionCollection>
+    </Page.Transitions>
+
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
             <RowDefinition Height="4*" MaxHeight="320"/>
@@ -16,12 +27,14 @@
         <!--Row 0-->
 
         <StackPanel Canvas.ZIndex="1" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="20,2,0,10">
-            <TextBlock Text="Violet Martins" FontSize="70"  Foreground="#999999" FontWeight="Light"/>
-            <TextBlock Text="Computer Science, BSc" FontSize="40"  Foreground="#999999" FontWeight="Light"/>
-            <TextBlock Text="Third Year" FontSize="40"  Foreground="#999999" FontWeight="Light"/>
+            <TextBlock Text="Violet Martins" CommonNavigationTransitionInfo.IsStaggerElement="True" FontSize="70"  Foreground="#999999" FontWeight="Light"/>
+            <TextBlock Text="Computer Science, BSc" CommonNavigationTransitionInfo.IsStaggerElement="True" FontSize="40"  Foreground="#999999" FontWeight="Light"/>
+            <TextBlock Text="Third Year" CommonNavigationTransitionInfo.IsStaggerElement="True" FontSize="40"  Foreground="#999999" FontWeight="Light"/>
 
         </StackPanel>
-        <Image Name="heroImage" Canvas.ZIndex="0" Source="Assets/heroImage.jpg" Stretch="UniformToFill" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+        <Border CommonNavigationTransitionInfo.IsStaggerElement="True">
+            <Image Name="heroImage" Canvas.ZIndex="0" Source="Assets/heroImage.jpg" Stretch="UniformToFill" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+        </Border>
         
         <!--Row 1-->
         <RelativePanel Grid.Row="1">
@@ -34,7 +47,7 @@
                     <ColumnDefinition Width="2*"/>
                 </Grid.ColumnDefinitions>
                 <RelativePanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
-                    <Button Name="courseScheduleButton" Click="courseScheduleButton_Click" FontSize="40" Background="#0077c8" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignRightWithPanel="True">
+                    <Button Name="courseScheduleButton" CommonNavigationTransitionInfo.IsStaggerElement="True" Click="courseScheduleButton_Click" FontSize="40" Background="#0077c8" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignRightWithPanel="True">
                             <StackPanel>
                                 <Image Source="Assets/calendar-icon.png" Height="100" VerticalAlignment="Top"/>
                             <TextBlock Text="Course Schedule" FontWeight="Light"/>
@@ -43,7 +56,7 @@
                     </Button>
 
                 </RelativePanel>
-                <RelativePanel Background="#002d72" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
+                <RelativePanel CommonNavigationTransitionInfo.IsStaggerElement="True" Background="#002d72" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
                     <ScrollViewer VerticalScrollBarVisibility="Hidden">
                          <TextBlock Grid.Column="1" Foreground="#999999" FontSize="18" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TextWrapping="WrapWholeWords" Margin="10">
                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy
@@ -66,7 +79,7 @@
                     <ColumnDefinition Width="1*"/>
                     <ColumnDefinition Width="1*"/>
                 </Grid.ColumnDefinitions>
-                <Button Name="academicsButton" Click="academicsButton_Click" FontWeight="Light" Background="#ffa300" FontSize="75" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0">
+                <Button Name="academicsButton" CommonNavigationTransitionInfo.IsStaggerElement="True" Click="academicsButton_Click" FontWeight="Light" Background="#ffa300" FontSize="75" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0">
                     <StackPanel RelativePanel.AlignBottomWithPanel="True">
                         <Image Source="Assets/notebook-icon-73156.png" Height="120" VerticalAlignment="Top"/>
                         <TextBlock Text="Academics" FontWeight="Light"/>
@@ -81,25 +94,25 @@
                     <ColumnDefinition Width="1*"/>
                     <ColumnDefinition Width="1*"/>
                 </Grid.ColumnDefinitions>
-                    <Button Name="favouritesButton" Click="favouritesButton_Click" FontWeight="Light" Background="#ffdc00" FontSize="40" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0">
+                    <Button Name="favouritesButton" CommonNavigationTransitionInfo.IsStaggerElement="True" Click="favouritesButton_Click" FontWeight="Light" Background="#ffdc00" FontSize="40" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0">
                         <StackPanel RelativePanel.AlignBottomWithPanel="True">
                             <Image Source="Assets/star1.png" Height="60" VerticalAlignment="Top"/>
                             <TextBlock Text="Favourites" FontWeight="Light"/>
                         </StackPanel>
                     </Button>
-                    <Button Name="studentFeesButton" Click="studentFeesButton_Click" FontWeight="Light" Background="#00a9ef" FontSize="40" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0">
+                    <Button Name="studentFeesButton" CommonNavigationTransitionInfo.IsStaggerElement="True" Click="studentFeesButton_Click" FontWeight="Light" Background="#00a9ef" FontSize="40" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0">
                         <StackPanel RelativePanel.AlignBottomWithPanel="True">
                             <Image Source="Assets/Corruption-512.png" Height="60" VerticalAlignment="Top"/>
                             <TextBlock Text="Student Fees" FontWeight="Light"/>
                         </StackPanel>
                     </Button>
-                    <Button Name="myGradesButton" Click="myGradesButton_Click" FontWeight="Light" Background="#0077c8" FontSize="40" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0">
+                    <Button Name="myGradesButton" CommonNavigationTransitionInfo.IsStaggerElement="True" Click="myGradesButton_Click" FontWeight="Light" Background="#0077c8" FontSize="40" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0">
                         <StackPanel>
                             <Image Source="Assets/test_medical-512.png" Height="60" VerticalAlignment="Top"/>
                             <TextBlock Text="My Grades" FontWeight="Light"/>
                         </StackPanel>
                     </Button>
-                    <Button Name="alertsButton" Click="alertsButton_Click" FontWeight="Light" Background="#ffc609" FontSize="40" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0">
+                    <Button Name="alertsButton" CommonNavigationTransitionInfo.IsStaggerElement="True" Click="alertsButton_Click" FontWeight="Light" Background="#ffc609" FontSize="40" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0">
                         <StackPanel RelativePanel.AlignBottomWithPanel="True">
                             <Image Source="Assets/Alert.png" Height="60" VerticalAlignment="Top"/>
                             <TextBlock Text="Alerts" FontWeight="Light"/>

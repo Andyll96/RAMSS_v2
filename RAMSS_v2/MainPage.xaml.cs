@@ -193,5 +193,10 @@ namespace RAMSS_v2
             else
                 forwardButton.Visibility = Visibility.Visible;
         }
+
+        private void addFavouriteListBoxItem_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            splitView.IsPaneOpen = !splitView.IsPaneOpen;
+        }
     }
 }

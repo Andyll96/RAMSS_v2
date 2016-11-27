@@ -6,15 +6,25 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-    
+
+    <Page.Transitions>
+        <TransitionCollection>
+            <NavigationThemeTransition>
+                <NavigationThemeTransition.DefaultNavigationTransitionInfo>
+                    <CommonNavigationTransitionInfo IsStaggeringEnabled="True"/>
+                </NavigationThemeTransition.DefaultNavigationTransitionInfo>
+            </NavigationThemeTransition>
+        </TransitionCollection>
+    </Page.Transitions>
+
     <Grid Background="#002d72">
         <Grid.RowDefinitions>
             <RowDefinition Height="3*"/>
             <RowDefinition Height="2*"/>
             <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
-        <TextBlock Text="Account Summary" Margin="20,100,10,0" Foreground="#999999" FontSize="40" FontWeight="Light"/>
-        <ScrollViewer VerticalScrollBarVisibility="Hidden" Margin="20,160,10,0">
+        <TextBlock Text="Account Summary" CommonNavigationTransitionInfo.IsStaggerElement="True" Margin="20,100,10,0" Foreground="#999999" FontSize="40" FontWeight="Light"/>
+        <ScrollViewer CommonNavigationTransitionInfo.IsStaggerElement="True" VerticalScrollBarVisibility="Hidden" Margin="20,160,10,0">
             <TextBlock Name="accountSummaryTextBlock"  Foreground="#999999" FontSize="20"  TextWrapping="WrapWholeWords" FontWeight="Light" Height="Auto">
                 Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque
                 eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut,
@@ -28,17 +38,17 @@
                     <ColumnDefinition Width="1*"/>
                     <ColumnDefinition Width="1*"/>
                 </Grid.ColumnDefinitions>
-                    <TextBlock Text="Charges Due" Margin="10,0,0,0" FontSize="35"  FontWeight="Light"/>
-                    <ScrollViewer Margin="20,50,10,0" VerticalScrollBarVisibility="Hidden">
+                <TextBlock Text="Charges Due" CommonNavigationTransitionInfo.IsStaggerElement="True" Margin="10,0,0,0" FontSize="35"  FontWeight="Light"/>
+                <ScrollViewer CommonNavigationTransitionInfo.IsStaggerElement="True" Margin="20,50,10,0" VerticalScrollBarVisibility="Hidden">
                         <TextBlock TextWrapping="WrapWholeWords">
                     Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque
                 eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut,
                 imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.
                 </TextBlock>
                     </ScrollViewer>
-                
-                <TextBlock Grid.Column="1" Margin="10,0,0,0" Text="Payments" Height="Auto" FontSize="35"  FontWeight="Light"/>
-                <ScrollViewer Grid.Column="1" Margin="10,50,20,0" VerticalScrollBarVisibility="Hidden">
+
+                <TextBlock Grid.Column="1" CommonNavigationTransitionInfo.IsStaggerElement="True" Margin="10,0,0,0" Text="Payments" Height="Auto" FontSize="35"  FontWeight="Light"/>
+                <ScrollViewer Grid.Column="1" CommonNavigationTransitionInfo.IsStaggerElement="True" Margin="10,50,20,0" VerticalScrollBarVisibility="Hidden">
                         <TextBlock TextWrapping="WrapWholeWords">
                     Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque
                 eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut,
@@ -64,10 +74,10 @@
                             <RowDefinition/>
                             <RowDefinition/>
                         </Grid.RowDefinitions>
-                        <Button FontSize="20" Background="#ffdc00" Content="T4A Inquiry" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontWeight="Light"/>
-                        <Button FontSize="20" Background="#004c9b" Content="Fees and Enrollement &#x0a; Confirmation" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontWeight="Light"/>
-                        <Button FontSize="20" Background="#0077c8" Content="Request A Refund" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontWeight="Light"/>
-                        <Button FontSize="20" Background="#5bc2f4" Content="T2202A Inquiry" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontWeight="Light"/>
+                        <Button CommonNavigationTransitionInfo.IsStaggerElement="True" FontSize="20" Background="#ffdc00" Content="T4A Inquiry" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontWeight="Light"/>
+                        <Button CommonNavigationTransitionInfo.IsStaggerElement="True" FontSize="20" Background="#004c9b" Content="Fees and Enrollement &#x0a; Confirmation" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontWeight="Light"/>
+                        <Button CommonNavigationTransitionInfo.IsStaggerElement="True" FontSize="20" Background="#0077c8" Content="Request A Refund" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontWeight="Light"/>
+                        <Button CommonNavigationTransitionInfo.IsStaggerElement="True" FontSize="20" Background="#5bc2f4" Content="T2202A Inquiry" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontWeight="Light"/>
 
                     </Grid>
                 </RelativePanel>
@@ -78,8 +88,8 @@
                             <RowDefinition Height="1.5*"/>
                             <RowDefinition Height="1*"/>
                         </Grid.RowDefinitions>
-                        <Button Background="#ffa300" FontSize="30" Content="Account Statement" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontWeight="Light"/>
-                        <Button Background="#ffee00" FontSize="30" Content="Financial Aid" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontWeight="Light"/>
+                        <Button CommonNavigationTransitionInfo.IsStaggerElement="True" Background="#ffa300" FontSize="30" Content="Account Statement" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontWeight="Light"/>
+                        <Button CommonNavigationTransitionInfo.IsStaggerElement="True" Background="#ffee00" FontSize="30" Content="Financial Aid" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontWeight="Light"/>
                     </Grid>
                 </RelativePanel>
             </Grid>

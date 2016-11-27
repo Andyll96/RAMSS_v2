@@ -6,6 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
+   
 
     <Grid>
         <Grid.RowDefinitions>
@@ -17,24 +18,26 @@
             <Button Name="homeButton" Background="Transparent" Click="homeButton_Click" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignLeftWithPanel="True" Height="75" Margin="20,10,0,0">
                 <Image Name="ryersonLogo" Source="Assets/Ryerson-rgb.png"  />
             </Button>
-            <AutoSuggestBox Name="searchBar" PlaceholderText="Find a Page" TextChanged="searchBar_TextChanged" QuerySubmitted="searchBar_QuerySubmitted" SuggestionChosen="searchBar_SuggestionChosen" RelativePanel.AlignRightWithPanel="True" FontFamily="Segoe MDL2 Assets" FontSize="30" Margin="0,30,80,0" Background="Transparent" FontWeight="Light" Width="402" QueryIcon="Find" Opacity="0.4"/>
+            <AutoSuggestBox Name="searchBar" PlaceholderText="Find a Page" TextChanged="searchBar_TextChanged" QuerySubmitted="searchBar_QuerySubmitted" SuggestionChosen="searchBar_SuggestionChosen" RelativePanel.AlignRightWithPanel="True" FontFamily="Segoe MDL2 Assets" FontSize="30" Margin="0,30,80,0" FontWeight="Light" Opacity="0.7" Width="302" QueryIcon="Find" />
             <Button Name="hamburgerMenuButton" Click="hamburgerMenuButton_Click" Content="&#xE700;" Background="Transparent" Foreground="white" FontSize="40" Height="50" Width="50" RelativePanel.AlignRightWith="searchBar" RelativePanel.AlignTopWithPanel="True" Margin="0,20,20,0" FontFamily="Segoe MDL2 Assets"/>
         </RelativePanel>
 
             <SplitView Name="splitView" Margin="0,0,0,0" Canvas.ZIndex="2"  VerticalAlignment="Stretch" PanePlacement="Right" DisplayMode="Overlay" OpenPaneLength="200" >
             <SplitView.Pane>
-                <ListBox Background="LightGray">
+                <ListBox Background="LightGray" BorderBrush="Gray" BorderThickness="5">
                     <ListBoxItem Name="courseScheduleListBoxItem" Tapped="courseScheduleListBoxItem_Tapped" Content="Course Schedule"/>
                     <ListBoxItem Name="academicsListBoxItem" Tapped="academicsListBoxItem_Tapped" Content="Academics"/>
                     <ListBoxItem Name="favouritesListBoxItem" Tapped="favouritesListBoxItem_Tapped" Content="Favourites"/>
                     <ListBoxItem Name="studentFeesListBoxItem" Tapped="studentFeesListBoxItem_Tapped" Content="Student Fees"/>
                     <ListBoxItem Name="myGradesListBoxItem" Tapped="myGradesListBoxItem_Tapped" Content="My Grades"/>
                     <ListBoxItem Name="alertsListBoxItem" Tapped="alertsListBoxItem_Tapped" Content="Alerts"/>
+                    <Line X2="200" Stroke="Gray" Fill="Black" HorizontalAlignment="Stretch" StrokeThickness="3"/>
+                    <ListBoxItem Name="addFavouriteListBoxItem" Tapped="addFavouriteListBoxItem_Tapped" Content="Add Page to Favourites" VerticalAlignment="Bottom"/>
                 </ListBox>
             </SplitView.Pane>
         </SplitView>
         <Frame Name="myFrame" Navigated="myFrame_Navigated" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignRightWithPanel="True">
-
+            
         </Frame>
     </Grid>
 </Page>
