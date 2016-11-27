@@ -32,7 +32,6 @@ namespace RAMSS_v2
         public MainPage()
         {
             this.InitializeComponent();
-
             myFrame.Navigate(typeof(HomePage));
 
             ApplicationViewTitleBar titleBar = ApplicationView.GetForCurrentView().TitleBar;
@@ -130,6 +129,34 @@ namespace RAMSS_v2
             if(pages != null)
             {
                 searchBar.Text = pages.name;
+                if (pages.name.ToUpper().Equals("HOME"))
+                {
+                    myFrame.Navigate(typeof(HomePage));
+                }
+                else if (pages.name.ToUpper().Equals("ACADEMICS"))
+                {
+                    myFrame.Navigate(typeof(AcademicsPage));
+                }
+                else if (pages.name.ToUpper().Equals("ALERTS"))
+                {
+                    myFrame.Navigate(typeof(AlertsPage));
+                }
+                else if (pages.name.ToUpper().Equals("COURSE SCHEDULE"))
+                {
+                    myFrame.Navigate(typeof(CourseSchedulePage));
+                }
+                else if (pages.name.ToUpper().Equals("FAVOURITES"))
+                {
+                    myFrame.Navigate(typeof(FavouritesPage));
+                }
+                else if (pages.name.ToUpper().Equals("STUDENT FEES"))
+                {
+                    myFrame.Navigate(typeof(FinancialPage));
+                }
+                else if (pages.name.ToUpper().Equals("MY GRADES"))
+                {
+                    myFrame.Navigate(typeof(MyGradesPage));
+                }
             }
         }
 
@@ -137,6 +164,34 @@ namespace RAMSS_v2
         {
             var pages = args.SelectedItem as Pages;
             sender.Text = string.Format("{0}", pages.name);
+        }
+
+        private void backButton_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (!myFrame.CanGoForward)
+                backButton.Visibility = Visibility.Collapsed;
+            else
+                backButton.Visibility = Visibility.Visible;
+        }
+
+        private void forwardButton_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (!myFrame.CanGoForward)
+                forwardButton.Visibility = Visibility.Collapsed;
+            else
+                forwardButton.Visibility = Visibility.Visible;
+        }
+
+        private void myFrame_Navigated(object sender, NavigationEventArgs e)
+        {
+            if (!myFrame.CanGoBack)
+                backButton.Visibility = Visibility.Collapsed;
+            else
+                backButton.Visibility = Visibility.Visible;
+            if (!myFrame.CanGoForward)
+                forwardButton.Visibility = Visibility.Collapsed;
+            else
+                forwardButton.Visibility = Visibility.Visible;
         }
     }
 }

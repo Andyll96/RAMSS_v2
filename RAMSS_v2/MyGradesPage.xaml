@@ -7,7 +7,157 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid Background="#0077c8">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <ComboBox Margin="50,100,0,0" Height="40" Width="400">
+            <ComboBoxItem Content="Semester 1"/>
+            <ComboBoxItem Content="Semester 2"/>
+            <ComboBoxItem Content="Semester 3"/>
+            <ComboBoxItem Content="Semester 4"/>
+            <ComboBoxItem Content="Semester 5"/>
+            <ComboBoxItem Content="Semester 6"/>
+            <ComboBoxItem Content="Semester 7"/>
+            <ComboBoxItem Content="Semester 8"/>
+        </ComboBox>
+        <Grid Margin="0,145,0,0" Grid.Row="0" Background="#ffc609">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Text="Class" TextAlignment="Center" FontSize="30" FontWeight="Light"/>
+            <TextBlock Grid.Column="1" Text="Description" TextAlignment="Center" FontSize="30"  FontWeight="Light"/>
+            <TextBlock Grid.Column="2" Text="Units" TextAlignment="Center" FontSize="30"  FontWeight="Light"/>
+            <TextBlock Grid.Column="3" Text="Grade" TextAlignment="Center" FontSize="30" FontWeight="Light"/>
+        </Grid>
+
+        <Grid Grid.Row="1" Background="#999999">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2.5*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                 <TextBlock Name="viewStatusTitle" Text="View Status" FontSize="35" Margin="50,0,0,0"  FontWeight="Light"/>
+                <Border Margin="0,50,0,0" Background="#0077c8">
+                    <TextBlock Grid.Row="0" FontWeight="Light"/>
+                </Border> 
+ 
+                <TextBlock Grid.Row="1" Text="View GPA" FontSize="35" Margin="50,0,0,0"  FontWeight="Light"/>
+                <Border Grid.Row="1" Margin="0,50,0,0" Background="#0077c8">
+                    <TextBlock Grid.Row="0" FontWeight="Light"/>
+                </Border>
+            </Grid>
+            <StackPanel Orientation="Vertical" Grid.Column="1" Background="#ffa300">
+                <TextBlock Text="Grade Projection" Margin="0,0,0,10" FontSize="35" TextAlignment="Center" FontWeight="Light"/>
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,10" >
+                    <TextBlock Text="Class 1" FontSize="25" Margin="10,0,50,0"/>
+                    <ComboBox HorizontalAlignment="Right" Margin="0,0,10,0" Width="200">
+                        <ComboBoxItem Content="A+"/>
+                        <ComboBoxItem Content="A"/>
+                        <ComboBoxItem Content="A-"/>
+                        <ComboBoxItem Content="B+"/>
+                        <ComboBoxItem Content="B"/>
+                        <ComboBoxItem Content="B-"/>
+                        <ComboBoxItem Content="C+"/>
+                        <ComboBoxItem Content="C"/>
+                        <ComboBoxItem Content="C-"/>
+                        <ComboBoxItem Content="D+"/>
+                        <ComboBoxItem Content="D"/>
+                        <ComboBoxItem Content="D-"/>
+                        <ComboBoxItem Content="F"/>
+                    </ComboBox> 
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                    <TextBlock Text="Class 2" FontSize="25" Margin="10,0,50,0"/>
+                    <ComboBox HorizontalAlignment="Right" Margin="0,0,10,0" Width="200">
+                        <ComboBoxItem Content="A+"/>
+                        <ComboBoxItem Content="A"/>
+                        <ComboBoxItem Content="A-"/>
+                        <ComboBoxItem Content="B+"/>
+                        <ComboBoxItem Content="B"/>
+                        <ComboBoxItem Content="B-"/>
+                        <ComboBoxItem Content="C+" />
+                        <ComboBoxItem Content="C"/>
+                        <ComboBoxItem Content="C-"/>
+                        <ComboBoxItem Content="D+"/>
+                        <ComboBoxItem Content="D"/>
+                        <ComboBoxItem Content="D-"/>
+                        <ComboBoxItem Content="F"/>
+                    </ComboBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                    <TextBlock Text="Class 3" FontSize="25" Margin="10,0,50,0"/>
+                    <ComboBox HorizontalAlignment="Right" Margin="0,0,10,0" Width="200">
+                        <ComboBoxItem Content="A+"/>
+                        <ComboBoxItem Content="A"/>
+                        <ComboBoxItem Content="A-"/>
+                        <ComboBoxItem Content="B+"/>
+                        <ComboBoxItem Content="B"/>
+                        <ComboBoxItem Content="B-"/>
+                        <ComboBoxItem Content="C+"/>
+                        <ComboBoxItem Content="C"/>
+                        <ComboBoxItem Content="C-"/>
+                        <ComboBoxItem Content="D+"/>
+                        <ComboBoxItem Content="D"/>
+                        <ComboBoxItem Content="D-"/>
+                        <ComboBoxItem Content="F"/>
+                    </ComboBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                    <TextBlock Text="Class 4" FontSize="25" Margin="10,0,50,0"/>
+                    <ComboBox HorizontalAlignment="Right" Margin="0,0,10,0" Width="200">
+                        <ComboBoxItem Content="A+"/>
+                        <ComboBoxItem Content="A"/>
+                        <ComboBoxItem Content="A-"/>
+                        <ComboBoxItem Content="B+"/>
+                        <ComboBoxItem Content="B"/>
+                        <ComboBoxItem Content="B-"/>
+                        <ComboBoxItem Content="C+"/>
+                        <ComboBoxItem Content="C"/>
+                        <ComboBoxItem Content="C-"/>
+                        <ComboBoxItem Content="D+"/>
+                        <ComboBoxItem Content="D"/>
+                        <ComboBoxItem Content="D-"/>
+                        <ComboBoxItem Content="F"/>
+                    </ComboBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                    <TextBlock Text="Class 5" FontSize="25" Margin="10,0,50,0"/>
+                    <ComboBox HorizontalAlignment="Right" Margin="0,0,10,0" Width="200">
+                        <ComboBoxItem Content="A+"/>
+                        <ComboBoxItem Content="A"/>
+                        <ComboBoxItem Content="A-"/>
+                        <ComboBoxItem Content="B+"/>
+                        <ComboBoxItem Content="B"/>
+                        <ComboBoxItem Content="B-"/>
+                        <ComboBoxItem Content="C+"/>
+                        <ComboBoxItem Content="C"/>
+                        <ComboBoxItem Content="C-"/>
+                        <ComboBoxItem Content="D+"/>
+                        <ComboBoxItem Content="D"/>
+                        <ComboBoxItem Content="D-"/>
+                        <ComboBoxItem Content="F"/>
+                    </ComboBox>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
 
     </Grid>
 </Page>

@@ -12,8 +12,8 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <RelativePanel Canvas.ZIndex="1" Height="100" VerticalAlignment="Top">
-            <Button Name="backButton" Foreground="White" Height="60" FontSize="30" FontFamily="Segoe MDL2 Assets" Content="&#xE112;" Background="Transparent" Click="backButton_Click" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignLeftWith="homeButton" Margin="175,23,0,0" FontWeight="Bold"/>
-            <Button Name="forwardButton" Foreground="white" Height="60" FontSize="30" FontFamily="Segoe MDL2 Assets" Content="&#xE111;" Background="Transparent" Click="forwardButton_Click" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignLeftWith="homeButton" Margin="226,23,0,0" FontWeight="Bold"/>
+            <Button Name="backButton" Loaded="backButton_Loaded" Foreground="White" Height="60" FontSize="30" FontFamily="Segoe MDL2 Assets" Content="&#xE112;" Background="Transparent" Click="backButton_Click" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignLeftWith="homeButton" Margin="175,23,0,0" FontWeight="Bold"/>
+            <Button Name="forwardButton" Loaded="forwardButton_Loaded" Foreground="white" Height="60" FontSize="30" FontFamily="Segoe MDL2 Assets" Content="&#xE111;" Background="Transparent" Click="forwardButton_Click" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignLeftWith="homeButton" Margin="226,23,0,0" FontWeight="Bold"/>
             <Button Name="homeButton" Background="Transparent" Click="homeButton_Click" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignLeftWithPanel="True" Height="75" Margin="20,10,0,0">
                 <Image Name="ryersonLogo" Source="Assets/Ryerson-rgb.png"  />
             </Button>
@@ -33,7 +33,7 @@
                 </ListBox>
             </SplitView.Pane>
         </SplitView>
-        <Frame Name="myFrame" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignRightWithPanel="True">
+        <Frame Name="myFrame" Navigated="myFrame_Navigated" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignRightWithPanel="True">
 
         </Frame>
     </Grid>

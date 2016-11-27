@@ -49,8 +49,8 @@
                         <TextBlock FontSize="30" TextAlignment="Center" Grid.Column="2" Text="Taken"/>
                     </Grid>
                 </StackPanel>
-                
-                
+
+
                 <Grid Grid.Row="2">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
@@ -58,13 +58,13 @@
                         <ColumnDefinition/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
-                    <Button Click="enrollButton_Click" Name="enrollButton" FontSize="40" Content="Enroll" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontWeight="Light"/>
-                    <Button Click="dropButton_Click" Name="dropButton" FontSize="40" Content="Drop" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontWeight="Light"/>
-                    <Button Click="swapButton_Click" Name="swapButton" FontSize="40" Content="Swap" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontWeight="Light"/>
-                    <Button Click="viewScheduleButton_Click" Name="viewScheduleButton" FontSize="40" Content="View Schedule" Grid.Column="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontWeight="Light"/>
+                    <Button Click="enrollButton_Click" Name="enrollButton" FontSize="30" Content="Enroll" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontWeight="Light"/>
+                    <Button Click="dropButton_Click" Name="dropButton" FontSize="30" Content="Drop" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontWeight="Light"/>
+                    <Button Click="swapButton_Click" Name="swapButton" FontSize="30" Content="Swap" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontWeight="Light"/>
+                    <Button Click="viewScheduleButton_Click" Name="viewScheduleButton" FontSize="30" Grid.Column="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontWeight="Light">
+                        <TextBlock TextWrapping="WrapWholeWords">View Schedule</TextBlock>
+                    </Button>
                 </Grid>
-                
-                
             </Grid>
         </SplitView.Content>
     </SplitView>

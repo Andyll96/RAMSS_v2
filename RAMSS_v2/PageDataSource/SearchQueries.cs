@@ -21,7 +21,7 @@ namespace RAMSS_v2.PageDataSource
             list.Clear();
  
                 Uri dataUri = new Uri("ms-appx:///PageDataSource/results.json");
-                System.Diagnostics.Debug.WriteLine("Something happened");
+                System.Diagnostics.Debug.WriteLine("Found results.json");
 
                 StorageFile file = await StorageFile.GetFileFromApplicationUriAsync(dataUri);
                 string jsonText = await FileIO.ReadTextAsync(file);
