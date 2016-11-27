@@ -75,7 +75,7 @@
                 </Border>
             </Grid>
             <StackPanel Orientation="Vertical" Grid.Column="1" Background="#ffa300">
-                <TextBlock CommonNavigationTransitionInfo.IsStaggerElement="True" Text="Grade Projection" Margin="0,0,0,10" FontSize="35" TextAlignment="Center" FontWeight="Light"/>
+                <TextBlock CommonNavigationTransitionInfo.IsStaggerElement="True" Text="GPA Projection" Margin="0,0,0,10" FontSize="35" TextAlignment="Center" FontWeight="Light"/>
                 <StackPanel Orientation="Horizontal" Margin="0,0,0,10" >
                     <TextBlock Text="Class 1" FontSize="25" Margin="10,0,50,0"/>
                     <ComboBox CommonNavigationTransitionInfo.IsStaggerElement="True" HorizontalAlignment="Right" Margin="0,0,10,0" Width="200">

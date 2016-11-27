@@ -32,6 +32,8 @@ namespace RAMSS_v2
         public MainPage()
         {
             this.InitializeComponent();
+            ApplicationView.PreferredLaunchViewSize = new Size(1280, 720);
+            ApplicationView.PreferredLaunchWindowingMode = ApplicationViewWindowingMode.PreferredLaunchViewSize;
             myFrame.Navigate(typeof(HomePage));
 
             ApplicationViewTitleBar titleBar = ApplicationView.GetForCurrentView().TitleBar;
