@@ -89,6 +89,10 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <Content Include="Assets\Code.png" />
+    <Content Include="Assets\elective.png" />
+    <Content Include="Assets\hat.png" />
+    <Content Include="Assets\pshycology.png" />
     <Content Include="PageDataSource\results.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -131,6 +135,11 @@
     <Compile Include="PageDataSource\Pages.cs" />
     <Compile Include="PageDataSource\SearchQueries.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserDataSource\Course.cs" />
+    <Compile Include="UserDataSource\Major.cs" />
+    <Compile Include="UserDataSource\Minor.cs" />
+    <Compile Include="UserDataSource\Semester.cs" />
+    <Compile Include="UserDataSource\User.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">

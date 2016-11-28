@@ -34,7 +34,9 @@ namespace RAMSS_v2
             this.InitializeComponent();
             ApplicationView.PreferredLaunchViewSize = new Size(1280, 720);
             ApplicationView.PreferredLaunchWindowingMode = ApplicationViewWindowingMode.PreferredLaunchViewSize;
+            ElementSoundPlayer.State = ElementSoundPlayerState.On;
             myFrame.Navigate(typeof(HomePage));
+            ElementSoundPlayer.Play(ElementSoundKind.GoBack);
 
             ApplicationViewTitleBar titleBar = ApplicationView.GetForCurrentView().TitleBar;
             titleBar.BackgroundColor = Color.FromArgb(0,63,63,63);
@@ -46,6 +48,7 @@ namespace RAMSS_v2
         private void homeButton_Click(object sender, RoutedEventArgs e)
         {
             myFrame.Navigate(typeof(HomePage));
+            ElementSoundPlayer.Play(ElementSoundKind.GoBack);
         }
 
         private void hamburgerMenuButton_Click(object sender, RoutedEventArgs e)

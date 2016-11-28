@@ -7,7 +7,64 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
+    <Page.Transitions>
+        <TransitionCollection>
+            <NavigationThemeTransition>
+                <NavigationThemeTransition.DefaultNavigationTransitionInfo>
+                    <CommonNavigationTransitionInfo IsStaggeringEnabled="True"/>
+                </NavigationThemeTransition.DefaultNavigationTransitionInfo>
+            </NavigationThemeTransition>
+        </TransitionCollection>
+    </Page.Transitions>
+    
     <Grid Background="#ffdc00">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid Margin="0,100,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition Height="1.5*"/>
+            </Grid.RowDefinitions>
+            <TextBlock CommonNavigationTransitionInfo.IsStaggerElement="True" Margin="20,0,0,0" FontSize="25" FontWeight="Light">
+               <Bold FontWeight="Medium">My Program:</Bold>  Computer Science, BSc<LineBreak/><Bold FontWeight="Medium">Institution:</Bold> Ryerson University<LineBreak/><Bold FontWeight="Medium">Major:</Bold> Computer Science<LineBreak/><Bold FontWeight="Medium">Minor:</Bold> N/A
+            </TextBlock>
+            <Button CommonNavigationTransitionInfo.IsStaggerElement="True" Grid.Row="1" Content="Plan Minor" FontSize="40" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#ffc609" FontWeight="Light"/>
+            <Button CommonNavigationTransitionInfo.IsStaggerElement="True" Grid.Row="2" Background="#004c9b" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Content="Verify Graduation Eligibility" FontSize="40" FontWeight="Light"/>
+            <Button CommonNavigationTransitionInfo.IsStaggerElement="True" Grid.Row="3" Background="#ffa300" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
+                <StackPanel>
+                    <Image Source="Assets/hat.png" Height="100"/>
+                    <TextBlock Text="Apply for Graduation" FontSize="50" FontWeight="Light"/>
+                </StackPanel>
+            </Button>
+        </Grid>
 
+        <Grid Grid.Column="1"  Background="#0077c8">
+            <Grid Margin="0,100,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <TextBlock CommonNavigationTransitionInfo.IsStaggerElement="True" Grid.Column="1" Text="Missing" TextAlignment="Center" FontSize="30" Height="40" FontWeight="Medium"/>
+                <TextBlock CommonNavigationTransitionInfo.IsStaggerElement="True" Grid.Column="2" Text="Completed" TextAlignment="Center" FontSize="30" Height="40" FontWeight="Medium"/>
+
+                <TextBlock CommonNavigationTransitionInfo.IsStaggerElement="True" Grid.Row="1" Text="Year 1" TextAlignment="Center" FontSize="30" Height="40" FontWeight="Medium"/>
+                <TextBlock CommonNavigationTransitionInfo.IsStaggerElement="True" Grid.Row="2" Text="Year 2" TextAlignment="Center" FontSize="30" Height="40" FontWeight="Medium"/>
+                <TextBlock CommonNavigationTransitionInfo.IsStaggerElement="True" Grid.Row="3" Text="Year 3" TextAlignment="Center" FontSize="30" Height="40" FontWeight="Medium"/>
+                <TextBlock CommonNavigationTransitionInfo.IsStaggerElement="True" Grid.Row="4" Text="Year 4" TextAlignment="Center" FontSize="30" Height="40" FontWeight="Medium"/>
+            </Grid>
+           
+        </Grid>
     </Grid>
 </Page>

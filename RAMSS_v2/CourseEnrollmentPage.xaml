@@ -20,6 +20,9 @@
         <SplitView.Pane>
             <RelativePanel  Margin="0,100,0,0" >
                 <AutoSuggestBox PlaceholderText="Find Course" Margin="20,0,20,0" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True" QueryIcon="Find"/>
+                <GridView Margin="0,40,0,0" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignTopWithPanel="True">
+                    
+                </GridView>
             </RelativePanel>
         </SplitView.Pane>
         <SplitView.Content>
@@ -51,9 +54,9 @@
                                 <ColumnDefinition/>
                                 <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
-                    <TextBlock CommonNavigationTransitionInfo.IsStaggerElement="True" FontSize="30" TextAlignment="Center" Grid.Column="0" Text="Need"/>
+                    <TextBlock CommonNavigationTransitionInfo.IsStaggerElement="True" FontSize="30" TextAlignment="Center" Grid.Column="0" Text="Missing"/>
                     <TextBlock CommonNavigationTransitionInfo.IsStaggerElement="True" FontSize="30" TextAlignment="Center" Grid.Column="1" Text="Taking"/>
-                    <TextBlock CommonNavigationTransitionInfo.IsStaggerElement="True" FontSize="30" TextAlignment="Center" Grid.Column="2" Text="Taken"/>
+                    <TextBlock CommonNavigationTransitionInfo.IsStaggerElement="True" FontSize="30" TextAlignment="Center" Grid.Column="2" Text="Completed"/>
                         </Grid>
                 <Grid Grid.Row="1">
                     <Grid.ColumnDefinitions>
@@ -62,9 +65,9 @@
                         <ColumnDefinition/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
-                    <Button CommonNavigationTransitionInfo.IsStaggerElement="True" Click="enrollButton_Click" Name="enrollButton" FontSize="30" Content="Enroll" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontWeight="Light"/>
+                    <Button Background="#ffdc00" CommonNavigationTransitionInfo.IsStaggerElement="True" Click="enrollButton_Click" Name="enrollButton" FontSize="30" Content="Enroll" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontWeight="Light"/>
                     <Button CommonNavigationTransitionInfo.IsStaggerElement="True" Click="dropButton_Click" Name="dropButton" FontSize="30" Content="Drop" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontWeight="Light"/>
-                    <Button CommonNavigationTransitionInfo.IsStaggerElement="True" Click="swapButton_Click" Name="swapButton" FontSize="30" Content="Swap" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontWeight="Light"/>
+                    <Button Background="#ffdc00" CommonNavigationTransitionInfo.IsStaggerElement="True" Click="swapButton_Click" Name="swapButton" FontSize="30" Content="Swap" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontWeight="Light"/>
                     <Button CommonNavigationTransitionInfo.IsStaggerElement="True" Click="viewScheduleButton_Click" Name="viewScheduleButton" FontSize="30" Grid.Column="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontWeight="Light">
                         <TextBlock TextWrapping="WrapWholeWords">View Schedule</TextBlock>
                     </Button>

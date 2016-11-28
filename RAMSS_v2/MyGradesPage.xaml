@@ -77,8 +77,9 @@
             <StackPanel Orientation="Vertical" Grid.Column="1" Background="#ffa300">
                 <TextBlock CommonNavigationTransitionInfo.IsStaggerElement="True" Text="GPA Projection" Margin="0,0,0,10" FontSize="35" TextAlignment="Center" FontWeight="Light"/>
                 <StackPanel Orientation="Horizontal" Margin="0,0,0,10" >
-                    <TextBlock Text="Class 1" FontSize="25" Margin="10,0,50,0"/>
-                    <ComboBox CommonNavigationTransitionInfo.IsStaggerElement="True" HorizontalAlignment="Right" Margin="0,0,10,0" Width="200">
+                    <TextBlock CommonNavigationTransitionInfo.IsStaggerElement="True" Text="Class 1" FontSize="25" Margin="10,0,50,0"/>
+                    <ComboBox Name="class1ComboBox" SelectionChanged="class1ComboBox_SelectionChanged" CommonNavigationTransitionInfo.IsStaggerElement="True" HorizontalAlignment="Right" Margin="0,0,10,0" Width="200">
+                        <ComboBoxItem Height="30" Content=""/>
                         <ComboBoxItem Content="A+"/>
                         <ComboBoxItem Content="A"/>
                         <ComboBoxItem Content="A-"/>
@@ -96,7 +97,8 @@
                 </StackPanel>
                 <StackPanel CommonNavigationTransitionInfo.IsStaggerElement="True" Orientation="Horizontal" Margin="0,0,0,10">
                     <TextBlock Text="Class 2" FontSize="25" Margin="10,0,50,0"/>
-                    <ComboBox HorizontalAlignment="Right" Margin="0,0,10,0" Width="200">
+                    <ComboBox Name="class2ComboBox" SelectionChanged="class2ComboBox_SelectionChanged" HorizontalAlignment="Right" Margin="0,0,10,0" Width="200">
+                        <ComboBoxItem Height="30" Content=""/>
                         <ComboBoxItem Content="A+"/>
                         <ComboBoxItem Content="A"/>
                         <ComboBoxItem Content="A-"/>
@@ -114,7 +116,8 @@
                 </StackPanel>
                 <StackPanel CommonNavigationTransitionInfo.IsStaggerElement="True" Orientation="Horizontal" Margin="0,0,0,10">
                     <TextBlock Text="Class 3" FontSize="25" Margin="10,0,50,0"/>
-                    <ComboBox HorizontalAlignment="Right" Margin="0,0,10,0" Width="200">
+                    <ComboBox Name="class3ComboBox" SelectionChanged="class3ComboBox_SelectionChanged" HorizontalAlignment="Right" Margin="0,0,10,0" Width="200">
+                        <ComboBoxItem Height="30" Content=""/>
                         <ComboBoxItem Content="A+"/>
                         <ComboBoxItem Content="A"/>
                         <ComboBoxItem Content="A-"/>
@@ -132,7 +135,8 @@
                 </StackPanel>
                 <StackPanel CommonNavigationTransitionInfo.IsStaggerElement="True" Orientation="Horizontal" Margin="0,0,0,10">
                     <TextBlock Text="Class 4" FontSize="25" Margin="10,0,50,0"/>
-                    <ComboBox HorizontalAlignment="Right" Margin="0,0,10,0" Width="200">
+                    <ComboBox Name="class4ComboBox" SelectionChanged="class4ComboBox_SelectionChanged" HorizontalAlignment="Right" Margin="0,0,10,0" Width="200">
+                        <ComboBoxItem Height="30" Content=""/>
                         <ComboBoxItem Content="A+"/>
                         <ComboBoxItem Content="A"/>
                         <ComboBoxItem Content="A-"/>
@@ -150,7 +154,8 @@
                 </StackPanel>
                 <StackPanel CommonNavigationTransitionInfo.IsStaggerElement="True" Orientation="Horizontal" Margin="0,0,0,10">
                     <TextBlock Text="Class 5" FontSize="25" Margin="10,0,50,0"/>
-                    <ComboBox HorizontalAlignment="Right" Margin="0,0,10,0" Width="200">
+                    <ComboBox Name="class5ComboBox" SelectionChanged="class5ComboBox_SelectionChanged" HorizontalAlignment="Right" Margin="0,0,10,0" Width="200">
+                        <ComboBoxItem Height="30" Content=""/>
                         <ComboBoxItem Content="A+"/>
                         <ComboBoxItem Content="A"/>
                         <ComboBoxItem Content="A-"/>
@@ -166,7 +171,7 @@
                         <ComboBoxItem Content="F"/>
                     </ComboBox>
                 </StackPanel>
-                <TextBlock CommonNavigationTransitionInfo.IsStaggerElement="True" Text="Projected GPA:          0.00" FontSize="25" Margin="10,0,30,0" HorizontalAlignment="Right"/>
+                <TextBlock Name="projectedGPATextBlock" CommonNavigationTransitionInfo.IsStaggerElement="True" Text="Projected GPA:          0.00" FontSize="25" Margin="10,0,30,0" HorizontalAlignment="Right"/>
             </StackPanel>
         </Grid>
 
