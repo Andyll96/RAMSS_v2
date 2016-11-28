@@ -21,6 +21,7 @@ namespace RAMSS_v2.UserDataSource
 
         public Semester(int semesterNumber, DateTime startDate, DateTime endDate)
         {
+            courseList = new List<Course>();
             this.semesterNumber = semesterNumber;
             this.startDate = startDate;
             this.endDate = endDate;

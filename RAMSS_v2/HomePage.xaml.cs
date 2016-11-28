@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RAMSS_v2.UserDataSource;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -25,6 +26,15 @@ namespace RAMSS_v2
         public HomePage()
         {
             this.InitializeComponent();
+
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            User violet = (User)e.Parameter;
+            personalInfoTextBlock.Text = "Name: " + violet.name + "\nAddress: " + violet.address + "\nEmail: " + violet.email + "\nPhone Number: " + violet.phoneNumber;
+            emergencyInfoTextBlock.Text = "Name: " + violet.emergencyContactName + "\nPhone Number: " + violet.emergencyContactPhoneNumber;
+            System.Diagnostics.Debug.WriteLine(e.Parameter);
         }
 
         private void courseScheduleButton_Click(object sender, RoutedEventArgs e)

@@ -9,10 +9,10 @@ namespace RAMSS_v2.UserDataSource
     public class Major
     {
         
-        List<Semester> year1; 
-        List<Semester> year2;
-        List<Semester> year3;
-        List<Semester> year4;
+        List<Semester> year1 = new List<Semester>();
+        List<Semester> year2 = new List<Semester>();
+        List<Semester> year3 = new List<Semester>();
+        List<Semester> year4 = new List<Semester>();
 
         Semester semester1;
         Semester semester2;

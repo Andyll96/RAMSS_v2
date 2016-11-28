@@ -1,4 +1,5 @@
 ﻿using RAMSS_v2.PageDataSource;
+using RAMSS_v2.UserDataSource;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -28,26 +29,33 @@ namespace RAMSS_v2
     public sealed partial class MainPage : Page
     {
         SearchQueries squeries = new SearchQueries();
+        User violet;
 
         public MainPage()
         {
             this.InitializeComponent();
+
+            violet = new User();
+
+
             ApplicationView.PreferredLaunchViewSize = new Size(1280, 720);
             ApplicationView.PreferredLaunchWindowingMode = ApplicationViewWindowingMode.PreferredLaunchViewSize;
             ElementSoundPlayer.State = ElementSoundPlayerState.On;
-            myFrame.Navigate(typeof(HomePage));
+            myFrame.Navigate(typeof(HomePage),violet);
             ElementSoundPlayer.Play(ElementSoundKind.GoBack);
 
             ApplicationViewTitleBar titleBar = ApplicationView.GetForCurrentView().TitleBar;
             titleBar.BackgroundColor = Color.FromArgb(0,63,63,63);
             titleBar.ForegroundColor = Colors.White;
             titleBar.ButtonBackgroundColor = Color.FromArgb(0, 63, 63, 63);
-            titleBar.ButtonForegroundColor = Colors.White;            
+            titleBar.ButtonForegroundColor = Colors.White;
+
+                   
         }
 
         private void homeButton_Click(object sender, RoutedEventArgs e)
         {
-            myFrame.Navigate(typeof(HomePage));
+            myFrame.Navigate(typeof(HomePage),violet);
             ElementSoundPlayer.Play(ElementSoundKind.GoBack);
         }
 
@@ -58,37 +66,37 @@ namespace RAMSS_v2
 
         private void courseScheduleListBoxItem_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            myFrame.Navigate(typeof(CourseSchedulePage));
+            myFrame.Navigate(typeof(CourseSchedulePage),violet);
             splitView.IsPaneOpen = !splitView.IsPaneOpen;
         }
 
         private void academicsListBoxItem_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            myFrame.Navigate(typeof(AcademicsPage));
+            myFrame.Navigate(typeof(AcademicsPage),violet);
             splitView.IsPaneOpen = !splitView.IsPaneOpen;
         }
 
         private void favouritesListBoxItem_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            myFrame.Navigate(typeof(FavouritesPage));
+            myFrame.Navigate(typeof(FavouritesPage),violet);
             splitView.IsPaneOpen = !splitView.IsPaneOpen;
         }
 
         private void studentFeesListBoxItem_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            myFrame.Navigate(typeof(FinancialPage));
+            myFrame.Navigate(typeof(FinancialPage), violet);
             splitView.IsPaneOpen = !splitView.IsPaneOpen;
         }
 
         private void alertsListBoxItem_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            myFrame.Navigate(typeof(AlertsPage));
+            myFrame.Navigate(typeof(AlertsPage), violet);
             splitView.IsPaneOpen = !splitView.IsPaneOpen;
         }
 
         private void myGradesListBoxItem_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            myFrame.Navigate(typeof(MyGradesPage));
+            myFrame.Navigate(typeof(MyGradesPage),violet);
             splitView.IsPaneOpen = !splitView.IsPaneOpen;
         }
 
@@ -136,31 +144,31 @@ namespace RAMSS_v2
                 searchBar.Text = pages.name;
                 if (pages.name.ToUpper().Equals("HOME"))
                 {
-                    myFrame.Navigate(typeof(HomePage));
+                    myFrame.Navigate(typeof(HomePage), violet);
                 }
                 else if (pages.name.ToUpper().Equals("ACADEMICS"))
                 {
-                    myFrame.Navigate(typeof(AcademicsPage));
+                    myFrame.Navigate(typeof(AcademicsPage),violet);
                 }
                 else if (pages.name.ToUpper().Equals("ALERTS"))
                 {
-                    myFrame.Navigate(typeof(AlertsPage));
+                    myFrame.Navigate(typeof(AlertsPage),violet);
                 }
                 else if (pages.name.ToUpper().Equals("COURSE SCHEDULE"))
                 {
-                    myFrame.Navigate(typeof(CourseSchedulePage));
+                    myFrame.Navigate(typeof(CourseSchedulePage), violet);
                 }
                 else if (pages.name.ToUpper().Equals("FAVOURITES"))
                 {
-                    myFrame.Navigate(typeof(FavouritesPage));
+                    myFrame.Navigate(typeof(FavouritesPage), violet);
                 }
                 else if (pages.name.ToUpper().Equals("STUDENT FEES"))
                 {
-                    myFrame.Navigate(typeof(FinancialPage));
+                    myFrame.Navigate(typeof(FinancialPage),violet);
                 }
                 else if (pages.name.ToUpper().Equals("MY GRADES"))
                 {
-                    myFrame.Navigate(typeof(MyGradesPage));
+                    myFrame.Navigate(typeof(MyGradesPage),violet);
                 }
             }
         }

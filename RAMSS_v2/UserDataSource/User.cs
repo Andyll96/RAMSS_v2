@@ -19,9 +19,9 @@ namespace RAMSS_v2.UserDataSource
         public Major majorProgram;
         public Minor minorProgram;
 
-        List<Course> missingCourses;
-        List<Course> takingCourses;
-        List<Course> completedCourses;
+        List<Course> missingCourses = new List<Course>();
+        List<Course> takingCourses = new List<Course>();
+        List<Course> completedCourses = new List<Course>();
 
         public User()
         {
