@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RAMSS_v2.UserDataSource
 {
-    class Course
+    public class Course
     {
 
         public String code { get; set; }
@@ -20,6 +20,10 @@ namespace RAMSS_v2.UserDataSource
         public String time { get; set; }
         public String dayOfWeek { get; set; }
 
+        public Boolean missing { get; set; }
+        public Boolean taking { get; set; }
+        public Boolean completed { get; set; }
+
 
         public List<Course> prerequisites { get; set; }
         
@@ -27,6 +31,9 @@ namespace RAMSS_v2.UserDataSource
         {
             prerequisites = new List<Course>();
             unit = 1.00;
+            missing = true;
+            taking = false;
+            completed = false;
 
             this.code = code;
             this.description = description;

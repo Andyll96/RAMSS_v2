@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RAMSS_v2.UserDataSource;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -22,19 +23,28 @@ namespace RAMSS_v2
     /// </summary>
     public sealed partial class AcademicsPage : Page
     {
+
+        User violet;
+
         public AcademicsPage()
         {
             this.InitializeComponent();
         }
 
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            violet = (User)e.Parameter;
+            System.Diagnostics.Debug.WriteLine(e.Parameter);
+        }
+
         private void courseEnrollmentButton_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(CourseEnrollmentPage));
+            this.Frame.Navigate(typeof(CourseEnrollmentPage),violet);
         }
 
         private void academciCareerOptionsButton_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(AcademicCareerOptions));
+            this.Frame.Navigate(typeof(AcademicCareerOptions),violet);
         }
     }
 }

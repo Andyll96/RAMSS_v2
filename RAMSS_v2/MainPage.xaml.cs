@@ -48,14 +48,12 @@ namespace RAMSS_v2
             titleBar.BackgroundColor = Color.FromArgb(0,63,63,63);
             titleBar.ForegroundColor = Colors.White;
             titleBar.ButtonBackgroundColor = Color.FromArgb(0, 63, 63, 63);
-            titleBar.ButtonForegroundColor = Colors.White;
-
-                   
+            titleBar.ButtonForegroundColor = Colors.White;         
         }
 
         private void homeButton_Click(object sender, RoutedEventArgs e)
         {
-            myFrame.Navigate(typeof(HomePage),violet);
+            myFrame.Navigate(typeof(HomePage), violet);
             ElementSoundPlayer.Play(ElementSoundKind.GoBack);
         }
 

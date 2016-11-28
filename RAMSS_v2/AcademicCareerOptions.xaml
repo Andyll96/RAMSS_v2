@@ -42,7 +42,7 @@
             </Button>
         </Grid>
 
-        <Grid Grid.Column="1"  Background="#0077c8">
+        <Grid Grid.Column="1"  Background="#0077c8" Loaded="Grid_Loaded">
             <Grid Margin="0,100,0,0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="auto"/>
@@ -63,6 +63,14 @@
                 <TextBlock CommonNavigationTransitionInfo.IsStaggerElement="True" Grid.Row="2" Text="Year 2" TextAlignment="Center" FontSize="30" Height="40" FontWeight="Medium"/>
                 <TextBlock CommonNavigationTransitionInfo.IsStaggerElement="True" Grid.Row="3" Text="Year 3" TextAlignment="Center" FontSize="30" Height="40" FontWeight="Medium"/>
                 <TextBlock CommonNavigationTransitionInfo.IsStaggerElement="True" Grid.Row="4" Text="Year 4" TextAlignment="Center" FontSize="30" Height="40" FontWeight="Medium"/>
+                <TextBlock Name="Y1Missing" CommonNavigationTransitionInfo.IsStaggerElement="True" Grid.Column="1" Grid.Row="1" FontSize="16" TextAlignment="Center" FontWeight="Light"/>
+                <TextBlock Name="Y2Missing" CommonNavigationTransitionInfo.IsStaggerElement="True" Grid.Column="1" Grid.Row="2" FontSize="16" TextAlignment="Center" FontWeight="Light"/>
+                <TextBlock Name="Y3Missing" CommonNavigationTransitionInfo.IsStaggerElement="True" Grid.Column="1" Grid.Row="3" FontSize="16" TextAlignment="Center" FontWeight="Light"/>
+                <TextBlock Name="Y4Missing" CommonNavigationTransitionInfo.IsStaggerElement="True" Grid.Column="1" Grid.Row="4" FontSize="16" TextAlignment="Center" FontWeight="Light"/>
+                <TextBlock Name="Y1Completed" CommonNavigationTransitionInfo.IsStaggerElement="True" Grid.Column="2" Grid.Row="1" FontSize="16" TextAlignment="Center" FontWeight="Light"/>
+                <TextBlock Name="Y2Completed" CommonNavigationTransitionInfo.IsStaggerElement="True" Grid.Column="2" Grid.Row="2" FontSize="16" TextAlignment="Center" FontWeight="Light"/>
+                <TextBlock Name="Y3Completed" CommonNavigationTransitionInfo.IsStaggerElement="True" Grid.Column="2" Grid.Row="3" FontSize="16" TextAlignment="Center" FontWeight="Light"/>
+                <TextBlock Name="Y4Completed" CommonNavigationTransitionInfo.IsStaggerElement="True" Grid.Column="2" Grid.Row="4" FontSize="16" TextAlignment="Center" FontWeight="Light"/>
             </Grid>
            
         </Grid>

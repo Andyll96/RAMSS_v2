@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RAMSS_v2.UserDataSource;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -22,9 +23,18 @@ namespace RAMSS_v2
     /// </summary>
     public sealed partial class CourseEnrollmentPage : Page
     {
+
+        User violet;
+
         public CourseEnrollmentPage()
         {
             this.InitializeComponent();
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            violet = (User)e.Parameter;
+            System.Diagnostics.Debug.WriteLine(e.Parameter);
         }
 
         private void enrollButton_Click(object sender, RoutedEventArgs e)

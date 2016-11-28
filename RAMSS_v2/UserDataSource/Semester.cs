@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RAMSS_v2.UserDataSource
 {
-    class Semester
+    public class Semester
     {
 
         public int semesterNumber { get; set; }

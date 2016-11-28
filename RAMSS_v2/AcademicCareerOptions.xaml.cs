@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RAMSS_v2.UserDataSource;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -22,9 +23,73 @@ namespace RAMSS_v2
     /// </summary>
     public sealed partial class AcademicCareerOptions : Page
     {
+        User violet;
+
         public AcademicCareerOptions()
         {
             this.InitializeComponent();
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            violet = (User)e.Parameter;
+            System.Diagnostics.Debug.WriteLine(e.Parameter);
+        }
+
+        private void Grid_Loaded(object sender, RoutedEventArgs e)
+        {
+            int count = 1;
+            foreach (var missingCourse in violet.missingCoursesY1)
+            {
+                if(count%2 == 0)
+                {
+                    Y1Missing.Text += missingCourse.code + "\n";
+                }
+                else if(count%2 != 0)
+                {
+                    Y1Missing.Text += missingCourse.code + "\t\t";
+                }
+                count++;
+            }
+            count = 1;
+            foreach (var missingCourse in violet.missingCoursesY2)
+            {
+                if (count % 2 == 0)
+                {
+                    Y2Missing.Text += missingCourse.code + "\n";
+                }
+                else if (count % 2 != 0)
+                {
+                    Y2Missing.Text += missingCourse.code + "\t\t";
+                }
+                count++;
+            }
+            count = 1;
+            foreach (var missingCourse in violet.missingCoursesY3)
+            {
+                if (count % 2 == 0)
+                {
+                    Y3Missing.Text += missingCourse.code + "\n";
+                }
+                else if (count % 2 != 0)
+                {
+                    Y3Missing.Text += missingCourse.code + "\t\t";
+                }
+                count++;
+            }
+            count = 1;
+            foreach (var missingCourse in violet.missingCoursesY4)
+            {
+                if (count % 2 == 0)
+                {
+                    Y4Missing.Text += missingCourse.code + "\n";
+                }
+                else if (count % 2 != 0)
+                {
+                    Y4Missing.Text += missingCourse.code + "\t\t";
+                }
+                count++;
+            }
         }
     }
 }

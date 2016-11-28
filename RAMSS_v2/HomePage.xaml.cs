@@ -23,6 +23,9 @@ namespace RAMSS_v2
     /// </summary>
     public sealed partial class HomePage : Page
     {
+
+        User violet;
+
         public HomePage()
         {
             this.InitializeComponent();
@@ -31,7 +34,7 @@ namespace RAMSS_v2
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            User violet = (User)e.Parameter;
+            violet = (User)e.Parameter;
             personalInfoTextBlock.Text = "Name: " + violet.name + "\nAddress: " + violet.address + "\nEmail: " + violet.email + "\nPhone Number: " + violet.phoneNumber;
             emergencyInfoTextBlock.Text = "Name: " + violet.emergencyContactName + "\nPhone Number: " + violet.emergencyContactPhoneNumber;
             System.Diagnostics.Debug.WriteLine(e.Parameter);
@@ -39,32 +42,32 @@ namespace RAMSS_v2
 
         private void courseScheduleButton_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(CourseSchedulePage));
+            this.Frame.Navigate(typeof(CourseSchedulePage),violet);
         }
 
         private void studentFeesButton_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(FinancialPage));
+            this.Frame.Navigate(typeof(FinancialPage),violet);
         }
 
         private void academicsButton_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(AcademicsPage));
+            this.Frame.Navigate(typeof(AcademicsPage),violet);
         }
 
         private void favouritesButton_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(FavouritesPage));
+            this.Frame.Navigate(typeof(FavouritesPage),violet);
         }
 
         private void alertsButton_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(AlertsPage));
+            this.Frame.Navigate(typeof(AlertsPage),violet);
         }
 
         private void myGradesButton_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(MyGradesPage));
+            this.Frame.Navigate(typeof(MyGradesPage),violet);
         }
     }
 }
