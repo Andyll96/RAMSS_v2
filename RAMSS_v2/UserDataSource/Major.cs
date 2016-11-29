@@ -8,6 +8,8 @@ namespace RAMSS_v2.UserDataSource
 {
     public class Major
     {
+        public List<Course> curriculum { get; set; }
+
         public List<Semester> year1 { get; set; }
         public List<Semester> year2 { get; set; }
         public List<Semester> year3 { get; set; }
@@ -75,6 +77,7 @@ namespace RAMSS_v2.UserDataSource
 
         public Major()
         {
+            curriculum = new List<Course>();
 
             year1 = new List<Semester>();
             year2 = new List<Semester>();
@@ -149,6 +152,54 @@ namespace RAMSS_v2.UserDataSource
             semester6 = new Semester(6, DateTime.Parse("2017-01-13"), DateTime.Parse("2017-04-13"));
             semester7 = new Semester(7, DateTime.Parse("2017-09-06"), DateTime.Parse("2017-12-06"));
             semester8 = new Semester(8, DateTime.Parse("2018-01-13"), DateTime.Parse("2018-04-13"));
+
+            curriculum.Add(sem1Course1);
+            curriculum.Add(sem1Course2);
+            curriculum.Add(sem1Course3);
+            curriculum.Add(sem1Course4);
+            curriculum.Add(sem1Course5);
+
+            curriculum.Add(sem2Course1);
+            curriculum.Add(sem2Course2);
+            curriculum.Add(sem2Course3);
+            curriculum.Add(sem2Course4);
+            curriculum.Add(sem2Course5);
+
+            curriculum.Add(sem3Course1);
+            curriculum.Add(sem3Course2);
+            curriculum.Add(sem3Course3);
+            curriculum.Add(sem3Course4);
+            curriculum.Add(sem3Course5);
+
+            curriculum.Add(sem4Course1);
+            curriculum.Add(sem4Course2);
+            curriculum.Add(sem4Course3);
+            curriculum.Add(sem4Course4);
+            curriculum.Add(sem4Course5);
+
+            curriculum.Add(sem5Course1);
+            curriculum.Add(sem5Course2);
+            curriculum.Add(sem5Course3);
+            curriculum.Add(sem5Course4);
+            curriculum.Add(sem5Course5);
+
+            curriculum.Add(sem6Course1);
+            curriculum.Add(sem6Course2);
+            curriculum.Add(sem6Course3);
+            curriculum.Add(sem6Course4);
+            curriculum.Add(sem6Course5);
+
+            curriculum.Add(sem7Course1);
+            curriculum.Add(sem7Course2);
+            curriculum.Add(sem7Course3);
+            curriculum.Add(sem7Course4);
+            curriculum.Add(sem7Course5);
+
+            curriculum.Add(sem8Course1);
+            curriculum.Add(sem8Course2);
+            curriculum.Add(sem8Course3);
+            curriculum.Add(sem8Course4);
+            curriculum.Add(sem8Course5);
 
             semester1.courseList.Add(sem1Course1);
             semester1.courseList.Add(sem1Course2);

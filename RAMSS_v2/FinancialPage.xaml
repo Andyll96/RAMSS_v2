@@ -24,14 +24,42 @@
             <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
         <TextBlock Text="Account Summary" CommonNavigationTransitionInfo.IsStaggerElement="True" Margin="20,100,10,0" Foreground="#999999" FontSize="40" FontWeight="Light"/>
-        <ScrollViewer CommonNavigationTransitionInfo.IsStaggerElement="True" VerticalScrollBarVisibility="Hidden" Margin="20,160,10,0">
-            <TextBlock Name="accountSummaryTextBlock"  Foreground="#999999" FontSize="20"  TextWrapping="WrapWholeWords" FontWeight="Light" Height="Auto">
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque
-                eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut,
-                imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. 
-            </TextBlock>
-            </ScrollViewer>
-            
+        <ScrollViewer  CommonNavigationTransitionInfo.IsStaggerElement="True" Margin="20,160,10,0">
+            <Grid Height="Auto">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <TextBlock FontSize="25">Fall 2016</TextBlock>
+                <TextBlock FontSize="25" Grid.Row="1">Fall 2016</TextBlock>
+                <TextBlock FontSize="25" Grid.Row="2">Winter 2016</TextBlock>
+                <TextBlock FontSize="25" Grid.Row="3">Fall 2015</TextBlock>
+                <TextBlock FontSize="25" Grid.Row="4">Spring/Summer 2015</TextBlock>
+                <TextBlock FontSize="25" Grid.Row="5">Fall 2014</TextBlock>
+                <TextBlock FontSize="25" Grid.Row="6">Spring/Summer 2014</TextBlock>
+
+                <TextBlock FontSize="25" Grid.Column="1" Grid.Row="0">$3,892.79</TextBlock>
+                <TextBlock FontSize="25" Grid.Column="1" Grid.Row="1">$0.00</TextBlock>
+                <TextBlock FontSize="25" Grid.Column="1" Grid.Row="2">$0.00</TextBlock>
+                <TextBlock FontSize="25" Grid.Column="1" Grid.Row="3">$0.00</TextBlock>
+                <TextBlock FontSize="25" Grid.Column="1" Grid.Row="4">$0.00</TextBlock>
+                <TextBlock FontSize="25" Grid.Column="1" Grid.Row="5">$0.00</TextBlock>
+                <TextBlock FontSize="25" Grid.Column="1" Grid.Row="6">$0.00</TextBlock>
+
+
+
+            </Grid>
+        </ScrollViewer>
+
         <RelativePanel Grid.Row="1" Background="White">
             <Grid RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignTopWithPanel="True">
                 <Grid.ColumnDefinitions>
@@ -40,23 +68,58 @@
                 </Grid.ColumnDefinitions>
                 <TextBlock Text="Charges Due" CommonNavigationTransitionInfo.IsStaggerElement="True" Margin="10,0,0,0" FontSize="35"  FontWeight="Light"/>
                 <ScrollViewer CommonNavigationTransitionInfo.IsStaggerElement="True" Margin="20,50,10,0" VerticalScrollBarVisibility="Hidden">
-                        <TextBlock TextWrapping="WrapWholeWords">
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque
-                eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut,
-                imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.
-                </TextBlock>
-                    </ScrollViewer>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+
+                        </Grid.RowDefinitions>
+                        <TextBlock FontSize="25">Due Date</TextBlock>
+                        <TextBlock FontSize="25" Grid.Column="1">Due Amount</TextBlock>
+                        <TextBlock FontWeight="Light" FontSize="20" Grid.Row="1">09/09/2016</TextBlock>
+                        <TextBlock FontWeight="Light" FontSize="20" Grid.Row="2">11/09/2016</TextBlock>
+                        <TextBlock FontWeight="Light" FontSize="20" Grid.Row="3">06/10/2016</TextBlock>
+                        <TextBlock FontWeight="Light" FontSize="20" Grid.Row="4">10/11/2016</TextBlock>
+                        <TextBlock FontWeight="Light" FontSize="20" Grid.Column="1" Grid.Row="1">$2,992.92</TextBlock>
+                        <TextBlock FontWeight="Light" FontSize="20" Grid.Column="1" Grid.Row="2">$804.35</TextBlock>
+                        <TextBlock FontWeight="Light" FontSize="20" Grid.Column="1" Grid.Row="3">$41.14</TextBlock>
+                        <TextBlock FontWeight="Light" FontSize="20" Grid.Column="1" Grid.Row="4">$54.38</TextBlock>
+                    </Grid>
+                </ScrollViewer>
 
                 <TextBlock Grid.Column="1" CommonNavigationTransitionInfo.IsStaggerElement="True" Margin="10,0,0,0" Text="Payments" Height="Auto" FontSize="35"  FontWeight="Light"/>
                 <ScrollViewer Grid.Column="1" CommonNavigationTransitionInfo.IsStaggerElement="True" Margin="10,50,20,0" VerticalScrollBarVisibility="Hidden">
-                        <TextBlock TextWrapping="WrapWholeWords">
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque
-                eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut,
-                imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.
-                    </TextBlock>
-                    </ScrollViewer>
-                </Grid>
-            
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock FontSize="25">Date Paid</TextBlock>
+                        <TextBlock Grid.Column="1" FontSize="25">Payment Type</TextBlock>
+                        <TextBlock Grid.Column="2" FontSize="25">Paid Amount</TextBlock>
+                        <TextBlock FontWeight="Light" Grid.Row="1" Grid.Column="0" FontSize="20">08/12/2015</TextBlock>
+                        <TextBlock FontWeight="Light" Grid.Row="1" Grid.Column="1" FontSize="20">Payment Bank</TextBlock>
+                        <TextBlock FontWeight="Light" Grid.Row="1" Grid.Column="2" FontSize="20">$2,905.29</TextBlock>
+                        <TextBlock Grid.ColumnSpan="2" FontWeight="Medium" Grid.Row="2" FontSize="20" >Total Posted Payments for this view:</TextBlock>
+                        <TextBlock FontWeight="Light" Grid.Row="2" Grid.Column="2" FontSize="20">$2,905.29</TextBlock>
+
+                    </Grid>
+                </ScrollViewer>
+            </Grid>
+
         </RelativePanel>
         <RelativePanel Grid.Row="2">
             <Grid RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignTopWithPanel="True">

@@ -92,6 +92,7 @@
     <Content Include="Assets\Code.png" />
     <Content Include="Assets\elective.png" />
     <Content Include="Assets\hat.png" />
+    <Content Include="Assets\math-mathematical-function-x-512.png" />
     <Content Include="Assets\pshycology.png" />
     <Content Include="PageDataSource\results.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

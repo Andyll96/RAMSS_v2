@@ -25,6 +25,7 @@ namespace RAMSS_v2
     {
 
         User violet;
+        public List<Course> fullCurriculum;
 
         public CourseEnrollmentPage()
         {
@@ -34,6 +35,7 @@ namespace RAMSS_v2
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             violet = (User)e.Parameter;
+            fullCurriculum = violet.majorProgram.curriculum;
             System.Diagnostics.Debug.WriteLine(e.Parameter);
         }
 
