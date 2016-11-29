@@ -128,7 +128,7 @@ namespace RAMSS_v2.UserDataSource
                     else if(course.taking == true && semester.Key == 2)
                     {
                         takingCoursesY1.Add(new KeyValuePair<int, Course>(2, course));
-                    }
+                    }   
                 }
             }
 
@@ -227,7 +227,36 @@ namespace RAMSS_v2.UserDataSource
 
         public void enroll(int semesterNum, Course course)
         {
-            
+
+            switch (semesterNum)
+            {
+                case 1:
+                    takingCoursesY1.Add(new KeyValuePair<int, Course>(1, course));
+                    return;
+                case 2:
+                    takingCoursesY1.Add(new KeyValuePair<int, Course>(2, course));
+                    return;
+                case 3:
+                    takingCoursesY2.Add(new KeyValuePair<int, Course>(1, course));
+                    return;
+                case 4:
+                    takingCoursesY2.Add(new KeyValuePair<int, Course>(2, course));
+                    return;
+                case 5:
+                    takingCoursesY3.Add(new KeyValuePair<int, Course>(1, course));
+                    return;
+                case 6:
+                    takingCoursesY3.Add(new KeyValuePair<int, Course>(2, course));
+                    return;
+                case 7:
+                    takingCoursesY4.Add(new KeyValuePair<int, Course>(1, course));
+                    return;
+                case 8:
+                    takingCoursesY4.Add(new KeyValuePair<int, Course>(2, course));
+                    return;
+
+            }
+
         }
 
         public void drop(Course drop)

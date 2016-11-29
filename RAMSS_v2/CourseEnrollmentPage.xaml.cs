@@ -28,6 +28,7 @@ namespace RAMSS_v2
         User violet;
         public List<Course> fullCurriculum;
         ComboBoxItem comboBoxItem;
+        String content;
 
         public CourseEnrollmentPage()
         {
@@ -78,34 +79,266 @@ namespace RAMSS_v2
             if(comboBoxItem.Content.ToString().ToUpper().Equals("SEMESTER 1"))
             {
                 violet.enroll(1, selectedCourseToEnroll);
+                enrollmentView.IsPaneOpen = !enrollmentView.IsPaneOpen;
+                R1C2.Text = "";
+                R2C2.Text = "";
+                R3C2.Text = "";
+                R4C2.Text = "";
+                R5C2.Text = "";
+                foreach (var item in violet.takingCoursesY1)
+                {
+                    if(R1C2.Text == "" && item.Key == 1)
+                    {
+                        R1C2.Text += item.Value.code;
+                    }
+                    else if (R2C2.Text == "" && item.Key == 1)
+                    {
+                        R2C2.Text += item.Value.code;
+                    }
+                    else if (R3C2.Text == "" && item.Key == 1)
+                    {
+                        R3C2.Text += item.Value.code;
+                    }
+                    else if (R4C2.Text == "" && item.Key == 1)
+                    {
+                        R4C2.Text += item.Value.code;
+                    }
+                    else if (R5C2.Text == "" && item.Key == 1)
+                    {
+                        R5C2.Text += item.Value.code;
+                    }
+                }
             }
             else if (comboBoxItem.Content.ToString().ToUpper().Equals("SEMESTER 2"))
             {
                 violet.enroll(2, selectedCourseToEnroll);
+                enrollmentView.IsPaneOpen = !enrollmentView.IsPaneOpen;
+                R1C2.Text = "";
+                R2C2.Text = "";
+                R3C2.Text = "";
+                R4C2.Text = "";
+                R5C2.Text = "";
+                foreach (var item in violet.takingCoursesY1)
+                {
+                    if (R1C2.Text == "" && item.Key == 2)
+                    {
+                        R1C2.Text += item.Value.code;
+                    }
+                    else if (R2C2.Text == "" && item.Key == 2)
+                    {
+                        R2C2.Text += item.Value.code;
+                    }
+                    else if (R3C2.Text == "" && item.Key == 2)
+                    {
+                        R3C2.Text += item.Value.code;
+                    }
+                    else if (R4C2.Text == "" && item.Key == 2)
+                    {
+                        R4C2.Text += item.Value.code;
+                    }
+                    else if (R5C2.Text == "" && item.Key == 2)
+                    {
+                        R5C2.Text += item.Value.code;
+                    }
+                }
             }
             else if (comboBoxItem.Content.ToString().ToUpper().Equals("SEMESTER 3"))
             {
                 violet.enroll(3, selectedCourseToEnroll);
+                enrollmentView.IsPaneOpen = !enrollmentView.IsPaneOpen;
+                R1C2.Text = "";
+                R2C2.Text = "";
+                R3C2.Text = "";
+                R4C2.Text = "";
+                R5C2.Text = "";
+                foreach (var item in violet.takingCoursesY2)
+                {
+                    if (R1C2.Text == "" && item.Key == 1)
+                    {
+                        R1C2.Text += item.Value.code;
+                    }
+                    else if (R2C2.Text == "" && item.Key == 1)
+                    {
+                        R2C2.Text += item.Value.code;
+                    }
+                    else if (R3C2.Text == "" && item.Key == 1)
+                    {
+                        R3C2.Text += item.Value.code;
+                    }
+                    else if (R4C2.Text == "" && item.Key == 1)
+                    {
+                        R4C2.Text += item.Value.code;
+                    }
+                    else if (R5C2.Text == "" && item.Key == 1)
+                    {
+                        R5C2.Text += item.Value.code;
+                    }
+                }
             }
             else if (comboBoxItem.Content.ToString().ToUpper().Equals("SEMESTER 4"))
             {
                 violet.enroll(4, selectedCourseToEnroll);
+                enrollmentView.IsPaneOpen = !enrollmentView.IsPaneOpen;
+                R1C2.Text = "";
+                R2C2.Text = "";
+                R3C2.Text = "";
+                R4C2.Text = "";
+                R5C2.Text = "";
+                foreach (var item in violet.takingCoursesY2)
+                {
+                    if (R1C2.Text == "" && item.Key == 2)
+                    {
+                        R1C2.Text += item.Value.code;
+                    }
+                    else if (R2C2.Text == "" && item.Key == 2)
+                    {
+                        R2C2.Text += item.Value.code;
+                    }
+                    else if (R3C2.Text == "" && item.Key == 2)
+                    {
+                        R3C2.Text += item.Value.code;
+                    }
+                    else if (R4C2.Text == "" && item.Key == 2)
+                    {
+                        R4C2.Text += item.Value.code;
+                    }
+                    else if (R5C2.Text == "" && item.Key == 2)
+                    {
+                        R5C2.Text += item.Value.code;
+                    }
+                }
             }
             else if (comboBoxItem.Content.ToString().ToUpper().Equals("SEMESTER 5"))
             {
                 violet.enroll(5, selectedCourseToEnroll);
+                enrollmentView.IsPaneOpen = !enrollmentView.IsPaneOpen;
+                R1C2.Text = "";
+                R2C2.Text = "";
+                R3C2.Text = "";
+                R4C2.Text = "";
+                R5C2.Text = "";
+                foreach (var item in violet.takingCoursesY3)
+                {
+                    if (R1C2.Text == "" && item.Key == 1)
+                    {
+                        R1C2.Text += item.Value.code;
+                    }
+                    else if (R2C2.Text == "" && item.Key == 1)
+                    {
+                        R2C2.Text += item.Value.code;
+                    }
+                    else if (R3C2.Text == "" && item.Key == 1)
+                    {
+                        R3C2.Text += item.Value.code;
+                    }
+                    else if (R4C2.Text == "" && item.Key == 1)
+                    {
+                        R4C2.Text += item.Value.code;
+                    }
+                    else if (R5C2.Text == "" && item.Key == 1)
+                    {
+                        R5C2.Text += item.Value.code;
+                    }
+                }
             }
             else if (comboBoxItem.Content.ToString().ToUpper().Equals("SEMESTER 6"))
             {
                 violet.enroll(6, selectedCourseToEnroll);
+                enrollmentView.IsPaneOpen = !enrollmentView.IsPaneOpen;
+                R1C2.Text = "";
+                R2C2.Text = "";
+                R3C2.Text = "";
+                R4C2.Text = "";
+                R5C2.Text = "";
+                foreach (var item in violet.takingCoursesY3)
+                {
+                    if (R1C2.Text == "" && item.Key == 2)
+                    {
+                        R1C2.Text += item.Value.code;
+                    }
+                    else if (R2C2.Text == "" && item.Key == 2)
+                    {
+                        R2C2.Text += item.Value.code;
+                    }
+                    else if (R3C2.Text == "" && item.Key == 2)
+                    {
+                        R3C2.Text += item.Value.code;
+                    }
+                    else if (R4C2.Text == "" && item.Key == 2)
+                    {
+                        R4C2.Text += item.Value.code;
+                    }
+                    else if (R5C2.Text == "" && item.Key == 2)
+                    {
+                        R5C2.Text += item.Value.code;
+                    }
+                }
             }
             else if (comboBoxItem.Content.ToString().ToUpper().Equals("SEMESTER 7"))
             {
                 violet.enroll(7, selectedCourseToEnroll);
+                enrollmentView.IsPaneOpen = !enrollmentView.IsPaneOpen;
+                R1C2.Text = "";
+                R2C2.Text = "";
+                R3C2.Text = "";
+                R4C2.Text = "";
+                R5C2.Text = "";
+                foreach (var item in violet.takingCoursesY4)
+                {
+                    if (R1C2.Text == "" && item.Key == 1)
+                    {
+                        R1C2.Text += item.Value.code;
+                    }
+                    else if (R2C2.Text == "" && item.Key == 1)
+                    {
+                        R2C2.Text += item.Value.code;
+                    }
+                    else if (R3C2.Text == "" && item.Key == 1)
+                    {
+                        R3C2.Text += item.Value.code;
+                    }
+                    else if (R4C2.Text == "" && item.Key == 1)
+                    {
+                        R4C2.Text += item.Value.code;
+                    }
+                    else if (R5C2.Text == "" && item.Key == 1)
+                    {
+                        R5C2.Text += item.Value.code;
+                    }
+                }
             }
             else if (comboBoxItem.Content.ToString().ToUpper().Equals("SEMESTER 8"))
             {
                 violet.enroll(8, selectedCourseToEnroll);
+                enrollmentView.IsPaneOpen = !enrollmentView.IsPaneOpen;
+                R1C2.Text = "";
+                R2C2.Text = "";
+                R3C2.Text = "";
+                R4C2.Text = "";
+                R5C2.Text = "";
+                foreach (var item in violet.takingCoursesY4)
+                {
+                    if (R1C2.Text == "" && item.Key == 2)
+                    {
+                        R1C2.Text += item.Value.code;
+                    }
+                    else if (R2C2.Text == "" && item.Key == 2)
+                    {
+                        R2C2.Text += item.Value.code;
+                    }
+                    else if (R3C2.Text == "" && item.Key == 2)
+                    {
+                        R3C2.Text += item.Value.code;
+                    }
+                    else if (R4C2.Text == "" && item.Key == 2)
+                    {
+                        R4C2.Text += item.Value.code;
+                    }
+                    else if (R5C2.Text == "" && item.Key == 2)
+                    {
+                        R5C2.Text += item.Value.code;
+                    }
+                }
             }
         }
 
@@ -113,15 +346,14 @@ namespace RAMSS_v2
         {
             comboBoxItem = e.AddedItems[0] as ComboBoxItem;
             if (comboBoxItem == null) return;
-            var content = comboBoxItem.Content as string;
+            content = comboBoxItem.Content as string;
             if (content != null)
             {
                 getSemester(content);
             }
         }
 
-
-        private void getSemester(string semester)
+        public void getSemester(string semester)
         {
             switch (semester.ToUpper())
             {
