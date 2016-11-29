@@ -5,7 +5,7 @@
     xmlns:local="using:RAMSS_v2"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:model="using:RAMSS_v2.UserDataSource"
+    xmlns:data="using:RAMSS_v2.UserDataSource"
     mc:Ignorable="d">
     
     <Page.Transitions>
@@ -22,14 +22,16 @@
         <SplitView.Pane>
             <RelativePanel  Margin="0,100,0,0" >
                 <AutoSuggestBox PlaceholderText="Find Course" Margin="20,0,20,0" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True" QueryIcon="Find"/>
-                <ListView ItemsSource="{x:Bind fullCurriculum}" Margin="0,40,0,0" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignTopWithPanel="True">
-                    <DataTemplate x:DataType="model:Course">
+                <ListView Name="courseList" Margin="0,40,0,0" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignTopWithPanel="True">
+                    <ListView.ItemTemplate>
+                       <DataTemplate x:DataType="data:Course">
                         <StackPanel>
-                            <TextBlock Text="{x:Bind code}" FontSize="15"/>
-                            <TextBlock Text="{x:Bind professor}"/>
-                            <TextBlock Text="{x:Bind unit}"/>
+                            <TextBlock Name="code" Text="{x:Bind code}" FontSize="20"/>
+                            <TextBlock Name="prof" Text="{x:Bind professor}" FontSize="15"/>
+                            <TextBlock Name="unit" Text="{x:Bind unit}" FontSize="15"/>
                         </StackPanel>
-                    </DataTemplate>
+                    </DataTemplate> 
+                    </ListView.ItemTemplate>
                 </ListView>
             </RelativePanel>
         </SplitView.Pane>

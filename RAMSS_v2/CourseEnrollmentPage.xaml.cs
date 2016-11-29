@@ -36,6 +36,7 @@ namespace RAMSS_v2
         {
             violet = (User)e.Parameter;
             fullCurriculum = violet.majorProgram.curriculum;
+            courseList.ItemsSource = fullCurriculum;
             System.Diagnostics.Debug.WriteLine(e.Parameter);
         }
 
