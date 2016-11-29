@@ -121,9 +121,13 @@ namespace RAMSS_v2.UserDataSource
             {
                 foreach (var course in semester.Value.courseList)
                 {
-                    if (course.taking == true)
+                    if (course.taking == true && semester.Key == 1)
                     {
-                        takingCoursesY1.Add(course);
+                        takingCoursesY1.Add(new KeyValuePair<int, Course>(1, course));
+                    }
+                    else if(course.taking == true && semester.Key == 2)
+                    {
+                        takingCoursesY1.Add(new KeyValuePair<int, Course>(2, course));
                     }
                 }
             }
@@ -132,9 +136,13 @@ namespace RAMSS_v2.UserDataSource
             {
                 foreach (var course in semester.Value.courseList)
                 {
-                    if (course.taking == true)
+                    if (course.taking == true && semester.Key == 1)
                     {
-                        takingCoursesY2.Add(course);
+                        takingCoursesY2.Add(new KeyValuePair<int, Course>(1, course));
+                    }
+                    else if (course.taking == true && semester.Key == 2)
+                    {
+                        takingCoursesY2.Add(new KeyValuePair<int, Course>(2, course));
                     }
                 }
             }
@@ -143,9 +151,13 @@ namespace RAMSS_v2.UserDataSource
             {
                 foreach (var course in semester.Value.courseList)
                 {
-                    if (course.taking == true)
+                    if (course.taking == true && semester.Key == 1)
                     {
-                        takingCoursesY3.Add(course);
+                        takingCoursesY3.Add(new KeyValuePair<int, Course>(1, course));
+                    }
+                    else if (course.taking == true && semester.Key == 2)
+                    {
+                        takingCoursesY3.Add(new KeyValuePair<int, Course>(2, course));
                     }
                 }
             }
@@ -154,9 +166,13 @@ namespace RAMSS_v2.UserDataSource
             {
                 foreach (var course in semester.Value.courseList)
                 {
-                    if (course.taking == true)
+                    if (course.taking == true && semester.Key == 1)
                     {
-                        takingCoursesY4.Add(course);
+                        takingCoursesY4.Add(new KeyValuePair<int, Course>(1, course));
+                    }
+                    else if (course.taking == true && semester.Key == 2)
+                    {
+                        takingCoursesY4.Add(new KeyValuePair<int, Course>(2, course));
                     }
                 }
             }

@@ -73,7 +73,40 @@ namespace RAMSS_v2
         private void courseList_ItemClick(object sender, ItemClickEventArgs e)
         {
             var selectedCourseToEnroll = (Course)e.ClickedItem;
-            violet.takin
+            System.Diagnostics.Debug.WriteLine("selected Item: " + selectedCourseToEnroll.code);
+            System.Diagnostics.Debug.WriteLine("semester: " + comboBoxItem.Content.ToString());
+            if(comboBoxItem.Content.ToString().ToUpper().Equals("SEMESTER 1"))
+            {
+                violet.enroll(1, selectedCourseToEnroll);
+            }
+            else if (comboBoxItem.Content.ToString().ToUpper().Equals("SEMESTER 2"))
+            {
+                violet.enroll(2, selectedCourseToEnroll);
+            }
+            else if (comboBoxItem.Content.ToString().ToUpper().Equals("SEMESTER 3"))
+            {
+                violet.enroll(3, selectedCourseToEnroll);
+            }
+            else if (comboBoxItem.Content.ToString().ToUpper().Equals("SEMESTER 4"))
+            {
+                violet.enroll(4, selectedCourseToEnroll);
+            }
+            else if (comboBoxItem.Content.ToString().ToUpper().Equals("SEMESTER 5"))
+            {
+                violet.enroll(5, selectedCourseToEnroll);
+            }
+            else if (comboBoxItem.Content.ToString().ToUpper().Equals("SEMESTER 6"))
+            {
+                violet.enroll(6, selectedCourseToEnroll);
+            }
+            else if (comboBoxItem.Content.ToString().ToUpper().Equals("SEMESTER 7"))
+            {
+                violet.enroll(7, selectedCourseToEnroll);
+            }
+            else if (comboBoxItem.Content.ToString().ToUpper().Equals("SEMESTER 8"))
+            {
+                violet.enroll(8, selectedCourseToEnroll);
+            }
         }
 
         private void semesterComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
