@@ -91,6 +91,17 @@ namespace RAMSS_v2.UserDataSource
             sem1Course4 = new Course("PCS110", "Physics", "ENG 369", "n/a", "4:00pm", "Thursday");
             sem1Course5 = new Course("LIBA01", "LIBERAL STUDIES: TABLE A1", "ENG 159", "n/a", "7:00pm", "Friday");
 
+            sem1Course1.missing = false;
+            sem1Course2.missing = false;
+            sem1Course3.missing = false;
+            sem1Course4.missing = false;
+            sem1Course5.missing = false;
+            sem1Course1.completed = true;
+            sem1Course2.completed = true;
+            sem1Course3.completed = true;
+            sem1Course4.completed = true;
+            sem1Course5.completed = true;
+
             sem2Course1 = new Course("CPS209", "Computer Science II", "ENG 123", "n/a", "8:00am", "Monday");
             sem2Course1.prerequisites.Add(sem1Course1);
             sem2Course2 = new Course("CPS310", "Computer Organization II", "ENG 147", "n/a", "10:00am", "Tuesday");
@@ -98,6 +109,18 @@ namespace RAMSS_v2.UserDataSource
             sem2Course3 = new Course("CPS393", "Introduction to C and UNIX", "ENG 789", "n/a", "1:00pm", "Wednesday");
             sem2Course4 = new Course("MTH207", "Calculus and Computational Methods I", "ENG 369", "n/a", "4:00pm", "Thursday");
             sem2Course5 = new Course("LIBA02", "LIBERAL STUDIES: TABLE A2", "ENG 159", "n/a", "7:00pm", "Friday");
+
+            sem2Course1.missing = false;
+            sem2Course2.missing = false;
+            sem2Course3.missing = false;
+            sem2Course4.missing = false;
+            sem2Course5.missing = false;
+            sem2Course1.completed = true;
+            sem2Course2.completed = true;
+            sem2Course3.completed = true;
+            sem2Course4.completed = true;
+            sem2Course5.completed = true;
+
 
             sem3Course1 = new Course("CMN300", "Communication in the Computer Industry", "ENG 123", "n/a", "8:00am", "Monday");
             sem3Course2 = new Course("CPS305", "Data Structures and Algorithms", "ENG 147", "n/a", "10:00am", "Tuesday");

@@ -57,6 +57,11 @@ namespace RAMSS_v2
 
         private void swapButton_Click(object sender, RoutedEventArgs e)
         {
+            taking1.IsEnabled = !taking1.IsEnabled;
+            taking2.IsEnabled = !taking2.IsEnabled;
+            taking3.IsEnabled = !taking3.IsEnabled;
+            taking4.IsEnabled = !taking4.IsEnabled;
+            taking5.IsEnabled = !taking5.IsEnabled;
 
         }
 
@@ -67,7 +72,8 @@ namespace RAMSS_v2
 
         private void courseList_ItemClick(object sender, ItemClickEventArgs e)
         {
-
+            var selectedCourseToEnroll = (Course)e.ClickedItem;
+            violet.takin
         }
 
         private void semesterComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -86,10 +92,8 @@ namespace RAMSS_v2
         {
             switch (semester.ToUpper())
             {
-                case ("SEMESTER 1"):
-                    
+                case ("SEMESTER 1"):  
                     clearTextBoxes();
-
                     foreach (var season in violet.majorProgram.year1)
                     {
                         if(season.Key == 1)
@@ -108,6 +112,32 @@ namespace RAMSS_v2
                                         R4C1.Text = course.code;
                                     else if (R5C1.Text == "")
                                         R5C1.Text = course.code;
+                                }
+                                else if (course.taking == true)
+                                {
+                                    if (R1C2.Text == "")
+                                        R1C2.Text = course.code;
+                                    else if (R2C2.Text == "")
+                                        R2C2.Text = course.code;
+                                    else if (R3C2.Text == "")
+                                        R3C2.Text = course.code;
+                                    else if (R4C2.Text == "")
+                                        R4C2.Text = course.code;
+                                    else if (R5C2.Text == "")
+                                        R5C2.Text = course.code;
+                                }
+                                else if (course.completed == true)
+                                {
+                                    if (R1C3.Text == "")
+                                        R1C3.Text = course.code;
+                                    else if (R2C3.Text == "")
+                                        R2C3.Text = course.code;
+                                    else if (R3C3.Text == "")
+                                        R3C3.Text = course.code;
+                                    else if (R4C3.Text == "")
+                                        R4C3.Text = course.code;
+                                    else if (R5C3.Text == "")
+                                        R5C3.Text = course.code;
                                 }
                             }
                         }
@@ -134,7 +164,32 @@ namespace RAMSS_v2
                                         R4C1.Text = course.code;
                                     else if (R5C1.Text == "")
                                         R5C1.Text = course.code;
-                                    //JUST A TEST TO SEE IF GITHUB COMMIT WORKS RIGHT
+                                }
+                                else if (course.taking == true)
+                                {
+                                    if (R1C2.Text == "")
+                                        R1C2.Text = course.code;
+                                    else if (R2C2.Text == "")
+                                        R2C2.Text = course.code;
+                                    else if (R3C2.Text == "")
+                                        R3C2.Text = course.code;
+                                    else if (R4C2.Text == "")
+                                        R4C2.Text = course.code;
+                                    else if (R5C2.Text == "")
+                                        R5C2.Text = course.code;
+                                }
+                                else if (course.completed == true)
+                                {
+                                    if (R1C3.Text == "")
+                                        R1C3.Text = course.code;
+                                    else if (R2C3.Text == "")
+                                        R2C3.Text = course.code;
+                                    else if (R3C3.Text == "")
+                                        R3C3.Text = course.code;
+                                    else if (R4C3.Text == "")
+                                        R4C3.Text = course.code;
+                                    else if (R5C3.Text == "")
+                                        R5C3.Text = course.code;
                                 }
                             }
                         }
@@ -142,27 +197,309 @@ namespace RAMSS_v2
                     return;
                 case ("SEMESTER 3"):
                     clearTextBoxes();
-
+                    foreach (var season in violet.majorProgram.year2)
+                    {
+                        if (season.Key == 1)
+                        {
+                            foreach (var course in season.Value.courseList)
+                            {
+                                if (course.missing == true)
+                                {
+                                    if (R1C1.Text == "")
+                                        R1C1.Text = course.code;
+                                    else if (R2C1.Text == "")
+                                        R2C1.Text = course.code;
+                                    else if (R3C1.Text == "")
+                                        R3C1.Text = course.code;
+                                    else if (R4C1.Text == "")
+                                        R4C1.Text = course.code;
+                                    else if (R5C1.Text == "")
+                                        R5C1.Text = course.code;
+                                }
+                                else if (course.taking == true)
+                                {
+                                    if (R1C2.Text == "")
+                                        R1C2.Text = course.code;
+                                    else if (R2C2.Text == "")
+                                        R2C2.Text = course.code;
+                                    else if (R3C2.Text == "")
+                                        R3C2.Text = course.code;
+                                    else if (R4C2.Text == "")
+                                        R4C2.Text = course.code;
+                                    else if (R5C2.Text == "")
+                                        R5C2.Text = course.code;
+                                }
+                                else if (course.completed == true)
+                                {
+                                    if (R1C3.Text == "")
+                                        R1C3.Text = course.code;
+                                    else if (R2C3.Text == "")
+                                        R2C3.Text = course.code;
+                                    else if (R3C3.Text == "")
+                                        R3C3.Text = course.code;
+                                    else if (R4C3.Text == "")
+                                        R4C3.Text = course.code;
+                                    else if (R5C3.Text == "")
+                                        R5C3.Text = course.code;
+                                }
+                            }
+                        }
+                    }
                     return;
                 case ("SEMESTER 4"):
                     clearTextBoxes();
-
+                    foreach (var season in violet.majorProgram.year2)
+                    {
+                        if (season.Key == 2)
+                        {
+                            foreach (var course in season.Value.courseList)
+                            {
+                                if (course.missing == true)
+                                {
+                                    if (R1C1.Text == "")
+                                        R1C1.Text = course.code;
+                                    else if (R2C1.Text == "")
+                                        R2C1.Text = course.code;
+                                    else if (R3C1.Text == "")
+                                        R3C1.Text = course.code;
+                                    else if (R4C1.Text == "")
+                                        R4C1.Text = course.code;
+                                    else if (R5C1.Text == "")
+                                        R5C1.Text = course.code;
+                                }
+                                else if (course.taking == true)
+                                {
+                                    if (R1C2.Text == "")
+                                        R1C2.Text = course.code;
+                                    else if (R2C2.Text == "")
+                                        R2C2.Text = course.code;
+                                    else if (R3C2.Text == "")
+                                        R3C2.Text = course.code;
+                                    else if (R4C2.Text == "")
+                                        R4C2.Text = course.code;
+                                    else if (R5C2.Text == "")
+                                        R5C2.Text = course.code;
+                                }
+                                else if (course.completed == true)
+                                {
+                                    if (R1C3.Text == "")
+                                        R1C3.Text = course.code;
+                                    else if (R2C3.Text == "")
+                                        R2C3.Text = course.code;
+                                    else if (R3C3.Text == "")
+                                        R3C3.Text = course.code;
+                                    else if (R4C3.Text == "")
+                                        R4C3.Text = course.code;
+                                    else if (R5C3.Text == "")
+                                        R5C3.Text = course.code;
+                                }
+                            }
+                        }
+                    }
                     return;
                 case ("SEMESTER 5"):
                     clearTextBoxes();
-
+                    foreach (var season in violet.majorProgram.year3)
+                    {
+                        if (season.Key == 1)
+                        {
+                            foreach (var course in season.Value.courseList)
+                            {
+                                if (course.missing == true)
+                                {
+                                    if (R1C1.Text == "")
+                                        R1C1.Text = course.code;
+                                    else if (R2C1.Text == "")
+                                        R2C1.Text = course.code;
+                                    else if (R3C1.Text == "")
+                                        R3C1.Text = course.code;
+                                    else if (R4C1.Text == "")
+                                        R4C1.Text = course.code;
+                                    else if (R5C1.Text == "")
+                                        R5C1.Text = course.code;
+                                }
+                                else if (course.taking == true)
+                                {
+                                    if (R1C2.Text == "")
+                                        R1C2.Text = course.code;
+                                    else if (R2C2.Text == "")
+                                        R2C2.Text = course.code;
+                                    else if (R3C2.Text == "")
+                                        R3C2.Text = course.code;
+                                    else if (R4C2.Text == "")
+                                        R4C2.Text = course.code;
+                                    else if (R5C2.Text == "")
+                                        R5C2.Text = course.code;
+                                }
+                                else if (course.completed == true)
+                                {
+                                    if (R1C3.Text == "")
+                                        R1C3.Text = course.code;
+                                    else if (R2C3.Text == "")
+                                        R2C3.Text = course.code;
+                                    else if (R3C3.Text == "")
+                                        R3C3.Text = course.code;
+                                    else if (R4C3.Text == "")
+                                        R4C3.Text = course.code;
+                                    else if (R5C3.Text == "")
+                                        R5C3.Text = course.code;
+                                }
+                            }
+                        }
+                    }
                     return;
                 case ("SEMESTER 6"):
                     clearTextBoxes();
-
+                    foreach (var season in violet.majorProgram.year3)
+                    {
+                        if (season.Key == 2)
+                        {
+                            foreach (var course in season.Value.courseList)
+                            {
+                                if (course.missing == true)
+                                {
+                                    if (R1C1.Text == "")
+                                        R1C1.Text = course.code;
+                                    else if (R2C1.Text == "")
+                                        R2C1.Text = course.code;
+                                    else if (R3C1.Text == "")
+                                        R3C1.Text = course.code;
+                                    else if (R4C1.Text == "")
+                                        R4C1.Text = course.code;
+                                    else if (R5C1.Text == "")
+                                        R5C1.Text = course.code;
+                                }
+                                else if (course.taking == true)
+                                {
+                                    if (R1C2.Text == "")
+                                        R1C2.Text = course.code;
+                                    else if (R2C2.Text == "")
+                                        R2C2.Text = course.code;
+                                    else if (R3C2.Text == "")
+                                        R3C2.Text = course.code;
+                                    else if (R4C2.Text == "")
+                                        R4C2.Text = course.code;
+                                    else if (R5C2.Text == "")
+                                        R5C2.Text = course.code;
+                                }
+                                else if (course.completed == true)
+                                {
+                                    if (R1C3.Text == "")
+                                        R1C3.Text = course.code;
+                                    else if (R2C3.Text == "")
+                                        R2C3.Text = course.code;
+                                    else if (R3C3.Text == "")
+                                        R3C3.Text = course.code;
+                                    else if (R4C3.Text == "")
+                                        R4C3.Text = course.code;
+                                    else if (R5C3.Text == "")
+                                        R5C3.Text = course.code;
+                                }
+                            }
+                        }
+                    }
                     return;
                 case ("SEMESTER 7"):
                     clearTextBoxes();
-
+                    foreach (var season in violet.majorProgram.year4)
+                    {
+                        if (season.Key == 1)
+                        {
+                            foreach (var course in season.Value.courseList)
+                            {
+                                if (course.missing == true)
+                                {
+                                    if (R1C1.Text == "")
+                                        R1C1.Text = course.code;
+                                    else if (R2C1.Text == "")
+                                        R2C1.Text = course.code;
+                                    else if (R3C1.Text == "")
+                                        R3C1.Text = course.code;
+                                    else if (R4C1.Text == "")
+                                        R4C1.Text = course.code;
+                                    else if (R5C1.Text == "")
+                                        R5C1.Text = course.code;
+                                }
+                                else if (course.taking == true)
+                                {
+                                    if (R1C2.Text == "")
+                                        R1C2.Text = course.code;
+                                    else if (R2C2.Text == "")
+                                        R2C2.Text = course.code;
+                                    else if (R3C2.Text == "")
+                                        R3C2.Text = course.code;
+                                    else if (R4C2.Text == "")
+                                        R4C2.Text = course.code;
+                                    else if (R5C2.Text == "")
+                                        R5C2.Text = course.code;
+                                }
+                                else if (course.completed == true)
+                                {
+                                    if (R1C3.Text == "")
+                                        R1C3.Text = course.code;
+                                    else if (R2C3.Text == "")
+                                        R2C3.Text = course.code;
+                                    else if (R3C3.Text == "")
+                                        R3C3.Text = course.code;
+                                    else if (R4C3.Text == "")
+                                        R4C3.Text = course.code;
+                                    else if (R5C3.Text == "")
+                                        R5C3.Text = course.code;
+                                }
+                            }
+                        }
+                    }
                     return;
                 case ("SEMESTER 8"):
                     clearTextBoxes();
-
+                    foreach (var season in violet.majorProgram.year4)
+                    {
+                        if (season.Key == 2)
+                        {
+                            foreach (var course in season.Value.courseList)
+                            {
+                                if (course.missing == true)
+                                {
+                                    if (R1C1.Text == "")
+                                        R1C1.Text = course.code;
+                                    else if (R2C1.Text == "")
+                                        R2C1.Text = course.code;
+                                    else if (R3C1.Text == "")
+                                        R3C1.Text = course.code;
+                                    else if (R4C1.Text == "")
+                                        R4C1.Text = course.code;
+                                    else if (R5C1.Text == "")
+                                        R5C1.Text = course.code;
+                                }
+                                else if (course.taking == true)
+                                {
+                                    if (R1C2.Text == "")
+                                        R1C2.Text = course.code;
+                                    else if (R2C2.Text == "")
+                                        R2C2.Text = course.code;
+                                    else if (R3C2.Text == "")
+                                        R3C2.Text = course.code;
+                                    else if (R4C2.Text == "")
+                                        R4C2.Text = course.code;
+                                    else if (R5C2.Text == "")
+                                        R5C2.Text = course.code;
+                                }
+                                else if (course.completed == true)
+                                {
+                                    if (R1C3.Text == "")
+                                        R1C3.Text = course.code;
+                                    else if (R2C3.Text == "")
+                                        R2C3.Text = course.code;
+                                    else if (R3C3.Text == "")
+                                        R3C3.Text = course.code;
+                                    else if (R4C3.Text == "")
+                                        R4C3.Text = course.code;
+                                    else if (R5C3.Text == "")
+                                        R5C3.Text = course.code;
+                                }
+                            }
+                        }
+                    }
                     return;
             }
         }

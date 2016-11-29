@@ -20,37 +20,37 @@ namespace RAMSS_v2.UserDataSource
         public Major minorProgram { get; set; }
 
         public List<Course> missingCoursesY1 { get; set; }
-        public List<Course> takingCoursesY1 { get; set; }
+        public List<KeyValuePair<int, Course>> takingCoursesY1 { get; set; }
         public List<Course> completedCoursesY1 { get; set; }
 
         public List<Course> missingCoursesY2 { get; set; }
-        public List<Course> takingCoursesY2 { get; set; }
+        public List<KeyValuePair<int, Course>> takingCoursesY2 { get; set; }
         public List<Course> completedCoursesY2 { get; set; }
 
         public List<Course> missingCoursesY3 { get; set; }
-        public List<Course> takingCoursesY3 { get; set; }
+        public List<KeyValuePair<int, Course>> takingCoursesY3 { get; set; }
         public List<Course> completedCoursesY3 { get; set; }
 
         public List<Course> missingCoursesY4 { get; set; }
-        public List<Course> takingCoursesY4 { get; set; }
+        public List<KeyValuePair<int, Course>> takingCoursesY4 { get; set; }
         public List<Course> completedCoursesY4 { get; set; }
 
         public User()
         {
             missingCoursesY1 = new List<Course>();
-            takingCoursesY1 = new List<Course>();
+            takingCoursesY1 = new List<KeyValuePair<int,Course>>();
             completedCoursesY1 = new List<Course>();
 
             missingCoursesY2 = new List<Course>();
-            takingCoursesY2 = new List<Course>();
+            takingCoursesY2 = new List<KeyValuePair<int, Course>>();
             completedCoursesY2 = new List<Course>();
 
             missingCoursesY3 = new List<Course>();
-            takingCoursesY3 = new List<Course>();
+            takingCoursesY3 = new List<KeyValuePair<int, Course>>();
             completedCoursesY3 = new List<Course>();
 
             missingCoursesY4 = new List<Course>();
-            takingCoursesY4 = new List<Course>();
+            takingCoursesY4 = new List<KeyValuePair<int, Course>>();
             completedCoursesY4 = new List<Course>();
 
             name = "Violet Alessia Martins";
@@ -209,7 +209,7 @@ namespace RAMSS_v2.UserDataSource
             }
         }
 
-        public void enroll(Course enroll)
+        public void enroll(int semesterNum, Course course)
         {
             
         }

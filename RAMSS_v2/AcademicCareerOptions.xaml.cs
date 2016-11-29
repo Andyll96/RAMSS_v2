@@ -90,6 +90,58 @@ namespace RAMSS_v2
                 }
                 count++;
             }
+
+            foreach (var completedCourse in violet.completedCoursesY1)
+            {
+                if (count % 2 == 0)
+                {
+                    Y1Completed.Text += completedCourse.code + "\n";
+                }
+                else if (count % 2 != 0)
+                {
+                    Y1Completed.Text += completedCourse.code + "\t\t";
+                }
+                count++;
+            }
+            count = 1;
+            foreach (var completedCourse in violet.completedCoursesY2)
+            {
+                if (count % 2 == 0)
+                {
+                    Y2Completed.Text += completedCourse.code + "\n";
+                }
+                else if (count % 2 != 0)
+                {
+                    Y2Completed.Text += completedCourse.code + "\t\t";
+                }
+                count++;
+            }
+            count = 1;
+            foreach (var completedCourse in violet.completedCoursesY3)
+            {
+                if (count % 2 == 0)
+                {
+                    Y3Completed.Text += completedCourse.code + "\n";
+                }
+                else if (count % 2 != 0)
+                {
+                    Y3Completed.Text += completedCourse.code + "\t\t";
+                }
+                count++;
+            }
+            count = 1;
+            foreach (var completedCourse in violet.completedCoursesY4)
+            {
+                if (count % 2 == 0)
+                {
+                    Y4Completed.Text += completedCourse.code + "\n";
+                }
+                else if (count % 2 != 0)
+                {
+                    Y4Completed.Text += completedCourse.code + "\t\t";
+                }
+                count++;
+            }
         }
     }
 }

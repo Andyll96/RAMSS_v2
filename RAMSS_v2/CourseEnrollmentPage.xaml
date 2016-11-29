@@ -71,9 +71,9 @@
                         <ColumnDefinition/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
-                    <TextBlock CommonNavigationTransitionInfo.IsStaggerElement="True" FontSize="30" TextAlignment="Center" Grid.Column="0" Text="Missing"/>
-                    <TextBlock CommonNavigationTransitionInfo.IsStaggerElement="True" FontSize="30" TextAlignment="Center" Grid.Column="1" Text="Taking"/>
-                    <TextBlock CommonNavigationTransitionInfo.IsStaggerElement="True" FontSize="30" TextAlignment="Center" Grid.Column="2" Text="Completed"/>
+                    <TextBlock CommonNavigationTransitionInfo.IsStaggerElement="True" FontSize="40" TextAlignment="Center" Grid.Column="0" Text="Missing"/>
+                    <TextBlock CommonNavigationTransitionInfo.IsStaggerElement="True" FontSize="40" TextAlignment="Center" Grid.Column="1" Text="Taking"/>
+                    <TextBlock CommonNavigationTransitionInfo.IsStaggerElement="True" FontSize="40" TextAlignment="Center" Grid.Column="2" Text="Completed"/>
                     
                     <TextBlock Name="R1C1" CommonNavigationTransitionInfo.IsStaggerElement="True" FontSize="30" TextAlignment="Center" Grid.Row="1" Grid.Column="0"/>
                     <TextBlock Name="R1C2" CommonNavigationTransitionInfo.IsStaggerElement="True" FontSize="30" TextAlignment="Center" Grid.Row="1" Grid.Column="1"/>
@@ -90,6 +90,12 @@
                     <TextBlock Name="R5C1" CommonNavigationTransitionInfo.IsStaggerElement="True" FontSize="30" TextAlignment="Center" Grid.Row="5" Grid.Column="0"/>
                     <TextBlock Name="R5C2" CommonNavigationTransitionInfo.IsStaggerElement="True" FontSize="30" TextAlignment="Center" Grid.Row="5" Grid.Column="1"/>
                     <TextBlock Name="R5C3" CommonNavigationTransitionInfo.IsStaggerElement="True" FontSize="30" TextAlignment="Center" Grid.Row="5" Grid.Column="2"/>
+
+                    <Button Name="taking1" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Transparent" IsEnabled="False"/>
+                    <Button Name="taking2" Grid.Row="2" Grid.Column="1"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Transparent" IsEnabled="False"/>
+                    <Button Name="taking3" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Transparent" IsEnabled="False"/>
+                    <Button Name="taking4" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Transparent" IsEnabled="False"/>
+                    <Button Name="taking5" Grid.Row="5" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Transparent" IsEnabled="False"/>
 
                 </Grid>
                 <Grid Grid.Row="1">
