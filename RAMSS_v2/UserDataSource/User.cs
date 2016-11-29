@@ -72,7 +72,7 @@ namespace RAMSS_v2.UserDataSource
         {
             foreach (var semester in majorProgram.year1)
             {
-                foreach (var course in semester.courseList)
+                foreach (var course in semester.Value.courseList)
                 {
                     if (course.missing == true)
                     {
@@ -83,7 +83,7 @@ namespace RAMSS_v2.UserDataSource
 
             foreach (var semester in majorProgram.year2)
             {
-                foreach (var course in semester.courseList)
+                foreach (var course in semester.Value.courseList)
                 {
                     if (course.missing == true)
                     {
@@ -94,7 +94,7 @@ namespace RAMSS_v2.UserDataSource
 
             foreach (var semester in majorProgram.year3)
             {
-                foreach (var course in semester.courseList)
+                foreach (var course in semester.Value.courseList)
                 {
                     if (course.missing == true)
                     {
@@ -105,7 +105,7 @@ namespace RAMSS_v2.UserDataSource
 
             foreach (var semester in majorProgram.year4)
             {
-                foreach (var course in semester.courseList)
+                foreach (var course in semester.Value.courseList)
                 {
                     if (course.missing == true)
                     {
@@ -119,7 +119,7 @@ namespace RAMSS_v2.UserDataSource
         {
             foreach (var semester in majorProgram.year1)
             {
-                foreach (var course in semester.courseList)
+                foreach (var course in semester.Value.courseList)
                 {
                     if (course.taking == true)
                     {
@@ -130,7 +130,7 @@ namespace RAMSS_v2.UserDataSource
 
             foreach (var semester in majorProgram.year2)
             {
-                foreach (var course in semester.courseList)
+                foreach (var course in semester.Value.courseList)
                 {
                     if (course.taking == true)
                     {
@@ -141,7 +141,7 @@ namespace RAMSS_v2.UserDataSource
 
             foreach (var semester in majorProgram.year3)
             {
-                foreach (var course in semester.courseList)
+                foreach (var course in semester.Value.courseList)
                 {
                     if (course.taking == true)
                     {
@@ -152,7 +152,7 @@ namespace RAMSS_v2.UserDataSource
 
             foreach (var semester in majorProgram.year4)
             {
-                foreach (var course in semester.courseList)
+                foreach (var course in semester.Value.courseList)
                 {
                     if (course.taking == true)
                     {
@@ -166,7 +166,7 @@ namespace RAMSS_v2.UserDataSource
         {
             foreach (var semester in majorProgram.year1)
             {
-                foreach (var course in semester.courseList)
+                foreach (var course in semester.Value.courseList)
                 {
                     if (course.completed == true)
                     {
@@ -177,7 +177,7 @@ namespace RAMSS_v2.UserDataSource
 
             foreach (var semester in majorProgram.year2)
             {
-                foreach (var course in semester.courseList)
+                foreach (var course in semester.Value.courseList)
                 {
                     if (course.completed == true)
                     {
@@ -188,7 +188,7 @@ namespace RAMSS_v2.UserDataSource
 
             foreach (var semester in majorProgram.year3)
             {
-                foreach (var course in semester.courseList)
+                foreach (var course in semester.Value.courseList)
                 {
                     if (course.completed == true)
                     {
@@ -199,7 +199,7 @@ namespace RAMSS_v2.UserDataSource
 
             foreach (var semester in majorProgram.year4)
             {
-                foreach (var course in semester.courseList)
+                foreach (var course in semester.Value.courseList)
                 {
                     if (course.completed == true)
                     {

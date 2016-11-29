@@ -22,13 +22,19 @@
         <SplitView.Pane>
             <RelativePanel  Margin="0,100,0,0" >
                 <AutoSuggestBox PlaceholderText="Find Course" Margin="20,0,20,0" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True" QueryIcon="Find"/>
-                <ListView Name="courseList" Margin="0,40,0,0" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignTopWithPanel="True">
+                <ListView Name="courseList" IsItemClickEnabled="True" ItemClick="courseList_ItemClick" Margin="0,40,0,0" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignTopWithPanel="True">
                     <ListView.ItemTemplate>
                        <DataTemplate x:DataType="data:Course">
                         <StackPanel>
                             <TextBlock Name="code" Text="{x:Bind code}" FontSize="20"/>
-                            <TextBlock Name="prof" Text="{x:Bind professor}" FontSize="15"/>
-                            <TextBlock Name="unit" Text="{x:Bind unit}" FontSize="15"/>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Professor:" FontSize="15" Margin="0,0,5,0"/>
+                                    <TextBlock Name="prof" Text="{x:Bind professor}" FontSize="15"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Unit:" FontSize="15" Margin="0,0,5,0"/>
+                                    <TextBlock Name="unit" Text="{x:Bind unit}" FontSize="15"/>
+                                </StackPanel>
                         </StackPanel>
                     </DataTemplate> 
                     </ListView.ItemTemplate>
@@ -41,7 +47,7 @@
                     <RowDefinition Height="4*"/>
                     <RowDefinition Height="0.5*"/>
                     </Grid.RowDefinitions>
-                    <ComboBox CommonNavigationTransitionInfo.IsStaggerElement="True" Height="40" Width="500" Margin="10,100,10,10">
+                    <ComboBox Name="semesterComboBox" SelectionChanged="semesterComboBox_SelectionChanged" CommonNavigationTransitionInfo.IsStaggerElement="True" Height="40" Width="500" Margin="10,100,10,10">
                             <ComboBoxItem Content="Semester 1"/>
                             <ComboBoxItem Content="Semester 2"/>
                             <ComboBoxItem Content="Semester 3"/>
@@ -58,6 +64,7 @@
                         <RowDefinition/>
                         <RowDefinition/>
                         <RowDefinition/>
+                        <RowDefinition/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
@@ -68,18 +75,21 @@
                     <TextBlock CommonNavigationTransitionInfo.IsStaggerElement="True" FontSize="30" TextAlignment="Center" Grid.Column="1" Text="Taking"/>
                     <TextBlock CommonNavigationTransitionInfo.IsStaggerElement="True" FontSize="30" TextAlignment="Center" Grid.Column="2" Text="Completed"/>
                     
-                    <TextBlock CommonNavigationTransitionInfo.IsStaggerElement="True" FontSize="30" TextAlignment="Center" Grid.Row="1" Grid.Column="0"/>
-                    <TextBlock CommonNavigationTransitionInfo.IsStaggerElement="True" FontSize="30" TextAlignment="Center" Grid.Row="1" Grid.Column="1"/>
-                    <TextBlock CommonNavigationTransitionInfo.IsStaggerElement="True" FontSize="30" TextAlignment="Center" Grid.Row="1" Grid.Column="2"/>
-                    <TextBlock CommonNavigationTransitionInfo.IsStaggerElement="True" FontSize="30" TextAlignment="Center" Grid.Row="2" Grid.Column="0"/>
-                    <TextBlock CommonNavigationTransitionInfo.IsStaggerElement="True" FontSize="30" TextAlignment="Center" Grid.Row="2" Grid.Column="1"/>
-                    <TextBlock CommonNavigationTransitionInfo.IsStaggerElement="True" FontSize="30" TextAlignment="Center" Grid.Row="2" Grid.Column="2"/>
-                    <TextBlock CommonNavigationTransitionInfo.IsStaggerElement="True" FontSize="30" TextAlignment="Center" Grid.Row="3" Grid.Column="0"/>
-                    <TextBlock CommonNavigationTransitionInfo.IsStaggerElement="True" FontSize="30" TextAlignment="Center" Grid.Row="3" Grid.Column="1"/>
-                    <TextBlock CommonNavigationTransitionInfo.IsStaggerElement="True" FontSize="30" TextAlignment="Center" Grid.Row="3" Grid.Column="2"/>
-                    <TextBlock CommonNavigationTransitionInfo.IsStaggerElement="True" FontSize="30" TextAlignment="Center" Grid.Row="4" Grid.Column="0"/>
-                    <TextBlock CommonNavigationTransitionInfo.IsStaggerElement="True" FontSize="30" TextAlignment="Center" Grid.Row="4" Grid.Column="1"/>
-                    <TextBlock CommonNavigationTransitionInfo.IsStaggerElement="True" FontSize="30" TextAlignment="Center" Grid.Row="4" Grid.Column="2"/>
+                    <TextBlock Name="R1C1" CommonNavigationTransitionInfo.IsStaggerElement="True" FontSize="30" TextAlignment="Center" Grid.Row="1" Grid.Column="0"/>
+                    <TextBlock Name="R1C2" CommonNavigationTransitionInfo.IsStaggerElement="True" FontSize="30" TextAlignment="Center" Grid.Row="1" Grid.Column="1"/>
+                    <TextBlock Name="R1C3" CommonNavigationTransitionInfo.IsStaggerElement="True" FontSize="30" TextAlignment="Center" Grid.Row="1" Grid.Column="2"/>
+                    <TextBlock Name="R2C1" CommonNavigationTransitionInfo.IsStaggerElement="True" FontSize="30" TextAlignment="Center" Grid.Row="2" Grid.Column="0"/>
+                    <TextBlock Name="R2C2" CommonNavigationTransitionInfo.IsStaggerElement="True" FontSize="30" TextAlignment="Center" Grid.Row="2" Grid.Column="1"/>
+                    <TextBlock Name="R2C3" CommonNavigationTransitionInfo.IsStaggerElement="True" FontSize="30" TextAlignment="Center" Grid.Row="2" Grid.Column="2"/>
+                    <TextBlock Name="R3C1" CommonNavigationTransitionInfo.IsStaggerElement="True" FontSize="30" TextAlignment="Center" Grid.Row="3" Grid.Column="0"/>
+                    <TextBlock Name="R3C2" CommonNavigationTransitionInfo.IsStaggerElement="True" FontSize="30" TextAlignment="Center" Grid.Row="3" Grid.Column="1"/>
+                    <TextBlock Name="R3C3" CommonNavigationTransitionInfo.IsStaggerElement="True" FontSize="30" TextAlignment="Center" Grid.Row="3" Grid.Column="2"/>
+                    <TextBlock Name="R4C1" CommonNavigationTransitionInfo.IsStaggerElement="True" FontSize="30" TextAlignment="Center" Grid.Row="4" Grid.Column="0"/>
+                    <TextBlock Name="R4C2" CommonNavigationTransitionInfo.IsStaggerElement="True" FontSize="30" TextAlignment="Center" Grid.Row="4" Grid.Column="1"/>
+                    <TextBlock Name="R4C3" CommonNavigationTransitionInfo.IsStaggerElement="True" FontSize="30" TextAlignment="Center" Grid.Row="4" Grid.Column="2"/>
+                    <TextBlock Name="R5C1" CommonNavigationTransitionInfo.IsStaggerElement="True" FontSize="30" TextAlignment="Center" Grid.Row="5" Grid.Column="0"/>
+                    <TextBlock Name="R5C2" CommonNavigationTransitionInfo.IsStaggerElement="True" FontSize="30" TextAlignment="Center" Grid.Row="5" Grid.Column="1"/>
+                    <TextBlock Name="R5C3" CommonNavigationTransitionInfo.IsStaggerElement="True" FontSize="30" TextAlignment="Center" Grid.Row="5" Grid.Column="2"/>
 
                 </Grid>
                 <Grid Grid.Row="1">

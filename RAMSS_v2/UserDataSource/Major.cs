@@ -10,10 +10,10 @@ namespace RAMSS_v2.UserDataSource
     {
         public List<Course> curriculum { get; set; }
 
-        public List<Semester> year1 { get; set; }
-        public List<Semester> year2 { get; set; }
-        public List<Semester> year3 { get; set; }
-        public List<Semester> year4 { get; set; }
+        public List<KeyValuePair<int, Semester>> year1 { get; set; }
+        public List<KeyValuePair<int, Semester>> year2 { get; set; }
+        public List<KeyValuePair<int, Semester>> year3 { get; set; }
+        public List<KeyValuePair<int, Semester>> year4 { get; set; }
 
 
         public Semester semester1 { get; set; }
@@ -79,10 +79,10 @@ namespace RAMSS_v2.UserDataSource
         {
             curriculum = new List<Course>();
 
-            year1 = new List<Semester>();
-            year2 = new List<Semester>();
-            year3 = new List<Semester>();
-            year4 = new List<Semester>();
+            year1 = new List<KeyValuePair<int, Semester>>();
+            year2 = new List<KeyValuePair<int, Semester>>();
+            year3 = new List<KeyValuePair<int, Semester>>();
+            year4 = new List<KeyValuePair<int, Semester>>();
 
 
             sem1Course1 = new Course("CPS109", "Computer Science I", "ENG 123", "n/a", "8:00am", "Monday");
@@ -212,8 +212,8 @@ namespace RAMSS_v2.UserDataSource
             semester2.courseList.Add(sem2Course3);
             semester2.courseList.Add(sem2Course4);
             semester2.courseList.Add(sem2Course5);
-            year1.Add(semester1);
-            year1.Add(semester2);
+            year1.Add(new KeyValuePair<int, Semester>(1,semester1));
+            year1.Add(new KeyValuePair<int, Semester>(2,semester2));
 
             semester3.courseList.Add(sem3Course1);
             semester3.courseList.Add(sem3Course2);
@@ -226,8 +226,8 @@ namespace RAMSS_v2.UserDataSource
             semester4.courseList.Add(sem4Course3);
             semester4.courseList.Add(sem4Course4);
             semester4.courseList.Add(sem4Course5);
-            year2.Add(semester3);
-            year2.Add(semester4);
+            year2.Add(new KeyValuePair<int, Semester>(1,semester3));
+            year2.Add(new KeyValuePair<int, Semester>(2,semester4));
 
             semester5.courseList.Add(sem5Course1);
             semester5.courseList.Add(sem5Course2);
@@ -240,8 +240,8 @@ namespace RAMSS_v2.UserDataSource
             semester6.courseList.Add(sem6Course3);
             semester6.courseList.Add(sem6Course4);
             semester6.courseList.Add(sem6Course5);
-            year3.Add(semester5);
-            year3.Add(semester6);
+            year3.Add(new KeyValuePair<int, Semester>(1,semester5));
+            year3.Add(new KeyValuePair<int, Semester>(2,semester6));
 
             semester7.courseList.Add(sem7Course1);
             semester7.courseList.Add(sem7Course2);
@@ -254,8 +254,8 @@ namespace RAMSS_v2.UserDataSource
             semester8.courseList.Add(sem8Course3);
             semester8.courseList.Add(sem8Course4);
             semester8.courseList.Add(sem8Course5);
-            year4.Add(semester7);
-            year4.Add(semester8);
+            year4.Add(new KeyValuePair<int, Semester>(1,semester7));
+            year4.Add(new KeyValuePair<int, Semester>(2,semester8));
 
         }
     }
