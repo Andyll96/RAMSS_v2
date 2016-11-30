@@ -6,6 +6,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -30,10 +31,11 @@ namespace RAMSS_v2
             this.InitializeComponent();
         }
 
-        protected override void OnNavigatedTo(NavigationEventArgs e)
+        protected async override void OnNavigatedTo(NavigationEventArgs e)
         {
             violet = (User)e.Parameter;
             System.Diagnostics.Debug.WriteLine(e.Parameter);
+            await new MessageDialog("Note: the list of Missing and Completed Courses does not include courses that you are currently enrolled in", "Note").ShowAsync();
         }
 
         private void Grid_Loaded(object sender, RoutedEventArgs e)
