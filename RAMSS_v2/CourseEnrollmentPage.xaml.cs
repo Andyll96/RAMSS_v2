@@ -111,15 +111,34 @@ namespace RAMSS_v2
             }
             else if (comboBoxItem.Content.ToString().ToUpper().Equals("SEMESTER 5"))
             {
-                if (selectedCourseToEnroll.prerequisites.Any())
+                foreach (var item in violet.completedCoursesY1)
+                {
+                    if (selectedCourseToEnroll.code.Equals(item.Value.code))
+                    {
+                        await new MessageDialog("You've already taken this course","Course Completed").ShowAsync();
+                        enrollmentView.IsPaneOpen = !enrollmentView.IsPaneOpen;
+                        return;
+                    }
+                }
+                foreach (var item in violet.completedCoursesY2)
+                {
+                    if (selectedCourseToEnroll.code.Equals(item.Value.code))
+                    {
+                        await new MessageDialog("You've already taken this course", "Course Completed").ShowAsync();
+                        enrollmentView.IsPaneOpen = !enrollmentView.IsPaneOpen;
+                        return;
+                    }
+                }
+                if (selectedCourseToEnroll.prerequisites.Any()) //prereq test
                 {
                     List<Course> preReqsTaken = new List<Course>();
+                    List<Course> alreadyTaken = new List<Course>();
 
                     foreach (var course in violet.completedCoursesY1)
                     {
                         foreach (var preReq in selectedCourseToEnroll.prerequisites)
                         {
-                            if(course.Value.code.Equals(preReq.code))
+                            if (course.Value.code.Equals(preReq.code))
                             {
                                 preReqsTaken.Add(course.Value);
                             }
@@ -136,7 +155,9 @@ namespace RAMSS_v2
                             }
                         }
                     }
-                    if (!preReqsTaken.Any())
+
+
+                    if (!preReqsTaken.Any()) //If you haven't taken the preReqs Required
                     {
                         String str = null;
                         foreach (var item in selectedCourseToEnroll.prerequisites)
@@ -162,6 +183,24 @@ namespace RAMSS_v2
             }
             else if (comboBoxItem.Content.ToString().ToUpper().Equals("SEMESTER 6"))
             {
+                foreach (var item in violet.completedCoursesY1)
+                {
+                    if (selectedCourseToEnroll.code.Equals(item.Value.code))
+                    {
+                        await new MessageDialog("You've already taken this course", "Course Completed").ShowAsync();
+                        enrollmentView.IsPaneOpen = !enrollmentView.IsPaneOpen;
+                        return;
+                    }
+                }
+                foreach (var item in violet.completedCoursesY2)
+                {
+                    if (selectedCourseToEnroll.code.Equals(item.Value.code))
+                    {
+                        await new MessageDialog("You've already taken this course", "Course Completed").ShowAsync();
+                        enrollmentView.IsPaneOpen = !enrollmentView.IsPaneOpen;
+                        return;
+                    }
+                }
                 if (selectedCourseToEnroll.prerequisites.Any())
                 {
                     List<Course> preReqsTaken = new List<Course>();
