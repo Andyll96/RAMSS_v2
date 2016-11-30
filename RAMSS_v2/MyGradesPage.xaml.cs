@@ -201,13 +201,14 @@ namespace RAMSS_v2
             {
                 System.Diagnostics.Debug.WriteLine(content);
 
-                if(content.ToUpper().Equals("SEMESTER 1"))
+                if (content.ToUpper().Equals("SEMESTER 1"))
                 {
+                    clearBoard();
                     foreach (var course in violet.completedCoursesY1)
                     {
-                        if(course.Key == 1)
+                        if (course.Key == 1)
                         {
-                            if(R1C1.Text == "" && R1C2.Text == "" && R1C3.Text == "" && R1C4.Text == "")
+                            if (R1C1.Text == "" && R1C2.Text == "" && R1C3.Text == "" && R1C4.Text == "")
                             {
                                 R1C1.Text = course.Value.code;
                                 R1C2.Text = course.Value.description;
@@ -242,11 +243,355 @@ namespace RAMSS_v2
                                 R5C3.Text = course.Value.unit.ToString();
                                 R5C4.Text = course.Value.grade;
                             }
-                            //PUT THESE IFS INTO A METHOD AND THEN REUSE FOR SEMETERS 2,3,4,...
                         }
                     }
                 }
+                else if (content.ToUpper().Equals("SEMESTER 2"))
+                {
+                    clearBoard();
+
+                    foreach (var course in violet.completedCoursesY1)
+                    {
+                        if (course.Key == 2)
+                        {
+                            if (R1C1.Text == "" && R1C2.Text == "" && R1C3.Text == "" && R1C4.Text == "")
+                            {
+                                R1C1.Text = course.Value.code;
+                                R1C2.Text = course.Value.description;
+                                R1C3.Text = course.Value.unit.ToString();
+                                R1C4.Text = course.Value.grade;
+                            }
+                            else if (R2C1.Text == "" && R2C2.Text == "" && R2C3.Text == "" && R2C4.Text == "")
+                            {
+                                R2C1.Text = course.Value.code;
+                                R2C2.Text = course.Value.description;
+                                R2C3.Text = course.Value.unit.ToString();
+                                R2C4.Text = course.Value.grade;
+                            }
+                            else if (R3C1.Text == "" && R3C2.Text == "" && R3C3.Text == "" && R3C4.Text == "")
+                            {
+                                R3C1.Text = course.Value.code;
+                                R3C2.Text = course.Value.description;
+                                R3C3.Text = course.Value.unit.ToString();
+                                R3C4.Text = course.Value.grade;
+                            }
+                            else if (R4C1.Text == "" && R4C2.Text == "" && R4C3.Text == "" && R4C4.Text == "")
+                            {
+                                R4C1.Text = course.Value.code;
+                                R4C2.Text = course.Value.description;
+                                R4C3.Text = course.Value.unit.ToString();
+                                R4C4.Text = course.Value.grade;
+                            }
+                            else if (R5C1.Text == "" && R5C2.Text == "" && R5C3.Text == "" && R5C4.Text == "")
+                            {
+                                R5C1.Text = course.Value.code;
+                                R5C2.Text = course.Value.description;
+                                R5C3.Text = course.Value.unit.ToString();
+                                R5C4.Text = course.Value.grade;
+                            }
+                        }
+                    }
+                }
+                else if (content.ToUpper().Equals("SEMESTER 3"))
+                {
+                    clearBoard();
+                    foreach (var course in violet.completedCoursesY2)
+                    {
+                        if (course.Key == 1)
+                        {
+                            if (R1C1.Text == "" && R1C2.Text == "" && R1C3.Text == "" && R1C4.Text == "")
+                            {
+                                R1C1.Text = course.Value.code;
+                                R1C2.Text = course.Value.description;
+                                R1C3.Text = course.Value.unit.ToString();
+                                R1C4.Text = course.Value.grade;
+                            }
+                            else if (R2C1.Text == "" && R2C2.Text == "" && R2C3.Text == "" && R2C4.Text == "")
+                            {
+                                R2C1.Text = course.Value.code;
+                                R2C2.Text = course.Value.description;
+                                R2C3.Text = course.Value.unit.ToString();
+                                R2C4.Text = course.Value.grade;
+                            }
+                            else if (R3C1.Text == "" && R3C2.Text == "" && R3C3.Text == "" && R3C4.Text == "")
+                            {
+                                R3C1.Text = course.Value.code;
+                                R3C2.Text = course.Value.description;
+                                R3C3.Text = course.Value.unit.ToString();
+                                R3C4.Text = course.Value.grade;
+                            }
+                            else if (R4C1.Text == "" && R4C2.Text == "" && R4C3.Text == "" && R4C4.Text == "")
+                            {
+                                R4C1.Text = course.Value.code;
+                                R4C2.Text = course.Value.description;
+                                R4C3.Text = course.Value.unit.ToString();
+                                R4C4.Text = course.Value.grade;
+                            }
+                            else if (R5C1.Text == "" && R5C2.Text == "" && R5C3.Text == "" && R5C4.Text == "")
+                            {
+                                R5C1.Text = course.Value.code;
+                                R5C2.Text = course.Value.description;
+                                R5C3.Text = course.Value.unit.ToString();
+                                R5C4.Text = course.Value.grade;
+                            }
+                        }
+                    }
+                }
+                else if (content.ToUpper().Equals("SEMESTER 4"))
+                {
+                    clearBoard();
+
+                    foreach (var course in violet.completedCoursesY2)
+                    {
+                        if (course.Key == 2)
+                        {
+                            if (R1C1.Text == "" && R1C2.Text == "" && R1C3.Text == "" && R1C4.Text == "")
+                            {
+                                R1C1.Text = course.Value.code;
+                                R1C2.Text = course.Value.description;
+                                R1C3.Text = course.Value.unit.ToString();
+                                R1C4.Text = course.Value.grade;
+                            }
+                            else if (R2C1.Text == "" && R2C2.Text == "" && R2C3.Text == "" && R2C4.Text == "")
+                            {
+                                R2C1.Text = course.Value.code;
+                                R2C2.Text = course.Value.description;
+                                R2C3.Text = course.Value.unit.ToString();
+                                R2C4.Text = course.Value.grade;
+                            }
+                            else if (R3C1.Text == "" && R3C2.Text == "" && R3C3.Text == "" && R3C4.Text == "")
+                            {
+                                R3C1.Text = course.Value.code;
+                                R3C2.Text = course.Value.description;
+                                R3C3.Text = course.Value.unit.ToString();
+                                R3C4.Text = course.Value.grade;
+                            }
+                            else if (R4C1.Text == "" && R4C2.Text == "" && R4C3.Text == "" && R4C4.Text == "")
+                            {
+                                R4C1.Text = course.Value.code;
+                                R4C2.Text = course.Value.description;
+                                R4C3.Text = course.Value.unit.ToString();
+                                R4C4.Text = course.Value.grade;
+                            }
+                            else if (R5C1.Text == "" && R5C2.Text == "" && R5C3.Text == "" && R5C4.Text == "")
+                            {
+                                R5C1.Text = course.Value.code;
+                                R5C2.Text = course.Value.description;
+                                R5C3.Text = course.Value.unit.ToString();
+                                R5C4.Text = course.Value.grade;
+                            }
+                        }
+                    }
+                }
+                else if (content.ToUpper().Equals("SEMESTER 5"))
+                {
+                    clearBoard();
+                    foreach (var course in violet.completedCoursesY3)
+                    {
+                        if (course.Key == 1)
+                        {
+                            if (R1C1.Text == "" && R1C2.Text == "" && R1C3.Text == "" && R1C4.Text == "")
+                            {
+                                R1C1.Text = course.Value.code;
+                                R1C2.Text = course.Value.description;
+                                R1C3.Text = course.Value.unit.ToString();
+                                R1C4.Text = course.Value.grade;
+                            }
+                            else if (R2C1.Text == "" && R2C2.Text == "" && R2C3.Text == "" && R2C4.Text == "")
+                            {
+                                R2C1.Text = course.Value.code;
+                                R2C2.Text = course.Value.description;
+                                R2C3.Text = course.Value.unit.ToString();
+                                R2C4.Text = course.Value.grade;
+                            }
+                            else if (R3C1.Text == "" && R3C2.Text == "" && R3C3.Text == "" && R3C4.Text == "")
+                            {
+                                R3C1.Text = course.Value.code;
+                                R3C2.Text = course.Value.description;
+                                R3C3.Text = course.Value.unit.ToString();
+                                R3C4.Text = course.Value.grade;
+                            }
+                            else if (R4C1.Text == "" && R4C2.Text == "" && R4C3.Text == "" && R4C4.Text == "")
+                            {
+                                R4C1.Text = course.Value.code;
+                                R4C2.Text = course.Value.description;
+                                R4C3.Text = course.Value.unit.ToString();
+                                R4C4.Text = course.Value.grade;
+                            }
+                            else if (R5C1.Text == "" && R5C2.Text == "" && R5C3.Text == "" && R5C4.Text == "")
+                            {
+                                R5C1.Text = course.Value.code;
+                                R5C2.Text = course.Value.description;
+                                R5C3.Text = course.Value.unit.ToString();
+                                R5C4.Text = course.Value.grade;
+                            }
+                        }
+                    }
+                }
+                else if (content.ToUpper().Equals("SEMESTER 6"))
+                {
+                    clearBoard();
+
+                    foreach (var course in violet.completedCoursesY3)
+                    {
+                        if (course.Key == 2)
+                        {
+                            if (R1C1.Text == "" && R1C2.Text == "" && R1C3.Text == "" && R1C4.Text == "")
+                            {
+                                R1C1.Text = course.Value.code;
+                                R1C2.Text = course.Value.description;
+                                R1C3.Text = course.Value.unit.ToString();
+                                R1C4.Text = course.Value.grade;
+                            }
+                            else if (R2C1.Text == "" && R2C2.Text == "" && R2C3.Text == "" && R2C4.Text == "")
+                            {
+                                R2C1.Text = course.Value.code;
+                                R2C2.Text = course.Value.description;
+                                R2C3.Text = course.Value.unit.ToString();
+                                R2C4.Text = course.Value.grade;
+                            }
+                            else if (R3C1.Text == "" && R3C2.Text == "" && R3C3.Text == "" && R3C4.Text == "")
+                            {
+                                R3C1.Text = course.Value.code;
+                                R3C2.Text = course.Value.description;
+                                R3C3.Text = course.Value.unit.ToString();
+                                R3C4.Text = course.Value.grade;
+                            }
+                            else if (R4C1.Text == "" && R4C2.Text == "" && R4C3.Text == "" && R4C4.Text == "")
+                            {
+                                R4C1.Text = course.Value.code;
+                                R4C2.Text = course.Value.description;
+                                R4C3.Text = course.Value.unit.ToString();
+                                R4C4.Text = course.Value.grade;
+                            }
+                            else if (R5C1.Text == "" && R5C2.Text == "" && R5C3.Text == "" && R5C4.Text == "")
+                            {
+                                R5C1.Text = course.Value.code;
+                                R5C2.Text = course.Value.description;
+                                R5C3.Text = course.Value.unit.ToString();
+                                R5C4.Text = course.Value.grade;
+                            }
+                        }
+                    }
+                }
+                else if (content.ToUpper().Equals("SEMESTER 7"))
+                {
+                    clearBoard();
+                    foreach (var course in violet.completedCoursesY4)
+                    {
+                        if (course.Key == 1)
+                        {
+                            if (R1C1.Text == "" && R1C2.Text == "" && R1C3.Text == "" && R1C4.Text == "")
+                            {
+                                R1C1.Text = course.Value.code;
+                                R1C2.Text = course.Value.description;
+                                R1C3.Text = course.Value.unit.ToString();
+                                R1C4.Text = course.Value.grade;
+                            }
+                            else if (R2C1.Text == "" && R2C2.Text == "" && R2C3.Text == "" && R2C4.Text == "")
+                            {
+                                R2C1.Text = course.Value.code;
+                                R2C2.Text = course.Value.description;
+                                R2C3.Text = course.Value.unit.ToString();
+                                R2C4.Text = course.Value.grade;
+                            }
+                            else if (R3C1.Text == "" && R3C2.Text == "" && R3C3.Text == "" && R3C4.Text == "")
+                            {
+                                R3C1.Text = course.Value.code;
+                                R3C2.Text = course.Value.description;
+                                R3C3.Text = course.Value.unit.ToString();
+                                R3C4.Text = course.Value.grade;
+                            }
+                            else if (R4C1.Text == "" && R4C2.Text == "" && R4C3.Text == "" && R4C4.Text == "")
+                            {
+                                R4C1.Text = course.Value.code;
+                                R4C2.Text = course.Value.description;
+                                R4C3.Text = course.Value.unit.ToString();
+                                R4C4.Text = course.Value.grade;
+                            }
+                            else if (R5C1.Text == "" && R5C2.Text == "" && R5C3.Text == "" && R5C4.Text == "")
+                            {
+                                R5C1.Text = course.Value.code;
+                                R5C2.Text = course.Value.description;
+                                R5C3.Text = course.Value.unit.ToString();
+                                R5C4.Text = course.Value.grade;
+                            }
+                        }
+                    }
+                }
+                else if (content.ToUpper().Equals("SEMESTER 8"))
+                {
+                    clearBoard();
+
+                    foreach (var course in violet.completedCoursesY4)
+                    {
+                        if (course.Key == 2)
+                        {
+                            if (R1C1.Text == "" && R1C2.Text == "" && R1C3.Text == "" && R1C4.Text == "")
+                            {
+                                R1C1.Text = course.Value.code;
+                                R1C2.Text = course.Value.description;
+                                R1C3.Text = course.Value.unit.ToString();
+                                R1C4.Text = course.Value.grade;
+                            }
+                            else if (R2C1.Text == "" && R2C2.Text == "" && R2C3.Text == "" && R2C4.Text == "")
+                            {
+                                R2C1.Text = course.Value.code;
+                                R2C2.Text = course.Value.description;
+                                R2C3.Text = course.Value.unit.ToString();
+                                R2C4.Text = course.Value.grade;
+                            }
+                            else if (R3C1.Text == "" && R3C2.Text == "" && R3C3.Text == "" && R3C4.Text == "")
+                            {
+                                R3C1.Text = course.Value.code;
+                                R3C2.Text = course.Value.description;
+                                R3C3.Text = course.Value.unit.ToString();
+                                R3C4.Text = course.Value.grade;
+                            }
+                            else if (R4C1.Text == "" && R4C2.Text == "" && R4C3.Text == "" && R4C4.Text == "")
+                            {
+                                R4C1.Text = course.Value.code;
+                                R4C2.Text = course.Value.description;
+                                R4C3.Text = course.Value.unit.ToString();
+                                R4C4.Text = course.Value.grade;
+                            }
+                            else if (R5C1.Text == "" && R5C2.Text == "" && R5C3.Text == "" && R5C4.Text == "")
+                            {
+                                R5C1.Text = course.Value.code;
+                                R5C2.Text = course.Value.description;
+                                R5C3.Text = course.Value.unit.ToString();
+                                R5C4.Text = course.Value.grade;
+                            }
+                        }
+                    }
+                }
+
             }
+        }
+
+
+        private void clearBoard()
+        {
+            R1C1.Text = "";
+            R1C2.Text = "";
+            R1C3.Text = "";
+            R1C4.Text = "";
+            R2C1.Text = "";
+            R2C2.Text = "";
+            R2C3.Text = "";
+            R2C4.Text = "";
+            R3C1.Text = "";
+            R3C2.Text = "";
+            R3C3.Text = "";
+            R3C4.Text = "";
+            R4C1.Text = "";
+            R4C2.Text = "";
+            R4C3.Text = "";
+            R4C4.Text = "";
+            R5C1.Text = "";
+            R5C2.Text = "";
+            R5C3.Text = "";
+            R5C4.Text = "";
         }
     }
 }
