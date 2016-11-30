@@ -22,7 +22,7 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <ComboBox CommonNavigationTransitionInfo.IsStaggerElement="True" Margin="30,100,0,0" Height="40" Width="400">
+        <ComboBox Name="semesterComboBox" SelectionChanged="semesterComboBox_SelectionChanged" CommonNavigationTransitionInfo.IsStaggerElement="True" Margin="30,100,0,0" Height="40" Width="400">
             <ComboBoxItem Content="Semester 1"/>
             <ComboBoxItem Content="Semester 2"/>
             <ComboBoxItem Content="Semester 3"/>
@@ -51,6 +51,27 @@
             <TextBlock Grid.Column="1" Text="Description" TextAlignment="Center" FontSize="30"  FontWeight="Light"/>
             <TextBlock Grid.Column="2" Text="Units" TextAlignment="Center" FontSize="30"  FontWeight="Light"/>
             <TextBlock Grid.Column="3" Text="Grade" TextAlignment="Center" FontSize="30" FontWeight="Light"/>
+            <TextBlock Name="R1C1" Grid.Row="1" Grid.Column="0" Margin="10,0,0,0" TextAlignment="Center" FontSize="25" FontWeight="Light"/>
+            <TextBlock Name="R1C2" Grid.Row="1" Grid.Column="1" Margin="10,0,0,0" TextAlignment="Center" FontSize="25" FontWeight="Light"/>
+            <TextBlock Name="R1C3" Grid.Row="1" Grid.Column="2" Margin="10,0,0,0" TextAlignment="Center" FontSize="25" FontWeight="Light"/>
+            <TextBlock Name="R1C4" Grid.Row="1" Grid.Column="3" Margin="10,0,0,0" TextAlignment="Center" FontSize="25" FontWeight="Light"/>
+            <TextBlock Name="R2C1" Grid.Row="2" Grid.Column="0" Margin="10,0,0,0" TextAlignment="Center" FontSize="25" FontWeight="Light"/>
+            <TextBlock Name="R2C2" Grid.Row="2" Grid.Column="1" Margin="10,0,0,0" TextAlignment="Center" FontSize="25" FontWeight="Light"/>
+            <TextBlock Name="R2C3" Grid.Row="2" Grid.Column="2" Margin="10,0,0,0" TextAlignment="Center" FontSize="25" FontWeight="Light"/>
+            <TextBlock Name="R2C4" Grid.Row="2" Grid.Column="3" Margin="10,0,0,0" TextAlignment="Center" FontSize="25" FontWeight="Light"/>
+            <TextBlock Name="R3C1" Grid.Row="3" Grid.Column="0" Margin="10,0,0,0" TextAlignment="Center" FontSize="25" FontWeight="Light"/>
+            <TextBlock Name="R3C2" Grid.Row="3" Grid.Column="1" Margin="10,0,0,0" TextAlignment="Center" FontSize="25" FontWeight="Light"/>
+            <TextBlock Name="R3C3" Grid.Row="3" Grid.Column="2" Margin="10,0,0,0" TextAlignment="Center" FontSize="25" FontWeight="Light"/>
+            <TextBlock Name="R3C4" Grid.Row="3" Grid.Column="3" Margin="10,0,0,0" TextAlignment="Center" FontSize="25" FontWeight="Light"/>
+            <TextBlock Name="R4C1" Grid.Row="4" Grid.Column="0" Margin="10,0,0,0" TextAlignment="Center" FontSize="25" FontWeight="Light"/>
+            <TextBlock Name="R4C2" Grid.Row="4" Grid.Column="1" Margin="10,0,0,0" TextAlignment="Center" FontSize="25" FontWeight="Light"/>
+            <TextBlock Name="R4C3" Grid.Row="4" Grid.Column="2" Margin="10,0,0,0" TextAlignment="Center" FontSize="25" FontWeight="Light"/>
+            <TextBlock Name="R4C4" Grid.Row="4" Grid.Column="3" Margin="10,0,0,0" TextAlignment="Center" FontSize="25" FontWeight="Light"/>
+            <TextBlock Name="R5C1" Grid.Row="5" Grid.Column="0" Margin="10,0,0,0" TextAlignment="Center" FontSize="25" FontWeight="Light"/>
+            <TextBlock Name="R5C2" Grid.Row="5" Grid.Column="1" Margin="10,0,0,0" TextAlignment="Center" FontSize="25" FontWeight="Light"/>
+            <TextBlock Name="R5C3" Grid.Row="5" Grid.Column="2" Margin="10,0,0,0" TextAlignment="Center" FontSize="25" FontWeight="Light"/>
+            <TextBlock Name="R5C4" Grid.Row="5" Grid.Column="3" Margin="10,0,0,0" TextAlignment="Center" FontSize="25" FontWeight="Light"/>
+
         </Grid>
 
         <Grid Grid.Row="1" Background="#999999">

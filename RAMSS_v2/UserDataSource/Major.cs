@@ -101,6 +101,12 @@ namespace RAMSS_v2.UserDataSource
             sem1Course3.completed = true;
             sem1Course4.completed = true;
             sem1Course5.completed = true;
+            sem1Course1.grade = "A+";
+            sem1Course2.grade = "C-";
+            sem1Course3.grade = "D+";
+            sem1Course4.grade = "B+";
+            sem1Course5.grade = "B";
+
 
             sem2Course1 = new Course("CPS209", "Computer Science II", "ENG 123", "n/a", "8:00am", "Monday");
             sem2Course1.prerequisites.Add(sem1Course1);
@@ -120,6 +126,11 @@ namespace RAMSS_v2.UserDataSource
             sem2Course3.completed = true;
             sem2Course4.completed = true;
             sem2Course5.completed = true;
+            sem2Course1.grade = "C+";
+            sem2Course2.grade = "B-";
+            sem2Course3.grade = "A";
+            sem2Course4.grade = "B+";
+            sem2Course5.grade = "D";
 
 
             sem3Course1 = new Course("CMN300", "Communication in the Computer Industry", "ENG 123", "n/a", "8:00am", "Monday");
@@ -140,6 +151,11 @@ namespace RAMSS_v2.UserDataSource
             sem3Course3.completed = true;
             sem3Course4.completed = true;
             sem3Course5.completed = true;
+            sem3Course1.grade = "D";
+            sem3Course2.grade = "B";
+            sem3Course3.grade = "A-";
+            sem3Course4.grade = "C";
+            sem3Course5.grade = "D-";
 
             sem4Course1 = new Course("CPS406", "Introduction to Software Engineering", "ENG 123", "n/a", "8:00am", "Monday");
             sem4Course1.prerequisites.Add(sem2Course1);
@@ -159,6 +175,11 @@ namespace RAMSS_v2.UserDataSource
             sem4Course3.completed = true;
             sem4Course4.completed = true;
             sem4Course5.completed = true;
+            sem4Course1.grade = "A+";
+            sem4Course2.grade = "A-";
+            sem4Course3.grade = "B+";
+            sem4Course4.grade = "C+";
+            sem4Course5.grade = "B-";
 
             sem5Course1 = new Course("CPS510", "Database Systems I", "ENG 123", "n/a", "8:00am", "Monday");
             sem5Course1.prerequisites.Add(sem3Course2);
