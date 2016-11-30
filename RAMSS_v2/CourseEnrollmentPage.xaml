@@ -91,11 +91,11 @@
                     <TextBlock Name="R5C2" CommonNavigationTransitionInfo.IsStaggerElement="True" FontSize="30" TextAlignment="Center" Grid.Row="5" Grid.Column="1"/>
                     <TextBlock Name="R5C3" CommonNavigationTransitionInfo.IsStaggerElement="True" FontSize="30" TextAlignment="Center" Grid.Row="5" Grid.Column="2"/>
 
-                    <Button Name="taking1" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Transparent" IsEnabled="False"/>
-                    <Button Name="taking2" Grid.Row="2" Grid.Column="1"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Transparent" IsEnabled="False"/>
-                    <Button Name="taking3" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Transparent" IsEnabled="False"/>
-                    <Button Name="taking4" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Transparent" IsEnabled="False"/>
-                    <Button Name="taking5" Grid.Row="5" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Transparent" IsEnabled="False"/>
+                    <Button Name="taking1" Click="taking1_Click" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Transparent" IsEnabled="False"/>
+                    <Button Name="taking2" Click="taking2_Click" Grid.Row="2" Grid.Column="1"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Transparent" IsEnabled="False"/>
+                    <Button Name="taking3" Click="taking3_Click" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Transparent" IsEnabled="False"/>
+                    <Button Name="taking4" Click="taking4_Click" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Transparent" IsEnabled="False"/>
+                    <Button Name="taking5" Click="taking5_Click" Grid.Row="5" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Transparent" IsEnabled="False"/>
 
                 </Grid>
                 <Grid Grid.Row="1">

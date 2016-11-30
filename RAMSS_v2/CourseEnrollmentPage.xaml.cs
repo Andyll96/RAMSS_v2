@@ -29,6 +29,11 @@ namespace RAMSS_v2
         public List<Course> fullCurriculum;
         ComboBoxItem comboBoxItem;
         String content;
+        Boolean droppingCourseBool = false;
+        Boolean swapingCourseBool = false;
+
+        Course swapingCourse = new Course();
+
 
         public CourseEnrollmentPage()
         {
@@ -48,22 +53,37 @@ namespace RAMSS_v2
             if (comboBoxItem != null)
                 enrollmentView.IsPaneOpen = !enrollmentView.IsPaneOpen;
             else
-                await new MessageDialog("Select a Semester Using the Drop Down Box", "Select a Semester").ShowAsync();
+                await new MessageDialog("Select a Semester Using the Drop Down Box on the Top Left of the Page", "Select a Semester").ShowAsync();
         }
 
-        private void dropButton_Click(object sender, RoutedEventArgs e)
+        private async void dropButton_Click(object sender, RoutedEventArgs e)
         {
+            if (droppingCourseBool == false)
+            {
+                droppingCourseBool = true;
+                await new MessageDialog("Select a course, from the Taking Column, to Drop", "Drop a Course").ShowAsync();
 
+                taking1.IsEnabled = !taking1.IsEnabled;
+                taking2.IsEnabled = !taking2.IsEnabled;
+                taking3.IsEnabled = !taking3.IsEnabled;
+                taking4.IsEnabled = !taking4.IsEnabled;
+                taking5.IsEnabled = !taking5.IsEnabled;
+            }
         }
 
-        private void swapButton_Click(object sender, RoutedEventArgs e)
+        private async void swapButton_Click(object sender, RoutedEventArgs e)
         {
-            taking1.IsEnabled = !taking1.IsEnabled;
-            taking2.IsEnabled = !taking2.IsEnabled;
-            taking3.IsEnabled = !taking3.IsEnabled;
-            taking4.IsEnabled = !taking4.IsEnabled;
-            taking5.IsEnabled = !taking5.IsEnabled;
+            if (swapingCourseBool == false)
+            {
+                swapingCourseBool = true;
+                await new MessageDialog("Select a course, from the Taking Column, to Swap", "Swap a Course").ShowAsync();
 
+                taking1.IsEnabled = !taking1.IsEnabled;
+                taking2.IsEnabled = !taking2.IsEnabled;
+                taking3.IsEnabled = !taking3.IsEnabled;
+                taking4.IsEnabled = !taking4.IsEnabled;
+                taking5.IsEnabled = !taking5.IsEnabled;
+            }
         }
 
         private void viewScheduleButton_Click(object sender, RoutedEventArgs e)
@@ -73,99 +93,271 @@ namespace RAMSS_v2
 
         private async void courseList_ItemClick(object sender, ItemClickEventArgs e)
         {
-            var selectedCourseToEnroll = (Course)e.ClickedItem;
-
-            System.Diagnostics.Debug.WriteLine("selected Item: " + selectedCourseToEnroll.code);
-            System.Diagnostics.Debug.WriteLine("semester: " + comboBoxItem.Content.ToString());
-
-            if (comboBoxItem.Content.ToString().ToUpper().Equals("SEMESTER 1"))
+            if (swapingCourseBool == true)
             {
-                await new MessageDialog("The selected semester has already been completed, therefore courses cannot be enrolled for this semester.", "Semester Already Complete").ShowAsync();
-                //violet.enroll(1, selectedCourseToEnroll);
-                enrollmentView.IsPaneOpen = !enrollmentView.IsPaneOpen;
-                getSemester(content);
-            }
-            else if (comboBoxItem.Content.ToString().ToUpper().Equals("SEMESTER 2"))
-            {
-                await new MessageDialog("The selected semester has already been completed, therefore courses cannot be enrolled for this semester.", "Semester Already Complete").ShowAsync();
-                //violet.enroll(2, selectedCourseToEnroll);
-                enrollmentView.IsPaneOpen = !enrollmentView.IsPaneOpen;
-                getSemester(content);
-
-            }
-            else if (comboBoxItem.Content.ToString().ToUpper().Equals("SEMESTER 3"))
-            {
-                await new MessageDialog("The selected semester has already been completed, therefore courses cannot be enrolled for this semester.", "Semester Already Complete").ShowAsync();
-                //violet.enroll(3, selectedCourseToEnroll);
-                enrollmentView.IsPaneOpen = !enrollmentView.IsPaneOpen;
-                getSemester(content);
-
-            }
-            else if (comboBoxItem.Content.ToString().ToUpper().Equals("SEMESTER 4"))
-            {
-                await new MessageDialog("The selected semester has already been completed, therefore courses cannot be enrolled for this semester.", "Semester Already Complete").ShowAsync();
-                //violet.enroll(4, selectedCourseToEnroll);
-                enrollmentView.IsPaneOpen = !enrollmentView.IsPaneOpen;
-                getSemester(content);
-
-            }
-            else if (comboBoxItem.Content.ToString().ToUpper().Equals("SEMESTER 5"))
-            {
-                foreach (var item in violet.completedCoursesY1)
+                var selectedCourseToSwap = (Course)e.ClickedItem;
+                if(content.ToUpper().Equals("SEMESTER 5"))
                 {
-                    if (selectedCourseToEnroll.code.Equals(item.Value.code))
-                    {
-                        await new MessageDialog("You've already taken this course","Course Completed").ShowAsync();
-                        enrollmentView.IsPaneOpen = !enrollmentView.IsPaneOpen;
-                        return;
-                    }
-                }
-                foreach (var item in violet.completedCoursesY2)
-                {
-                    if (selectedCourseToEnroll.code.Equals(item.Value.code))
-                    {
-                        await new MessageDialog("You've already taken this course", "Course Completed").ShowAsync();
-                        enrollmentView.IsPaneOpen = !enrollmentView.IsPaneOpen;
-                        return;
-                    }
-                }
-                if (selectedCourseToEnroll.prerequisites.Any()) //prereq test
-                {
-                    List<Course> preReqsTaken = new List<Course>();
-                    List<Course> alreadyTaken = new List<Course>();
+                    violet.takingCoursesY3.Remove(new KeyValuePair<int, Course>(1, swapingCourse));
+                    violet.missingCoursesY3.Add(new KeyValuePair<int, Course>(1, swapingCourse));
 
-                    foreach (var course in violet.completedCoursesY1)
+                    foreach (var item in violet.completedCoursesY1)
                     {
-                        foreach (var preReq in selectedCourseToEnroll.prerequisites)
+                        if (selectedCourseToSwap.code.Equals(item.Value.code))
                         {
-                            if (course.Value.code.Equals(preReq.code))
+                            await new MessageDialog("You've already taken this course", "Course Completed").ShowAsync();
+                            enrollmentView.IsPaneOpen = !enrollmentView.IsPaneOpen;
+                            return;
+                        }
+                    }
+                    foreach (var item in violet.completedCoursesY2)
+                    {
+                        if (selectedCourseToSwap.code.Equals(item.Value.code))
+                        {
+                            await new MessageDialog("You've already taken this course", "Course Completed").ShowAsync();
+                            enrollmentView.IsPaneOpen = !enrollmentView.IsPaneOpen;
+                            return;
+                        }
+                    }
+                    if (selectedCourseToSwap.prerequisites.Any()) //prereq test
+                    {
+                        List<Course> preReqsTaken = new List<Course>();
+                        List<Course> alreadyTaken = new List<Course>();
+
+                        foreach (var course in violet.completedCoursesY1)
+                        {
+                            foreach (var preReq in selectedCourseToSwap.prerequisites)
                             {
-                                preReqsTaken.Add(course.Value);
+                                if (course.Value.code.Equals(preReq.code))
+                                {
+                                    preReqsTaken.Add(course.Value);
+                                }
                             }
                         }
-                    }
 
-                    foreach (var course in violet.completedCoursesY2)
-                    {
-                        foreach (var preReq in selectedCourseToEnroll.prerequisites)
+                        foreach (var course in violet.completedCoursesY2)
                         {
-                            if (course.Value.code.Equals(preReq.code))
+                            foreach (var preReq in selectedCourseToSwap.prerequisites)
                             {
-                                preReqsTaken.Add(course.Value);
+                                if (course.Value.code.Equals(preReq.code))
+                                {
+                                    preReqsTaken.Add(course.Value);
+                                }
                             }
                         }
-                    }
 
 
-                    if (!preReqsTaken.Any()) //If you haven't taken the preReqs Required
-                    {
-                        String str = null;
-                        foreach (var item in selectedCourseToEnroll.prerequisites)
+                        if (!preReqsTaken.Any()) //If you haven't taken the preReqs Required
                         {
-                            str += item.code + ", ";
+                            String str = null;
+                            foreach (var item in selectedCourseToSwap.prerequisites)
+                            {
+                                str += item.code + ", ";
+                            }
+                            await new MessageDialog("Make sure you have these Courses: " + str, "Not Available").ShowAsync();
+                            enrollmentView.IsPaneOpen = !enrollmentView.IsPaneOpen;
                         }
-                        await new MessageDialog("Make sure you have these Courses: " + str, "Not Available").ShowAsync();
+                        else
+                        {
+                            violet.enroll(5, selectedCourseToSwap);
+                            enrollmentView.IsPaneOpen = !enrollmentView.IsPaneOpen;
+                            getSemester(content);
+                        }
+                    }
+                    else
+                    {
+                        violet.enroll(5, selectedCourseToSwap);
                         enrollmentView.IsPaneOpen = !enrollmentView.IsPaneOpen;
+                        getSemester(content);
+                    }
+                    taking1.IsEnabled = !taking1.IsEnabled;
+                    taking2.IsEnabled = !taking2.IsEnabled;
+                    taking3.IsEnabled = !taking3.IsEnabled;
+                    taking4.IsEnabled = !taking4.IsEnabled;
+                    taking5.IsEnabled = !taking5.IsEnabled;
+                    swapingCourseBool = false;
+                }
+                else if (content.ToUpper().Equals("SEMESTER 6"))
+                {
+                    violet.takingCoursesY3.Remove(new KeyValuePair<int, Course>(2, swapingCourse));
+                    violet.missingCoursesY3.Add(new KeyValuePair<int, Course>(2, swapingCourse));
+
+                    foreach (var item in violet.completedCoursesY1)
+                    {
+                        if (selectedCourseToSwap.code.Equals(item.Value.code))
+                        {
+                            await new MessageDialog("You've already taken this course", "Course Completed").ShowAsync();
+                            enrollmentView.IsPaneOpen = !enrollmentView.IsPaneOpen;
+                            return;
+                        }
+                    }
+                    foreach (var item in violet.completedCoursesY2)
+                    {
+                        if (selectedCourseToSwap.code.Equals(item.Value.code))
+                        {
+                            await new MessageDialog("You've already taken this course", "Course Completed").ShowAsync();
+                            enrollmentView.IsPaneOpen = !enrollmentView.IsPaneOpen;
+                            return;
+                        }
+                    }
+                    if (selectedCourseToSwap.prerequisites.Any())
+                    {
+                        List<Course> preReqsTaken = new List<Course>();
+
+                        foreach (var course in violet.completedCoursesY1)
+                        {
+                            foreach (var preReq in selectedCourseToSwap.prerequisites)
+                            {
+                                if (course.Value.code.Equals(preReq.code))
+                                {
+                                    preReqsTaken.Add(course.Value);
+                                }
+                            }
+                        }
+
+                        foreach (var course in violet.completedCoursesY2)
+                        {
+                            foreach (var preReq in selectedCourseToSwap.prerequisites)
+                            {
+                                if (course.Value.code.Equals(preReq.code))
+                                {
+                                    preReqsTaken.Add(course.Value);
+                                }
+                            }
+                        }
+                        if (!preReqsTaken.Any())
+                        {
+                            String str = null;
+                            foreach (var item in selectedCourseToSwap.prerequisites)
+                            {
+                                str += item.code + ", ";
+                            }
+                            await new MessageDialog("Make sure you have these Courses: " + str, "Not Available").ShowAsync();
+                            enrollmentView.IsPaneOpen = !enrollmentView.IsPaneOpen;
+                        }
+                        else
+                        {
+                            violet.enroll(6, selectedCourseToSwap);
+                            enrollmentView.IsPaneOpen = !enrollmentView.IsPaneOpen;
+                            getSemester(content);
+                        }
+                    }
+                    else
+                    {
+                        violet.enroll(6, selectedCourseToSwap);
+                        enrollmentView.IsPaneOpen = !enrollmentView.IsPaneOpen;
+                        getSemester(content);
+                    }
+                    taking1.IsEnabled = !taking1.IsEnabled;
+                    taking2.IsEnabled = !taking2.IsEnabled;
+                    taking3.IsEnabled = !taking3.IsEnabled;
+                    taking4.IsEnabled = !taking4.IsEnabled;
+                    taking5.IsEnabled = !taking5.IsEnabled;
+                    swapingCourseBool = false;
+                }
+            }
+            else
+            {
+                var selectedCourseToEnroll = (Course)e.ClickedItem;
+
+                System.Diagnostics.Debug.WriteLine("selected Item: " + selectedCourseToEnroll.code);
+                System.Diagnostics.Debug.WriteLine("semester: " + comboBoxItem.Content.ToString());
+
+                if (comboBoxItem.Content.ToString().ToUpper().Equals("SEMESTER 1"))
+                {
+                    await new MessageDialog("The selected semester has already been completed, therefore courses cannot be enrolled for this semester.", "Semester Already Complete").ShowAsync();
+                    //violet.enroll(1, selectedCourseToEnroll);
+                    enrollmentView.IsPaneOpen = !enrollmentView.IsPaneOpen;
+                    getSemester(content);
+                }
+                else if (comboBoxItem.Content.ToString().ToUpper().Equals("SEMESTER 2"))
+                {
+                    await new MessageDialog("The selected semester has already been completed, therefore courses cannot be enrolled for this semester.", "Semester Already Complete").ShowAsync();
+                    //violet.enroll(2, selectedCourseToEnroll);
+                    enrollmentView.IsPaneOpen = !enrollmentView.IsPaneOpen;
+                    getSemester(content);
+
+                }
+                else if (comboBoxItem.Content.ToString().ToUpper().Equals("SEMESTER 3"))
+                {
+                    await new MessageDialog("The selected semester has already been completed, therefore courses cannot be enrolled for this semester.", "Semester Already Complete").ShowAsync();
+                    //violet.enroll(3, selectedCourseToEnroll);
+                    enrollmentView.IsPaneOpen = !enrollmentView.IsPaneOpen;
+                    getSemester(content);
+
+                }
+                else if (comboBoxItem.Content.ToString().ToUpper().Equals("SEMESTER 4"))
+                {
+                    await new MessageDialog("The selected semester has already been completed, therefore courses cannot be enrolled for this semester.", "Semester Already Complete").ShowAsync();
+                    //violet.enroll(4, selectedCourseToEnroll);
+                    enrollmentView.IsPaneOpen = !enrollmentView.IsPaneOpen;
+                    getSemester(content);
+
+                }
+                else if (comboBoxItem.Content.ToString().ToUpper().Equals("SEMESTER 5"))
+                {
+                    foreach (var item in violet.completedCoursesY1)
+                    {
+                        if (selectedCourseToEnroll.code.Equals(item.Value.code))
+                        {
+                            await new MessageDialog("You've already taken this course", "Course Completed").ShowAsync();
+                            enrollmentView.IsPaneOpen = !enrollmentView.IsPaneOpen;
+                            return;
+                        }
+                    }
+                    foreach (var item in violet.completedCoursesY2)
+                    {
+                        if (selectedCourseToEnroll.code.Equals(item.Value.code))
+                        {
+                            await new MessageDialog("You've already taken this course", "Course Completed").ShowAsync();
+                            enrollmentView.IsPaneOpen = !enrollmentView.IsPaneOpen;
+                            return;
+                        }
+                    }
+                    if (selectedCourseToEnroll.prerequisites.Any()) //prereq test
+                    {
+                        List<Course> preReqsTaken = new List<Course>();
+                        List<Course> alreadyTaken = new List<Course>();
+
+                        foreach (var course in violet.completedCoursesY1)
+                        {
+                            foreach (var preReq in selectedCourseToEnroll.prerequisites)
+                            {
+                                if (course.Value.code.Equals(preReq.code))
+                                {
+                                    preReqsTaken.Add(course.Value);
+                                }
+                            }
+                        }
+
+                        foreach (var course in violet.completedCoursesY2)
+                        {
+                            foreach (var preReq in selectedCourseToEnroll.prerequisites)
+                            {
+                                if (course.Value.code.Equals(preReq.code))
+                                {
+                                    preReqsTaken.Add(course.Value);
+                                }
+                            }
+                        }
+
+
+                        if (!preReqsTaken.Any()) //If you haven't taken the preReqs Required
+                        {
+                            String str = null;
+                            foreach (var item in selectedCourseToEnroll.prerequisites)
+                            {
+                                str += item.code + ", ";
+                            }
+                            await new MessageDialog("Make sure you have these Courses: " + str, "Not Available").ShowAsync();
+                            enrollmentView.IsPaneOpen = !enrollmentView.IsPaneOpen;
+                        }
+                        else
+                        {
+                            violet.enroll(5, selectedCourseToEnroll);
+                            enrollmentView.IsPaneOpen = !enrollmentView.IsPaneOpen;
+                            getSemester(content);
+                        }
                     }
                     else
                     {
@@ -174,67 +366,67 @@ namespace RAMSS_v2
                         getSemester(content);
                     }
                 }
-                else
+                else if (comboBoxItem.Content.ToString().ToUpper().Equals("SEMESTER 6"))
                 {
-                    violet.enroll(5, selectedCourseToEnroll);
-                    enrollmentView.IsPaneOpen = !enrollmentView.IsPaneOpen;
-                    getSemester(content);
-                }
-            }
-            else if (comboBoxItem.Content.ToString().ToUpper().Equals("SEMESTER 6"))
-            {
-                foreach (var item in violet.completedCoursesY1)
-                {
-                    if (selectedCourseToEnroll.code.Equals(item.Value.code))
+                    foreach (var item in violet.completedCoursesY1)
                     {
-                        await new MessageDialog("You've already taken this course", "Course Completed").ShowAsync();
-                        enrollmentView.IsPaneOpen = !enrollmentView.IsPaneOpen;
-                        return;
-                    }
-                }
-                foreach (var item in violet.completedCoursesY2)
-                {
-                    if (selectedCourseToEnroll.code.Equals(item.Value.code))
-                    {
-                        await new MessageDialog("You've already taken this course", "Course Completed").ShowAsync();
-                        enrollmentView.IsPaneOpen = !enrollmentView.IsPaneOpen;
-                        return;
-                    }
-                }
-                if (selectedCourseToEnroll.prerequisites.Any())
-                {
-                    List<Course> preReqsTaken = new List<Course>();
-
-                    foreach (var course in violet.completedCoursesY1)
-                    {
-                        foreach (var preReq in selectedCourseToEnroll.prerequisites)
+                        if (selectedCourseToEnroll.code.Equals(item.Value.code))
                         {
-                            if (course.Value.code.Equals(preReq.code))
+                            await new MessageDialog("You've already taken this course", "Course Completed").ShowAsync();
+                            enrollmentView.IsPaneOpen = !enrollmentView.IsPaneOpen;
+                            return;
+                        }
+                    }
+                    foreach (var item in violet.completedCoursesY2)
+                    {
+                        if (selectedCourseToEnroll.code.Equals(item.Value.code))
+                        {
+                            await new MessageDialog("You've already taken this course", "Course Completed").ShowAsync();
+                            enrollmentView.IsPaneOpen = !enrollmentView.IsPaneOpen;
+                            return;
+                        }
+                    }
+                    if (selectedCourseToEnroll.prerequisites.Any())
+                    {
+                        List<Course> preReqsTaken = new List<Course>();
+
+                        foreach (var course in violet.completedCoursesY1)
+                        {
+                            foreach (var preReq in selectedCourseToEnroll.prerequisites)
                             {
-                                preReqsTaken.Add(course.Value);
+                                if (course.Value.code.Equals(preReq.code))
+                                {
+                                    preReqsTaken.Add(course.Value);
+                                }
                             }
                         }
-                    }
 
-                    foreach (var course in violet.completedCoursesY2)
-                    {
-                        foreach (var preReq in selectedCourseToEnroll.prerequisites)
+                        foreach (var course in violet.completedCoursesY2)
                         {
-                            if (course.Value.code.Equals(preReq.code))
+                            foreach (var preReq in selectedCourseToEnroll.prerequisites)
                             {
-                                preReqsTaken.Add(course.Value);
+                                if (course.Value.code.Equals(preReq.code))
+                                {
+                                    preReqsTaken.Add(course.Value);
+                                }
                             }
                         }
-                    }
-                    if (!preReqsTaken.Any())
-                    {
-                        String str = null;
-                        foreach (var item in selectedCourseToEnroll.prerequisites)
+                        if (!preReqsTaken.Any())
                         {
-                            str += item.code + ", ";
+                            String str = null;
+                            foreach (var item in selectedCourseToEnroll.prerequisites)
+                            {
+                                str += item.code + ", ";
+                            }
+                            await new MessageDialog("Make sure you have these Courses: " + str, "Not Available").ShowAsync();
+                            enrollmentView.IsPaneOpen = !enrollmentView.IsPaneOpen;
                         }
-                        await new MessageDialog("Make sure you have these Courses: " + str, "Not Available").ShowAsync();
-                        enrollmentView.IsPaneOpen = !enrollmentView.IsPaneOpen;
+                        else
+                        {
+                            violet.enroll(6, selectedCourseToEnroll);
+                            enrollmentView.IsPaneOpen = !enrollmentView.IsPaneOpen;
+                            getSemester(content);
+                        }
                     }
                     else
                     {
@@ -242,31 +434,27 @@ namespace RAMSS_v2
                         enrollmentView.IsPaneOpen = !enrollmentView.IsPaneOpen;
                         getSemester(content);
                     }
+
+
                 }
-                else
+                else if (comboBoxItem.Content.ToString().ToUpper().Equals("SEMESTER 7"))
                 {
-                    violet.enroll(6, selectedCourseToEnroll);
+                    await new MessageDialog("This Semester is not available for Enrollment", "Not Available").ShowAsync();
+                    //violet.enroll(7, selectedCourseToEnroll);
+                    enrollmentView.IsPaneOpen = !enrollmentView.IsPaneOpen;
+                    getSemester(content);
+
+                }
+                else if (comboBoxItem.Content.ToString().ToUpper().Equals("SEMESTER 8"))
+                {
+                    await new MessageDialog("This Semester is not available for Enrollment", "Not Available").ShowAsync();
+                    //violet.enroll(8, selectedCourseToEnroll);
                     enrollmentView.IsPaneOpen = !enrollmentView.IsPaneOpen;
                     getSemester(content);
                 }
-               
 
             }
-            else if (comboBoxItem.Content.ToString().ToUpper().Equals("SEMESTER 7"))
-            {
-                await new MessageDialog("This Semester is not available for Enrollment", "Not Available").ShowAsync();
-                //violet.enroll(7, selectedCourseToEnroll);
-                enrollmentView.IsPaneOpen = !enrollmentView.IsPaneOpen;
-                getSemester(content);
 
-            }
-            else if (comboBoxItem.Content.ToString().ToUpper().Equals("SEMESTER 8"))
-            {
-                await new MessageDialog("This Semester is not available for Enrollment", "Not Available").ShowAsync();
-                //violet.enroll(8, selectedCourseToEnroll);
-                enrollmentView.IsPaneOpen = !enrollmentView.IsPaneOpen;
-                getSemester(content);
-            }
         }
 
         private void semesterComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -957,6 +1145,286 @@ namespace RAMSS_v2
             R3C3.Text = "";
             R4C3.Text = "";
             R5C3.Text = "";
+        }
+
+        private async void taking1_Click(object sender, RoutedEventArgs e)
+        {
+            if (droppingCourseBool == true)
+            {
+                String droppingCode = R1C2.Text;
+                Course droppingCourse = new Course();
+                foreach (var match in violet.majorProgram.curriculum)
+                {
+                    if (match.code.Equals(droppingCode))
+                    {
+                        droppingCourse = match;
+                    }
+                }
+                if (content.ToUpper().Equals("SEMESTER 5"))
+                {
+                    System.Diagnostics.Debug.WriteLine("Found match: " + droppingCourse.code);
+                    violet.takingCoursesY3.Remove(new KeyValuePair<int, Course>(1, droppingCourse));
+                    violet.missingCoursesY3.Add(new KeyValuePair<int, Course>(1, droppingCourse));
+                    getSemester("SEMESTER 5");
+                    taking1.IsEnabled = !taking1.IsEnabled;
+                    taking2.IsEnabled = !taking2.IsEnabled;
+                    taking3.IsEnabled = !taking3.IsEnabled;
+                    taking4.IsEnabled = !taking4.IsEnabled;
+                    taking5.IsEnabled = !taking5.IsEnabled;
+                    await new MessageDialog("Course has been dropped", "Dropped").ShowAsync();
+                    droppingCourseBool = false;
+                }
+                else if (content.ToUpper().Equals("SEMESTER 6"))
+                {
+                    System.Diagnostics.Debug.WriteLine("Found match: " + droppingCourse.code);
+                    violet.takingCoursesY3.Remove(new KeyValuePair<int, Course>(2, droppingCourse));
+                    violet.missingCoursesY3.Add(new KeyValuePair<int, Course>(2, droppingCourse));
+                    getSemester("SEMESTER 6");
+                    taking1.IsEnabled = !taking1.IsEnabled;
+                    taking2.IsEnabled = !taking2.IsEnabled;
+                    taking3.IsEnabled = !taking3.IsEnabled;
+                    taking4.IsEnabled = !taking4.IsEnabled;
+                    taking5.IsEnabled = !taking5.IsEnabled;
+                    await new MessageDialog("Course has been dropped", "Dropped").ShowAsync();
+                    droppingCourseBool = false;
+                }
+            }
+            else if (swapingCourseBool == true)
+            {
+                String swapingCode = R1C2.Text;
+                foreach (var match in violet.majorProgram.curriculum)
+                {
+                    if (match.code.Equals(swapingCode))
+                    {
+                        swapingCourse = match;
+                    }
+                }
+                enrollmentView.IsPaneOpen = !enrollmentView.IsPaneOpen;
+            }
+        }
+
+        private async void taking2_Click(object sender, RoutedEventArgs e)
+        {
+            if (droppingCourseBool == true)
+            {
+                String droppingCode = R2C2.Text;
+                Course droppingCourse = new Course();
+                foreach (var match in violet.majorProgram.curriculum)
+                {
+                    if (match.code.Equals(droppingCode))
+                    {
+                        droppingCourse = match;
+                    }
+                }
+                if (content.ToUpper().Equals("SEMESTER 5"))
+                {
+                    System.Diagnostics.Debug.WriteLine("Found match: " + droppingCourse.code);
+                    violet.takingCoursesY3.Remove(new KeyValuePair<int, Course>(1, droppingCourse));
+                    violet.missingCoursesY3.Add(new KeyValuePair<int, Course>(1, droppingCourse));
+                    getSemester("SEMESTER 5");
+                    taking1.IsEnabled = !taking1.IsEnabled;
+                    taking2.IsEnabled = !taking2.IsEnabled;
+                    taking3.IsEnabled = !taking3.IsEnabled;
+                    taking4.IsEnabled = !taking4.IsEnabled;
+                    taking5.IsEnabled = !taking5.IsEnabled;
+                    await new MessageDialog("Course has been dropped", "Dropped").ShowAsync();
+                    droppingCourseBool = false;
+                }
+                else if (content.ToUpper().Equals("SEMESTER 6"))
+                {
+                    System.Diagnostics.Debug.WriteLine("Found match: " + droppingCourse.code);
+                    violet.takingCoursesY3.Remove(new KeyValuePair<int, Course>(2, droppingCourse));
+                    violet.missingCoursesY3.Add(new KeyValuePair<int, Course>(2, droppingCourse));
+                    getSemester("SEMESTER 6");
+                    taking1.IsEnabled = !taking1.IsEnabled;
+                    taking2.IsEnabled = !taking2.IsEnabled;
+                    taking3.IsEnabled = !taking3.IsEnabled;
+                    taking4.IsEnabled = !taking4.IsEnabled;
+                    taking5.IsEnabled = !taking5.IsEnabled;
+                    await new MessageDialog("Course has been dropped", "Dropped").ShowAsync();
+                    droppingCourseBool = false;
+                }
+            }
+            else if (swapingCourseBool == true)
+            {
+                String swapingCode = R2C2.Text;
+                foreach (var match in violet.majorProgram.curriculum)
+                {
+                    if (match.code.Equals(swapingCode))
+                    {
+                        swapingCourse = match;
+                    }
+                }
+                enrollmentView.IsPaneOpen = !enrollmentView.IsPaneOpen;
+            }
+        }
+
+        private async void taking3_Click(object sender, RoutedEventArgs e)
+        {
+            if (droppingCourseBool == true)
+            {
+                String droppingCode = R3C2.Text;
+                Course droppingCourse = new Course();
+                foreach (var match in violet.majorProgram.curriculum)
+                {
+                    if (match.code.Equals(droppingCode))
+                    {
+                        droppingCourse = match;
+                    }
+                }
+                if (content.ToUpper().Equals("SEMESTER 5"))
+                {
+                    System.Diagnostics.Debug.WriteLine("Found match: " + droppingCourse.code);
+                    violet.takingCoursesY3.Remove(new KeyValuePair<int, Course>(1, droppingCourse));
+                    violet.missingCoursesY3.Add(new KeyValuePair<int, Course>(1, droppingCourse));
+                    getSemester("SEMESTER 5");
+                    taking1.IsEnabled = !taking1.IsEnabled;
+                    taking2.IsEnabled = !taking2.IsEnabled;
+                    taking3.IsEnabled = !taking3.IsEnabled;
+                    taking4.IsEnabled = !taking4.IsEnabled;
+                    taking5.IsEnabled = !taking5.IsEnabled;
+                    await new MessageDialog("Course has been dropped", "Dropped").ShowAsync();
+                    droppingCourseBool = false;
+                }
+                else if (content.ToUpper().Equals("SEMESTER 6"))
+                {
+                    System.Diagnostics.Debug.WriteLine("Found match: " + droppingCourse.code);
+                    violet.takingCoursesY3.Remove(new KeyValuePair<int, Course>(2, droppingCourse));
+                    violet.missingCoursesY3.Add(new KeyValuePair<int, Course>(2, droppingCourse));
+                    getSemester("SEMESTER 6");
+                    taking1.IsEnabled = !taking1.IsEnabled;
+                    taking2.IsEnabled = !taking2.IsEnabled;
+                    taking3.IsEnabled = !taking3.IsEnabled;
+                    taking4.IsEnabled = !taking4.IsEnabled;
+                    taking5.IsEnabled = !taking5.IsEnabled;
+                    await new MessageDialog("Course has been dropped", "Dropped").ShowAsync();
+                    droppingCourseBool = false;
+                }
+            }
+            else if (swapingCourseBool == true)
+            {
+                String swapingCode = R3C2.Text;
+                foreach (var match in violet.majorProgram.curriculum)
+                {
+                    if (match.code.Equals(swapingCode))
+                    {
+                        swapingCourse = match;
+                    }
+                }
+                enrollmentView.IsPaneOpen = !enrollmentView.IsPaneOpen;
+            }
+        }
+
+        private async void taking4_Click(object sender, RoutedEventArgs e)
+        {
+            if (droppingCourseBool == true)
+            {
+                String droppingCode = R4C2.Text;
+                Course droppingCourse = new Course();
+                foreach (var match in violet.majorProgram.curriculum)
+                {
+                    if (match.code.Equals(droppingCode))
+                    {
+                        droppingCourse = match;
+                    }
+                }
+                if (content.ToUpper().Equals("SEMESTER 5"))
+                {
+                    System.Diagnostics.Debug.WriteLine("Found match: " + droppingCourse.code);
+                    violet.takingCoursesY3.Remove(new KeyValuePair<int, Course>(1, droppingCourse));
+                    violet.missingCoursesY3.Add(new KeyValuePair<int, Course>(1, droppingCourse));
+                    getSemester("SEMESTER 5");
+                    taking1.IsEnabled = !taking1.IsEnabled;
+                    taking2.IsEnabled = !taking2.IsEnabled;
+                    taking3.IsEnabled = !taking3.IsEnabled;
+                    taking4.IsEnabled = !taking4.IsEnabled;
+                    taking5.IsEnabled = !taking5.IsEnabled;
+                    await new MessageDialog("Course has been dropped", "Dropped").ShowAsync();
+                    droppingCourseBool = false;
+                }
+                else if (content.ToUpper().Equals("SEMESTER 6"))
+                {
+                    System.Diagnostics.Debug.WriteLine("Found match: " + droppingCourse.code);
+                    violet.takingCoursesY3.Remove(new KeyValuePair<int, Course>(2, droppingCourse));
+                    violet.missingCoursesY3.Add(new KeyValuePair<int, Course>(2, droppingCourse));
+                    getSemester("SEMESTER 6");
+                    taking1.IsEnabled = !taking1.IsEnabled;
+                    taking2.IsEnabled = !taking2.IsEnabled;
+                    taking3.IsEnabled = !taking3.IsEnabled;
+                    taking4.IsEnabled = !taking4.IsEnabled;
+                    taking5.IsEnabled = !taking5.IsEnabled;
+                    await new MessageDialog("Course has been dropped", "Dropped").ShowAsync();
+                    droppingCourseBool = false;
+                }
+            }
+            else if (swapingCourseBool == true)
+            {
+                String swapingCode = R4C2.Text;
+                foreach (var match in violet.majorProgram.curriculum)
+                {
+                    if (match.code.Equals(swapingCode))
+                    {
+                        swapingCourse = match;
+                    }
+                }
+                enrollmentView.IsPaneOpen = !enrollmentView.IsPaneOpen;
+            }
+        }
+
+        private async void taking5_Click(object sender, RoutedEventArgs e)
+        {
+            if (droppingCourseBool == true)
+            {
+                String droppingCode = R5C2.Text;
+                Course droppingCourse = new Course();
+                foreach (var match in violet.majorProgram.curriculum)
+                {
+                    if (match.code.Equals(droppingCode))
+                    {
+                        droppingCourse = match;
+                    }
+                }
+                if (content.ToUpper().Equals("SEMESTER 5"))
+                {
+                    System.Diagnostics.Debug.WriteLine("Found match: " + droppingCourse.code);
+                    violet.takingCoursesY3.Remove(new KeyValuePair<int, Course>(1, droppingCourse));
+                    violet.missingCoursesY3.Add(new KeyValuePair<int, Course>(1, droppingCourse));
+                    getSemester("SEMESTER 5");
+                    taking1.IsEnabled = !taking1.IsEnabled;
+                    taking2.IsEnabled = !taking2.IsEnabled;
+                    taking3.IsEnabled = !taking3.IsEnabled;
+                    taking4.IsEnabled = !taking4.IsEnabled;
+                    taking5.IsEnabled = !taking5.IsEnabled;
+                    await new MessageDialog("Course has been dropped", "Dropped").ShowAsync();
+                    droppingCourseBool = false;
+                }
+                else if (content.ToUpper().Equals("SEMESTER 6"))
+                {
+                    System.Diagnostics.Debug.WriteLine("Found match: " + droppingCourse.code);
+                    violet.takingCoursesY3.Remove(new KeyValuePair<int, Course>(2, droppingCourse));
+                    violet.missingCoursesY3.Add(new KeyValuePair<int, Course>(2, droppingCourse));
+                    getSemester("SEMESTER 6");
+                    taking1.IsEnabled = !taking1.IsEnabled;
+                    taking2.IsEnabled = !taking2.IsEnabled;
+                    taking3.IsEnabled = !taking3.IsEnabled;
+                    taking4.IsEnabled = !taking4.IsEnabled;
+                    taking5.IsEnabled = !taking5.IsEnabled;
+                    await new MessageDialog("Course has been dropped", "Dropped").ShowAsync();
+                    droppingCourseBool = false;
+                }
+            }
+            else if (swapingCourseBool == true)
+            {
+                String swapingCode = R5C2.Text;
+                foreach (var match in violet.majorProgram.curriculum)
+                {
+                    if (match.code.Equals(swapingCode))
+                    {
+                        swapingCourse = match;
+                    }
+                }
+                enrollmentView.IsPaneOpen = !enrollmentView.IsPaneOpen;
+            }
         }
     }
 }

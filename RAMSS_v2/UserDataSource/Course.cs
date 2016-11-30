@@ -27,6 +27,15 @@ namespace RAMSS_v2.UserDataSource
 
         public List<Course> prerequisites { get; set; }
         
+        public Course()
+        {
+            prerequisites = new List<Course>();
+            unit = 1.00;
+            missing = true;
+            taking = false;
+            completed = false;
+        }
+
         public Course(String code, String description, String location, String professor, String time, String dayOfTheWeek)
         {
             prerequisites = new List<Course>();
