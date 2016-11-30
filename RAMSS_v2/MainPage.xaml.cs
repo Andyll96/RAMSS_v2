@@ -29,14 +29,14 @@ namespace RAMSS_v2
     public sealed partial class MainPage : Page
     {
         SearchQueries squeries = new SearchQueries();
-        User violet;
+        public static User violet;
 
         public MainPage()
         {
             this.InitializeComponent();
 
             violet = new User();
-
+            
 
             ApplicationView.PreferredLaunchViewSize = new Size(1280, 720);
             ApplicationView.PreferredLaunchWindowingMode = ApplicationViewWindowingMode.PreferredLaunchViewSize;

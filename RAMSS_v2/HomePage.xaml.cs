@@ -24,7 +24,7 @@ namespace RAMSS_v2
     public sealed partial class HomePage : Page
     {
 
-        User violet;
+        public static User violet;
 
         public HomePage()
         {

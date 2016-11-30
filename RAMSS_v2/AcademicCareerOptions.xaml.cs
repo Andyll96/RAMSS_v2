@@ -23,7 +23,7 @@ namespace RAMSS_v2
     /// </summary>
     public sealed partial class AcademicCareerOptions : Page
     {
-        User violet;
+        public static User violet;
 
         public AcademicCareerOptions()
         {

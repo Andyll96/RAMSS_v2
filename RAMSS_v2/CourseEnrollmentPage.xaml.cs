@@ -25,7 +25,7 @@ namespace RAMSS_v2
     public sealed partial class CourseEnrollmentPage : Page
     {
 
-        User violet;
+        public static User violet;
         public List<Course> fullCurriculum;
         ComboBoxItem comboBoxItem;
         String content;
@@ -76,269 +76,60 @@ namespace RAMSS_v2
             var selectedCourseToEnroll = (Course)e.ClickedItem;
             System.Diagnostics.Debug.WriteLine("selected Item: " + selectedCourseToEnroll.code);
             System.Diagnostics.Debug.WriteLine("semester: " + comboBoxItem.Content.ToString());
-            if(comboBoxItem.Content.ToString().ToUpper().Equals("SEMESTER 1"))
+            if (comboBoxItem.Content.ToString().ToUpper().Equals("SEMESTER 1"))
             {
                 violet.enroll(1, selectedCourseToEnroll);
                 enrollmentView.IsPaneOpen = !enrollmentView.IsPaneOpen;
-                R1C2.Text = "";
-                R2C2.Text = "";
-                R3C2.Text = "";
-                R4C2.Text = "";
-                R5C2.Text = "";
-                foreach (var item in violet.takingCoursesY1)
-                {
-                    if(R1C2.Text == "" && item.Key == 1)
-                    {
-                        R1C2.Text += item.Value.code;
-                    }
-                    else if (R2C2.Text == "" && item.Key == 1)
-                    {
-                        R2C2.Text += item.Value.code;
-                    }
-                    else if (R3C2.Text == "" && item.Key == 1)
-                    {
-                        R3C2.Text += item.Value.code;
-                    }
-                    else if (R4C2.Text == "" && item.Key == 1)
-                    {
-                        R4C2.Text += item.Value.code;
-                    }
-                    else if (R5C2.Text == "" && item.Key == 1)
-                    {
-                        R5C2.Text += item.Value.code;
-                    }
-                }
+                getSemester(content);
             }
             else if (comboBoxItem.Content.ToString().ToUpper().Equals("SEMESTER 2"))
             {
                 violet.enroll(2, selectedCourseToEnroll);
                 enrollmentView.IsPaneOpen = !enrollmentView.IsPaneOpen;
-                R1C2.Text = "";
-                R2C2.Text = "";
-                R3C2.Text = "";
-                R4C2.Text = "";
-                R5C2.Text = "";
-                foreach (var item in violet.takingCoursesY1)
-                {
-                    if (R1C2.Text == "" && item.Key == 2)
-                    {
-                        R1C2.Text += item.Value.code;
-                    }
-                    else if (R2C2.Text == "" && item.Key == 2)
-                    {
-                        R2C2.Text += item.Value.code;
-                    }
-                    else if (R3C2.Text == "" && item.Key == 2)
-                    {
-                        R3C2.Text += item.Value.code;
-                    }
-                    else if (R4C2.Text == "" && item.Key == 2)
-                    {
-                        R4C2.Text += item.Value.code;
-                    }
-                    else if (R5C2.Text == "" && item.Key == 2)
-                    {
-                        R5C2.Text += item.Value.code;
-                    }
-                }
+                getSemester(content);
+
             }
             else if (comboBoxItem.Content.ToString().ToUpper().Equals("SEMESTER 3"))
             {
                 violet.enroll(3, selectedCourseToEnroll);
                 enrollmentView.IsPaneOpen = !enrollmentView.IsPaneOpen;
-                R1C2.Text = "";
-                R2C2.Text = "";
-                R3C2.Text = "";
-                R4C2.Text = "";
-                R5C2.Text = "";
-                foreach (var item in violet.takingCoursesY2)
-                {
-                    if (R1C2.Text == "" && item.Key == 1)
-                    {
-                        R1C2.Text += item.Value.code;
-                    }
-                    else if (R2C2.Text == "" && item.Key == 1)
-                    {
-                        R2C2.Text += item.Value.code;
-                    }
-                    else if (R3C2.Text == "" && item.Key == 1)
-                    {
-                        R3C2.Text += item.Value.code;
-                    }
-                    else if (R4C2.Text == "" && item.Key == 1)
-                    {
-                        R4C2.Text += item.Value.code;
-                    }
-                    else if (R5C2.Text == "" && item.Key == 1)
-                    {
-                        R5C2.Text += item.Value.code;
-                    }
-                }
+                getSemester(content);
+
             }
             else if (comboBoxItem.Content.ToString().ToUpper().Equals("SEMESTER 4"))
             {
                 violet.enroll(4, selectedCourseToEnroll);
                 enrollmentView.IsPaneOpen = !enrollmentView.IsPaneOpen;
-                R1C2.Text = "";
-                R2C2.Text = "";
-                R3C2.Text = "";
-                R4C2.Text = "";
-                R5C2.Text = "";
-                foreach (var item in violet.takingCoursesY2)
-                {
-                    if (R1C2.Text == "" && item.Key == 2)
-                    {
-                        R1C2.Text += item.Value.code;
-                    }
-                    else if (R2C2.Text == "" && item.Key == 2)
-                    {
-                        R2C2.Text += item.Value.code;
-                    }
-                    else if (R3C2.Text == "" && item.Key == 2)
-                    {
-                        R3C2.Text += item.Value.code;
-                    }
-                    else if (R4C2.Text == "" && item.Key == 2)
-                    {
-                        R4C2.Text += item.Value.code;
-                    }
-                    else if (R5C2.Text == "" && item.Key == 2)
-                    {
-                        R5C2.Text += item.Value.code;
-                    }
-                }
+                getSemester(content);
+
             }
             else if (comboBoxItem.Content.ToString().ToUpper().Equals("SEMESTER 5"))
             {
                 violet.enroll(5, selectedCourseToEnroll);
                 enrollmentView.IsPaneOpen = !enrollmentView.IsPaneOpen;
-                R1C2.Text = "";
-                R2C2.Text = "";
-                R3C2.Text = "";
-                R4C2.Text = "";
-                R5C2.Text = "";
-                foreach (var item in violet.takingCoursesY3)
-                {
-                    if (R1C2.Text == "" && item.Key == 1)
-                    {
-                        R1C2.Text += item.Value.code;
-                    }
-                    else if (R2C2.Text == "" && item.Key == 1)
-                    {
-                        R2C2.Text += item.Value.code;
-                    }
-                    else if (R3C2.Text == "" && item.Key == 1)
-                    {
-                        R3C2.Text += item.Value.code;
-                    }
-                    else if (R4C2.Text == "" && item.Key == 1)
-                    {
-                        R4C2.Text += item.Value.code;
-                    }
-                    else if (R5C2.Text == "" && item.Key == 1)
-                    {
-                        R5C2.Text += item.Value.code;
-                    }
-                }
+                getSemester(content);
+
+
             }
             else if (comboBoxItem.Content.ToString().ToUpper().Equals("SEMESTER 6"))
             {
                 violet.enroll(6, selectedCourseToEnroll);
                 enrollmentView.IsPaneOpen = !enrollmentView.IsPaneOpen;
-                R1C2.Text = "";
-                R2C2.Text = "";
-                R3C2.Text = "";
-                R4C2.Text = "";
-                R5C2.Text = "";
-                foreach (var item in violet.takingCoursesY3)
-                {
-                    if (R1C2.Text == "" && item.Key == 2)
-                    {
-                        R1C2.Text += item.Value.code;
-                    }
-                    else if (R2C2.Text == "" && item.Key == 2)
-                    {
-                        R2C2.Text += item.Value.code;
-                    }
-                    else if (R3C2.Text == "" && item.Key == 2)
-                    {
-                        R3C2.Text += item.Value.code;
-                    }
-                    else if (R4C2.Text == "" && item.Key == 2)
-                    {
-                        R4C2.Text += item.Value.code;
-                    }
-                    else if (R5C2.Text == "" && item.Key == 2)
-                    {
-                        R5C2.Text += item.Value.code;
-                    }
-                }
+                getSemester(content);
+
             }
             else if (comboBoxItem.Content.ToString().ToUpper().Equals("SEMESTER 7"))
             {
                 violet.enroll(7, selectedCourseToEnroll);
                 enrollmentView.IsPaneOpen = !enrollmentView.IsPaneOpen;
-                R1C2.Text = "";
-                R2C2.Text = "";
-                R3C2.Text = "";
-                R4C2.Text = "";
-                R5C2.Text = "";
-                foreach (var item in violet.takingCoursesY4)
-                {
-                    if (R1C2.Text == "" && item.Key == 1)
-                    {
-                        R1C2.Text += item.Value.code;
-                    }
-                    else if (R2C2.Text == "" && item.Key == 1)
-                    {
-                        R2C2.Text += item.Value.code;
-                    }
-                    else if (R3C2.Text == "" && item.Key == 1)
-                    {
-                        R3C2.Text += item.Value.code;
-                    }
-                    else if (R4C2.Text == "" && item.Key == 1)
-                    {
-                        R4C2.Text += item.Value.code;
-                    }
-                    else if (R5C2.Text == "" && item.Key == 1)
-                    {
-                        R5C2.Text += item.Value.code;
-                    }
-                }
+                getSemester(content);
+
             }
             else if (comboBoxItem.Content.ToString().ToUpper().Equals("SEMESTER 8"))
             {
                 violet.enroll(8, selectedCourseToEnroll);
                 enrollmentView.IsPaneOpen = !enrollmentView.IsPaneOpen;
-                R1C2.Text = "";
-                R2C2.Text = "";
-                R3C2.Text = "";
-                R4C2.Text = "";
-                R5C2.Text = "";
-                foreach (var item in violet.takingCoursesY4)
-                {
-                    if (R1C2.Text == "" && item.Key == 2)
-                    {
-                        R1C2.Text += item.Value.code;
-                    }
-                    else if (R2C2.Text == "" && item.Key == 2)
-                    {
-                        R2C2.Text += item.Value.code;
-                    }
-                    else if (R3C2.Text == "" && item.Key == 2)
-                    {
-                        R3C2.Text += item.Value.code;
-                    }
-                    else if (R4C2.Text == "" && item.Key == 2)
-                    {
-                        R4C2.Text += item.Value.code;
-                    }
-                    else if (R5C2.Text == "" && item.Key == 2)
-                    {
-                        R5C2.Text += item.Value.code;
-                    }
-                }
+                getSemester(content);
             }
         }
 
@@ -355,21 +146,28 @@ namespace RAMSS_v2
 
         public void getSemester(string semester)
         {
+            printMissing(semester);
+            printTaking(semester);
+            printCompleted(semester);
+        }
+
+        private void printMissing(string semester)
+        {
             switch (semester.ToUpper())
             {
-                case ("SEMESTER 1"):  
-                    clearTextBoxes();
-                    foreach (var season in violet.majorProgram.year1)
+                case ("SEMESTER 1"):
+                    clearMissingColumn();
+                    foreach (var sem in violet.majorProgram.year1)
                     {
-                        if(season.Key == 1)
+                        if (sem.Key == 1) //If year 1 semester 1
                         {
-                            foreach (var course in season.Value.courseList)
+                            foreach (var course in sem.Value.courseList)
                             {
-                                if(course.missing == true)
+                                if (course.missing == true)
                                 {
-                                    if(R1C1.Text == "")
+                                    if (R1C1.Text == "")
                                         R1C1.Text = course.code;
-                                    else if(R2C1.Text == "")
+                                    else if (R2C1.Text == "")
                                         R2C1.Text = course.code;
                                     else if (R3C1.Text == "")
                                         R3C1.Text = course.code;
@@ -378,44 +176,17 @@ namespace RAMSS_v2
                                     else if (R5C1.Text == "")
                                         R5C1.Text = course.code;
                                 }
-                                else if (course.taking == true)
-                                {
-                                    if (R1C2.Text == "")
-                                        R1C2.Text = course.code;
-                                    else if (R2C2.Text == "")
-                                        R2C2.Text = course.code;
-                                    else if (R3C2.Text == "")
-                                        R3C2.Text = course.code;
-                                    else if (R4C2.Text == "")
-                                        R4C2.Text = course.code;
-                                    else if (R5C2.Text == "")
-                                        R5C2.Text = course.code;
-                                }
-                                else if (course.completed == true)
-                                {
-                                    if (R1C3.Text == "")
-                                        R1C3.Text = course.code;
-                                    else if (R2C3.Text == "")
-                                        R2C3.Text = course.code;
-                                    else if (R3C3.Text == "")
-                                        R3C3.Text = course.code;
-                                    else if (R4C3.Text == "")
-                                        R4C3.Text = course.code;
-                                    else if (R5C3.Text == "")
-                                        R5C3.Text = course.code;
-                                }
                             }
                         }
                     }
-                    return;
+                    break;
                 case ("SEMESTER 2"):
-                    clearTextBoxes();
-
-                    foreach (var season in violet.majorProgram.year1)
+                    clearMissingColumn();
+                    foreach (var sem in violet.majorProgram.year1)
                     {
-                        if (season.Key == 2)
+                        if (sem.Key == 2) //If year 1 semester 2
                         {
-                            foreach (var course in season.Value.courseList)
+                            foreach (var course in sem.Value.courseList)
                             {
                                 if (course.missing == true)
                                 {
@@ -430,43 +201,17 @@ namespace RAMSS_v2
                                     else if (R5C1.Text == "")
                                         R5C1.Text = course.code;
                                 }
-                                else if (course.taking == true)
-                                {
-                                    if (R1C2.Text == "")
-                                        R1C2.Text = course.code;
-                                    else if (R2C2.Text == "")
-                                        R2C2.Text = course.code;
-                                    else if (R3C2.Text == "")
-                                        R3C2.Text = course.code;
-                                    else if (R4C2.Text == "")
-                                        R4C2.Text = course.code;
-                                    else if (R5C2.Text == "")
-                                        R5C2.Text = course.code;
-                                }
-                                else if (course.completed == true)
-                                {
-                                    if (R1C3.Text == "")
-                                        R1C3.Text = course.code;
-                                    else if (R2C3.Text == "")
-                                        R2C3.Text = course.code;
-                                    else if (R3C3.Text == "")
-                                        R3C3.Text = course.code;
-                                    else if (R4C3.Text == "")
-                                        R4C3.Text = course.code;
-                                    else if (R5C3.Text == "")
-                                        R5C3.Text = course.code;
-                                }
                             }
                         }
                     }
-                    return;
+                    break;
                 case ("SEMESTER 3"):
-                    clearTextBoxes();
-                    foreach (var season in violet.majorProgram.year2)
+                    clearMissingColumn();
+                    foreach (var sem in violet.majorProgram.year2)
                     {
-                        if (season.Key == 1)
+                        if (sem.Key == 1) //If year 2 semester 1
                         {
-                            foreach (var course in season.Value.courseList)
+                            foreach (var course in sem.Value.courseList)
                             {
                                 if (course.missing == true)
                                 {
@@ -481,43 +226,17 @@ namespace RAMSS_v2
                                     else if (R5C1.Text == "")
                                         R5C1.Text = course.code;
                                 }
-                                else if (course.taking == true)
-                                {
-                                    if (R1C2.Text == "")
-                                        R1C2.Text = course.code;
-                                    else if (R2C2.Text == "")
-                                        R2C2.Text = course.code;
-                                    else if (R3C2.Text == "")
-                                        R3C2.Text = course.code;
-                                    else if (R4C2.Text == "")
-                                        R4C2.Text = course.code;
-                                    else if (R5C2.Text == "")
-                                        R5C2.Text = course.code;
-                                }
-                                else if (course.completed == true)
-                                {
-                                    if (R1C3.Text == "")
-                                        R1C3.Text = course.code;
-                                    else if (R2C3.Text == "")
-                                        R2C3.Text = course.code;
-                                    else if (R3C3.Text == "")
-                                        R3C3.Text = course.code;
-                                    else if (R4C3.Text == "")
-                                        R4C3.Text = course.code;
-                                    else if (R5C3.Text == "")
-                                        R5C3.Text = course.code;
-                                }
                             }
                         }
                     }
-                    return;
+                    break;
                 case ("SEMESTER 4"):
-                    clearTextBoxes();
-                    foreach (var season in violet.majorProgram.year2)
+                    clearMissingColumn();
+                    foreach (var sem in violet.majorProgram.year2)
                     {
-                        if (season.Key == 2)
+                        if (sem.Key == 2) //If year 2 semester 2
                         {
-                            foreach (var course in season.Value.courseList)
+                            foreach (var course in sem.Value.courseList)
                             {
                                 if (course.missing == true)
                                 {
@@ -532,43 +251,17 @@ namespace RAMSS_v2
                                     else if (R5C1.Text == "")
                                         R5C1.Text = course.code;
                                 }
-                                else if (course.taking == true)
-                                {
-                                    if (R1C2.Text == "")
-                                        R1C2.Text = course.code;
-                                    else if (R2C2.Text == "")
-                                        R2C2.Text = course.code;
-                                    else if (R3C2.Text == "")
-                                        R3C2.Text = course.code;
-                                    else if (R4C2.Text == "")
-                                        R4C2.Text = course.code;
-                                    else if (R5C2.Text == "")
-                                        R5C2.Text = course.code;
-                                }
-                                else if (course.completed == true)
-                                {
-                                    if (R1C3.Text == "")
-                                        R1C3.Text = course.code;
-                                    else if (R2C3.Text == "")
-                                        R2C3.Text = course.code;
-                                    else if (R3C3.Text == "")
-                                        R3C3.Text = course.code;
-                                    else if (R4C3.Text == "")
-                                        R4C3.Text = course.code;
-                                    else if (R5C3.Text == "")
-                                        R5C3.Text = course.code;
-                                }
                             }
                         }
                     }
-                    return;
+                    break;
                 case ("SEMESTER 5"):
-                    clearTextBoxes();
-                    foreach (var season in violet.majorProgram.year3)
+                    clearMissingColumn();
+                    foreach (var sem in violet.majorProgram.year3)
                     {
-                        if (season.Key == 1)
+                        if (sem.Key == 1) //If year 3 semester 1
                         {
-                            foreach (var course in season.Value.courseList)
+                            foreach (var course in sem.Value.courseList)
                             {
                                 if (course.missing == true)
                                 {
@@ -583,43 +276,17 @@ namespace RAMSS_v2
                                     else if (R5C1.Text == "")
                                         R5C1.Text = course.code;
                                 }
-                                else if (course.taking == true)
-                                {
-                                    if (R1C2.Text == "")
-                                        R1C2.Text = course.code;
-                                    else if (R2C2.Text == "")
-                                        R2C2.Text = course.code;
-                                    else if (R3C2.Text == "")
-                                        R3C2.Text = course.code;
-                                    else if (R4C2.Text == "")
-                                        R4C2.Text = course.code;
-                                    else if (R5C2.Text == "")
-                                        R5C2.Text = course.code;
-                                }
-                                else if (course.completed == true)
-                                {
-                                    if (R1C3.Text == "")
-                                        R1C3.Text = course.code;
-                                    else if (R2C3.Text == "")
-                                        R2C3.Text = course.code;
-                                    else if (R3C3.Text == "")
-                                        R3C3.Text = course.code;
-                                    else if (R4C3.Text == "")
-                                        R4C3.Text = course.code;
-                                    else if (R5C3.Text == "")
-                                        R5C3.Text = course.code;
-                                }
                             }
                         }
                     }
-                    return;
+                    break;
                 case ("SEMESTER 6"):
-                    clearTextBoxes();
-                    foreach (var season in violet.majorProgram.year3)
+                    clearMissingColumn();
+                    foreach (var sem in violet.majorProgram.year3)
                     {
-                        if (season.Key == 2)
+                        if (sem.Key == 2) //If year 3 semester 2
                         {
-                            foreach (var course in season.Value.courseList)
+                            foreach (var course in sem.Value.courseList)
                             {
                                 if (course.missing == true)
                                 {
@@ -634,43 +301,17 @@ namespace RAMSS_v2
                                     else if (R5C1.Text == "")
                                         R5C1.Text = course.code;
                                 }
-                                else if (course.taking == true)
-                                {
-                                    if (R1C2.Text == "")
-                                        R1C2.Text = course.code;
-                                    else if (R2C2.Text == "")
-                                        R2C2.Text = course.code;
-                                    else if (R3C2.Text == "")
-                                        R3C2.Text = course.code;
-                                    else if (R4C2.Text == "")
-                                        R4C2.Text = course.code;
-                                    else if (R5C2.Text == "")
-                                        R5C2.Text = course.code;
-                                }
-                                else if (course.completed == true)
-                                {
-                                    if (R1C3.Text == "")
-                                        R1C3.Text = course.code;
-                                    else if (R2C3.Text == "")
-                                        R2C3.Text = course.code;
-                                    else if (R3C3.Text == "")
-                                        R3C3.Text = course.code;
-                                    else if (R4C3.Text == "")
-                                        R4C3.Text = course.code;
-                                    else if (R5C3.Text == "")
-                                        R5C3.Text = course.code;
-                                }
                             }
                         }
                     }
-                    return;
+                    break;
                 case ("SEMESTER 7"):
-                    clearTextBoxes();
-                    foreach (var season in violet.majorProgram.year4)
+                    clearMissingColumn();
+                    foreach (var sem in violet.majorProgram.year4)
                     {
-                        if (season.Key == 1)
+                        if (sem.Key == 1) //If year 4 semester 1
                         {
-                            foreach (var course in season.Value.courseList)
+                            foreach (var course in sem.Value.courseList)
                             {
                                 if (course.missing == true)
                                 {
@@ -685,43 +326,17 @@ namespace RAMSS_v2
                                     else if (R5C1.Text == "")
                                         R5C1.Text = course.code;
                                 }
-                                else if (course.taking == true)
-                                {
-                                    if (R1C2.Text == "")
-                                        R1C2.Text = course.code;
-                                    else if (R2C2.Text == "")
-                                        R2C2.Text = course.code;
-                                    else if (R3C2.Text == "")
-                                        R3C2.Text = course.code;
-                                    else if (R4C2.Text == "")
-                                        R4C2.Text = course.code;
-                                    else if (R5C2.Text == "")
-                                        R5C2.Text = course.code;
-                                }
-                                else if (course.completed == true)
-                                {
-                                    if (R1C3.Text == "")
-                                        R1C3.Text = course.code;
-                                    else if (R2C3.Text == "")
-                                        R2C3.Text = course.code;
-                                    else if (R3C3.Text == "")
-                                        R3C3.Text = course.code;
-                                    else if (R4C3.Text == "")
-                                        R4C3.Text = course.code;
-                                    else if (R5C3.Text == "")
-                                        R5C3.Text = course.code;
-                                }
                             }
                         }
                     }
-                    return;
+                    break;
                 case ("SEMESTER 8"):
-                    clearTextBoxes();
-                    foreach (var season in violet.majorProgram.year4)
+                    clearMissingColumn();
+                    foreach (var sem in violet.majorProgram.year4)
                     {
-                        if (season.Key == 2)
+                        if (sem.Key == 2) //If year 4 semester 2
                         {
-                            foreach (var course in season.Value.courseList)
+                            foreach (var course in sem.Value.courseList)
                             {
                                 if (course.missing == true)
                                 {
@@ -736,51 +351,253 @@ namespace RAMSS_v2
                                     else if (R5C1.Text == "")
                                         R5C1.Text = course.code;
                                 }
-                                else if (course.taking == true)
-                                {
-                                    if (R1C2.Text == "")
-                                        R1C2.Text = course.code;
-                                    else if (R2C2.Text == "")
-                                        R2C2.Text = course.code;
-                                    else if (R3C2.Text == "")
-                                        R3C2.Text = course.code;
-                                    else if (R4C2.Text == "")
-                                        R4C2.Text = course.code;
-                                    else if (R5C2.Text == "")
-                                        R5C2.Text = course.code;
-                                }
-                                else if (course.completed == true)
-                                {
-                                    if (R1C3.Text == "")
-                                        R1C3.Text = course.code;
-                                    else if (R2C3.Text == "")
-                                        R2C3.Text = course.code;
-                                    else if (R3C3.Text == "")
-                                        R3C3.Text = course.code;
-                                    else if (R4C3.Text == "")
-                                        R4C3.Text = course.code;
-                                    else if (R5C3.Text == "")
-                                        R5C3.Text = course.code;
-                                }
                             }
                         }
                     }
-                    return;
+                    break;
             }
         }
 
-        private void clearTextBoxes()
+        private void printTaking(string semester)
+        {
+            switch (semester.ToUpper())
+            {
+                case ("SEMESTER 1"):
+                    clearTakingColumn();
+                    foreach (var sem in violet.takingCoursesY1)
+                    {
+                        if (R1C2.Text == "" && sem.Key == 1)
+                        {
+                            R1C2.Text += sem.Value.code;
+                        }
+                        else if (R2C2.Text == "" && sem.Key == 1)
+                        {
+                            R2C2.Text += sem.Value.code;
+                        }
+                        else if (R3C2.Text == "" && sem.Key == 1)
+                        {
+                            R3C2.Text += sem.Value.code;
+                        }
+                        else if (R4C2.Text == "" && sem.Key == 1)
+                        {
+                            R4C2.Text += sem.Value.code;
+                        }
+                        else if (R5C2.Text == "" && sem.Key == 1)
+                        {
+                            R5C2.Text += sem.Value.code;
+                        }
+                    }
+                    break;
+                case ("SEMESTER 2"):
+                    clearTakingColumn();
+                    foreach (var sem in violet.takingCoursesY1)
+                    {
+                        if (R1C2.Text == "" && sem.Key == 2)
+                        {
+                            R1C2.Text += sem.Value.code;
+                        }
+                        else if (R2C2.Text == "" && sem.Key == 2)
+                        {
+                            R2C2.Text += sem.Value.code;
+                        }
+                        else if (R3C2.Text == "" && sem.Key == 2)
+                        {
+                            R3C2.Text += sem.Value.code;
+                        }
+                        else if (R4C2.Text == "" && sem.Key == 2)
+                        {
+                            R4C2.Text += sem.Value.code;
+                        }
+                        else if (R5C2.Text == "" && sem.Key == 2)
+                        {
+                            R5C2.Text += sem.Value.code;
+                        }
+                    }
+                    break;
+                case ("SEMESTER 3"):
+                    clearTakingColumn();
+                    foreach (var sem in violet.takingCoursesY2)
+                    {
+                        if (R1C2.Text == "" && sem.Key == 1)
+                        {
+                            R1C2.Text += sem.Value.code;
+                        }
+                        else if (R2C2.Text == "" && sem.Key == 1)
+                        {
+                            R2C2.Text += sem.Value.code;
+                        }
+                        else if (R3C2.Text == "" && sem.Key == 1)
+                        {
+                            R3C2.Text += sem.Value.code;
+                        }
+                        else if (R4C2.Text == "" && sem.Key == 1)
+                        {
+                            R4C2.Text += sem.Value.code;
+                        }
+                        else if (R5C2.Text == "" && sem.Key == 1)
+                        {
+                            R5C2.Text += sem.Value.code;
+                        }
+                    }
+                    break;
+                case ("SEMESTER 4"):
+                    clearTakingColumn();
+                    foreach (var sem in violet.takingCoursesY2)
+                    {
+                        if (R1C2.Text == "" && sem.Key == 2)
+                        {
+                            R1C2.Text += sem.Value.code;
+                        }
+                        else if (R2C2.Text == "" && sem.Key == 2)
+                        {
+                            R2C2.Text += sem.Value.code;
+                        }
+                        else if (R3C2.Text == "" && sem.Key == 2)
+                        {
+                            R3C2.Text += sem.Value.code;
+                        }
+                        else if (R4C2.Text == "" && sem.Key == 2)
+                        {
+                            R4C2.Text += sem.Value.code;
+                        }
+                        else if (R5C2.Text == "" && sem.Key == 2)
+                        {
+                            R5C2.Text += sem.Value.code;
+                        }
+                    }
+                    break;
+                case ("SEMESTER 5"):
+                    clearTakingColumn();
+                    foreach (var sem in violet.takingCoursesY3)
+                    {
+                        if (R1C2.Text == "" && sem.Key == 1)
+                        {
+                            R1C2.Text += sem.Value.code;
+                        }
+                        else if (R2C2.Text == "" && sem.Key == 1)
+                        {
+                            R2C2.Text += sem.Value.code;
+                        }
+                        else if (R3C2.Text == "" && sem.Key == 1)
+                        {
+                            R3C2.Text += sem.Value.code;
+                        }
+                        else if (R4C2.Text == "" && sem.Key == 1)
+                        {
+                            R4C2.Text += sem.Value.code;
+                        }
+                        else if (R5C2.Text == "" && sem.Key == 1)
+                        {
+                            R5C2.Text += sem.Value.code;
+                        }
+                    }
+                    break;
+                case ("SEMESTER 6"):
+                    clearTakingColumn();
+                    foreach (var sem in violet.takingCoursesY3)
+                    {
+                        if (R1C2.Text == "" && sem.Key == 2)
+                        {
+                            R1C2.Text += sem.Value.code;
+                        }
+                        else if (R2C2.Text == "" && sem.Key == 2)
+                        {
+                            R2C2.Text += sem.Value.code;
+                        }
+                        else if (R3C2.Text == "" && sem.Key == 2)
+                        {
+                            R3C2.Text += sem.Value.code;
+                        }
+                        else if (R4C2.Text == "" && sem.Key == 2)
+                        {
+                            R4C2.Text += sem.Value.code;
+                        }
+                        else if (R5C2.Text == "" && sem.Key == 2)
+                        {
+                            R5C2.Text += sem.Value.code;
+                        }
+                    }
+                    break;
+                case ("SEMESTER 7"):
+                    clearTakingColumn();
+                    foreach (var sem in violet.takingCoursesY4)
+                    {
+                        if (R1C2.Text == "" && sem.Key == 1)
+                        {
+                            R1C2.Text += sem.Value.code;
+                        }
+                        else if (R2C2.Text == "" && sem.Key == 1)
+                        {
+                            R2C2.Text += sem.Value.code;
+                        }
+                        else if (R3C2.Text == "" && sem.Key == 1)
+                        {
+                            R3C2.Text += sem.Value.code;
+                        }
+                        else if (R4C2.Text == "" && sem.Key == 1)
+                        {
+                            R4C2.Text += sem.Value.code;
+                        }
+                        else if (R5C2.Text == "" && sem.Key == 1)
+                        {
+                            R5C2.Text += sem.Value.code;
+                        }
+                    }
+                    break;
+                case ("SEMESTER 8"):
+                    clearTakingColumn();
+                    foreach (var sem in violet.takingCoursesY4)
+                    {
+                        if (R1C2.Text == "" && sem.Key == 2)
+                        {
+                            R1C2.Text += sem.Value.code;
+                        }
+                        else if (R2C2.Text == "" && sem.Key == 2)
+                        {
+                            R2C2.Text += sem.Value.code;
+                        }
+                        else if (R3C2.Text == "" && sem.Key == 2)
+                        {
+                            R3C2.Text += sem.Value.code;
+                        }
+                        else if (R4C2.Text == "" && sem.Key == 2)
+                        {
+                            R4C2.Text += sem.Value.code;
+                        }
+                        else if (R5C2.Text == "" && sem.Key == 2)
+                        {
+                            R5C2.Text += sem.Value.code;
+                        }
+                    }
+                    break;
+            }
+        }
+
+        private void printCompleted(string semester)
+        {
+
+        }
+
+        private void clearMissingColumn()
         {
             R1C1.Text = "";
             R2C1.Text = "";
             R3C1.Text = "";
             R4C1.Text = "";
             R5C1.Text = "";
+        }
+
+        private void clearTakingColumn()
+        {
             R1C2.Text = "";
             R2C2.Text = "";
             R3C2.Text = "";
             R4C2.Text = "";
             R5C2.Text = "";
+        }
+
+        private void clearCompletedColumn()
+        {
             R1C3.Text = "";
             R2C3.Text = "";
             R3C3.Text = "";
