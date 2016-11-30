@@ -43,11 +43,11 @@ namespace RAMSS_v2
             {
                 if(count%2 == 0)
                 {
-                    Y1Missing.Text += missingCourse.code + "\n";
+                    Y1Missing.Text += missingCourse.Value.code + "\n";
                 }
                 else if(count%2 != 0)
                 {
-                    Y1Missing.Text += missingCourse.code + "\t\t";
+                    Y1Missing.Text += missingCourse.Value.code + "\t\t";
                 }
                 count++;
             }
@@ -56,11 +56,11 @@ namespace RAMSS_v2
             {
                 if (count % 2 == 0)
                 {
-                    Y2Missing.Text += missingCourse.code + "\n";
+                    Y2Missing.Text += missingCourse.Value.code + "\n";
                 }
                 else if (count % 2 != 0)
                 {
-                    Y2Missing.Text += missingCourse.code + "\t\t";
+                    Y2Missing.Text += missingCourse.Value.code + "\t\t";
                 }
                 count++;
             }
@@ -69,11 +69,11 @@ namespace RAMSS_v2
             {
                 if (count % 2 == 0)
                 {
-                    Y3Missing.Text += missingCourse.code + "\n";
+                    Y3Missing.Text += missingCourse.Value.code + "\n";
                 }
                 else if (count % 2 != 0)
                 {
-                    Y3Missing.Text += missingCourse.code + "\t\t";
+                    Y3Missing.Text += missingCourse.Value.code + "\t\t";
                 }
                 count++;
             }
@@ -82,11 +82,11 @@ namespace RAMSS_v2
             {
                 if (count % 2 == 0)
                 {
-                    Y4Missing.Text += missingCourse.code + "\n";
+                    Y4Missing.Text += missingCourse.Value.code + "\n";
                 }
                 else if (count % 2 != 0)
                 {
-                    Y4Missing.Text += missingCourse.code + "\t\t";
+                    Y4Missing.Text += missingCourse.Value.code + "\t\t";
                 }
                 count++;
             }
@@ -95,11 +95,11 @@ namespace RAMSS_v2
             {
                 if (count % 2 == 0)
                 {
-                    Y1Completed.Text += completedCourse.code + "\n";
+                    Y1Completed.Text += completedCourse.Value.code + "\n";
                 }
                 else if (count % 2 != 0)
                 {
-                    Y1Completed.Text += completedCourse.code + "\t\t";
+                    Y1Completed.Text += completedCourse.Value.code + "\t\t";
                 }
                 count++;
             }
@@ -108,11 +108,11 @@ namespace RAMSS_v2
             {
                 if (count % 2 == 0)
                 {
-                    Y2Completed.Text += completedCourse.code + "\n";
+                    Y2Completed.Text += completedCourse.Value.code + "\n";
                 }
                 else if (count % 2 != 0)
                 {
-                    Y2Completed.Text += completedCourse.code + "\t\t";
+                    Y2Completed.Text += completedCourse.Value.code + "\t\t";
                 }
                 count++;
             }
@@ -121,11 +121,11 @@ namespace RAMSS_v2
             {
                 if (count % 2 == 0)
                 {
-                    Y3Completed.Text += completedCourse.code + "\n";
+                    Y3Completed.Text += completedCourse.Value.code + "\n";
                 }
                 else if (count % 2 != 0)
                 {
-                    Y3Completed.Text += completedCourse.code + "\t\t";
+                    Y3Completed.Text += completedCourse.Value.code + "\t\t";
                 }
                 count++;
             }
@@ -134,11 +134,11 @@ namespace RAMSS_v2
             {
                 if (count % 2 == 0)
                 {
-                    Y4Completed.Text += completedCourse.code + "\n";
+                    Y4Completed.Text += completedCourse.Value.code + "\n";
                 }
                 else if (count % 2 != 0)
                 {
-                    Y4Completed.Text += completedCourse.code + "\t\t";
+                    Y4Completed.Text += completedCourse.Value.code + "\t\t";
                 }
                 count++;
             }

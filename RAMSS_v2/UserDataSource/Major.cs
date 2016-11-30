@@ -129,7 +129,18 @@ namespace RAMSS_v2.UserDataSource
             sem3Course3.prerequisites.Add(sem2Course1);
             sem3Course4 = new Course("MTH110", "Discrete Mathematics I", "ENG 369", "n/a", "4:00pm", "Thursday");
             sem3Course5 = new Course("PRL001", "PROFESSIONALLY RELATED 1", "ENG 159", "n/a", "7:00pm", "Friday");
-            
+
+            sem3Course1.missing = false;
+            sem3Course2.missing = false;
+            sem3Course3.missing = false;
+            sem3Course4.missing = false;
+            sem3Course5.missing = false;
+            sem3Course1.completed = true;
+            sem3Course2.completed = true;
+            sem3Course3.completed = true;
+            sem3Course4.completed = true;
+            sem3Course5.completed = true;
+
             sem4Course1 = new Course("CPS406", "Introduction to Software Engineering", "ENG 123", "n/a", "8:00am", "Monday");
             sem4Course1.prerequisites.Add(sem2Course1);
             sem4Course2 = new Course("CPS412", "Social Issues and Professional Practice", "ENG 147", "n/a", "10:00am", "Tuesday");
@@ -137,6 +148,17 @@ namespace RAMSS_v2.UserDataSource
             sem4Course4 = new Course("CPS590", "Introduction to Operating Systems", "ENG 369", "n/a", "4:00pm", "Thursday");
             sem4Course4.prerequisites.Add(sem2Course3);
             sem4Course5 = new Course("PRL002", "PROFESSIONALLY RELATED 2", "ENG 159", "n/a", "7:00pm", "Friday");
+
+            sem4Course1.missing = false;
+            sem4Course2.missing = false;
+            sem4Course3.missing = false;
+            sem4Course4.missing = false;
+            sem4Course5.missing = false;
+            sem4Course1.completed = true;
+            sem4Course2.completed = true;
+            sem4Course3.completed = true;
+            sem4Course4.completed = true;
+            sem4Course5.completed = true;
 
             sem5Course1 = new Course("CPS510", "Database Systems I", "ENG 123", "n/a", "8:00am", "Monday");
             sem5Course1.prerequisites.Add(sem3Course2);

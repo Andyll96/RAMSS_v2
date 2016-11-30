@@ -48,5 +48,10 @@ namespace RAMSS_v2.UserDataSource
             String[] info = { code, description, time, location, professor };
             return info;
         }
+
+        public static implicit operator List<object>(Course v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
