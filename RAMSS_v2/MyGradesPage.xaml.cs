@@ -97,6 +97,58 @@ namespace RAMSS_v2
             }
         }
 
+        private double getGrade2(String grade, ref int leCounter)
+        {
+            switch (grade)
+            {
+                case ("A+"):
+                    leCounter++;
+                    return 4.33;
+                case ("A"):
+                    leCounter++;
+                    return 4;
+                case ("A-"):
+                    leCounter++;
+                    return 3.67;
+                case ("B+"):
+                    leCounter++;
+                    return 3.33;
+                case ("B"):
+                    leCounter++;
+                    return 3.00;
+                case ("B-"):
+                    leCounter++;
+                    return 2.67;
+                case ("C+"):
+                    leCounter++;
+                    return 2.33;
+                case ("C"):
+                    leCounter++;
+                    return 2.00;
+                case ("C-"):
+                    leCounter++;
+                    return 1.67;
+                case ("D+"):
+                    leCounter++;
+                    return 1.33;
+                case ("D"):
+                    leCounter++;
+                    return 1.00;
+                case ("D-"):
+                    leCounter++;
+                    return 0.67;
+                case ("F"):
+                    leCounter++;
+                    return 0;
+                case (""):
+                    leCounter--;
+                    return 0;
+                default:
+                    leCounter = 0;
+                    return -1;
+            }
+        }
+
         private void recalculateGrade()
         {
             System.Diagnostics.Debug.WriteLine("Class 1:" + class1Grade);
@@ -204,10 +256,14 @@ namespace RAMSS_v2
                 if (content.ToUpper().Equals("SEMESTER 1"))
                 {
                     clearBoard();
+                    int numClasses = 0;
+                    double totalGrade = 0;
                     foreach (var course in violet.completedCoursesY1)
                     {
                         if (course.Key == 1)
                         {
+                            totalGrade += getGrade2(course.Value.grade, ref numClasses);
+                            
                             if (R1C1.Text == "" && R1C2.Text == "" && R1C3.Text == "" && R1C4.Text == "")
                             {
                                 R1C1.Text = course.Value.code;
@@ -245,15 +301,25 @@ namespace RAMSS_v2
                             }
                         }
                     }
+                    GPATextBlock.Text = "GPA:            " + Math.Round((totalGrade / numClasses), 2);
+                    if (Math.Round((totalGrade / numClasses), 2) >= 1.67)
+                        statusTextBlock.Text = "Probationary Status: Clear";
+                    else if (Double.IsNaN(Math.Round((totalGrade / numClasses), 2)))
+                        statusTextBlock.Text = "Probationary Status: ";
+                    else
+                        statusTextBlock.Text = "Probationary Status: Probation";
                 }
                 else if (content.ToUpper().Equals("SEMESTER 2"))
                 {
                     clearBoard();
-
+                    int numClasses = 0;
+                    double totalGrade = 0;
                     foreach (var course in violet.completedCoursesY1)
                     {
                         if (course.Key == 2)
                         {
+                            totalGrade += getGrade2(course.Value.grade, ref numClasses);
+
                             if (R1C1.Text == "" && R1C2.Text == "" && R1C3.Text == "" && R1C4.Text == "")
                             {
                                 R1C1.Text = course.Value.code;
@@ -291,14 +357,25 @@ namespace RAMSS_v2
                             }
                         }
                     }
+                    GPATextBlock.Text = "GPA:            " + Math.Round((totalGrade / numClasses), 2);
+                    if (Math.Round((totalGrade / numClasses), 2) >= 1.67)
+                        statusTextBlock.Text = "Probationary Status: Clear";
+                    else if (Double.IsNaN(Math.Round((totalGrade / numClasses), 2)))
+                        statusTextBlock.Text = "Probationary Status: ";
+                    else
+                        statusTextBlock.Text = "Probationary Status: Probation";
                 }
                 else if (content.ToUpper().Equals("SEMESTER 3"))
                 {
                     clearBoard();
+                    int numClasses = 0;
+                    double totalGrade = 0;
                     foreach (var course in violet.completedCoursesY2)
                     {
                         if (course.Key == 1)
                         {
+                            totalGrade += getGrade2(course.Value.grade, ref numClasses);
+
                             if (R1C1.Text == "" && R1C2.Text == "" && R1C3.Text == "" && R1C4.Text == "")
                             {
                                 R1C1.Text = course.Value.code;
@@ -336,15 +413,25 @@ namespace RAMSS_v2
                             }
                         }
                     }
+                    GPATextBlock.Text = "GPA:            " + Math.Round((totalGrade / numClasses), 2);
+                    if (Math.Round((totalGrade / numClasses), 2) >= 1.67)
+                        statusTextBlock.Text = "Probationary Status: Clear";
+                    else if (Double.IsNaN(Math.Round((totalGrade / numClasses), 2)))
+                        statusTextBlock.Text = "Probationary Status: ";
+                    else
+                        statusTextBlock.Text = "Probationary Status: Probation";
                 }
                 else if (content.ToUpper().Equals("SEMESTER 4"))
                 {
                     clearBoard();
-
+                    int numClasses = 0;
+                    double totalGrade = 0;
                     foreach (var course in violet.completedCoursesY2)
                     {
                         if (course.Key == 2)
                         {
+                            totalGrade += getGrade2(course.Value.grade, ref numClasses);
+
                             if (R1C1.Text == "" && R1C2.Text == "" && R1C3.Text == "" && R1C4.Text == "")
                             {
                                 R1C1.Text = course.Value.code;
@@ -382,14 +469,24 @@ namespace RAMSS_v2
                             }
                         }
                     }
+                    GPATextBlock.Text = "GPA:            " + Math.Round((totalGrade / numClasses), 2);
+                    if (Math.Round((totalGrade / numClasses), 2) >= 1.67)
+                        statusTextBlock.Text = "Probationary Status: Clear";
+                    else if (Double.IsNaN(Math.Round((totalGrade / numClasses), 2)))
+                        statusTextBlock.Text = "Probationary Status: ";
+                    else
+                        statusTextBlock.Text = "Probationary Status: Probation";
                 }
                 else if (content.ToUpper().Equals("SEMESTER 5"))
                 {
                     clearBoard();
+                    int numClasses = 0;
+                    double totalGrade = 0;
                     foreach (var course in violet.completedCoursesY3)
                     {
                         if (course.Key == 1)
                         {
+                            totalGrade += getGrade2(course.Value.grade, ref numClasses);
                             if (R1C1.Text == "" && R1C2.Text == "" && R1C3.Text == "" && R1C4.Text == "")
                             {
                                 R1C1.Text = course.Value.code;
@@ -427,15 +524,25 @@ namespace RAMSS_v2
                             }
                         }
                     }
+                    GPATextBlock.Text = "GPA:            " + Math.Round((totalGrade / numClasses), 2);
+                    if (Math.Round((totalGrade / numClasses), 2) >= 1.67)
+                        statusTextBlock.Text = "Probationary Status: Clear";
+                    else if (Double.IsNaN(Math.Round((totalGrade / numClasses), 2)))
+                        statusTextBlock.Text = "Probationary Status: ";
+                    else
+                        statusTextBlock.Text = "Probationary Status: Probation";
                 }
                 else if (content.ToUpper().Equals("SEMESTER 6"))
                 {
                     clearBoard();
-
+                    int numClasses = 0;
+                    double totalGrade = 0;
                     foreach (var course in violet.completedCoursesY3)
                     {
                         if (course.Key == 2)
                         {
+                            totalGrade += getGrade2(course.Value.grade, ref numClasses);
+
                             if (R1C1.Text == "" && R1C2.Text == "" && R1C3.Text == "" && R1C4.Text == "")
                             {
                                 R1C1.Text = course.Value.code;
@@ -473,14 +580,25 @@ namespace RAMSS_v2
                             }
                         }
                     }
+                    GPATextBlock.Text = "GPA:            " + Math.Round((totalGrade / numClasses), 2);
+                    if (Math.Round((totalGrade / numClasses), 2) >= 1.67)
+                        statusTextBlock.Text = "Probationary Status: Clear";
+                    else if (Double.IsNaN(Math.Round((totalGrade / numClasses), 2)))
+                        statusTextBlock.Text = "Probationary Status: ";
+                    else
+                        statusTextBlock.Text = "Probationary Status: Probation";
                 }
                 else if (content.ToUpper().Equals("SEMESTER 7"))
                 {
                     clearBoard();
+                    int numClasses = 0;
+                    double totalGrade = 0;
                     foreach (var course in violet.completedCoursesY4)
                     {
                         if (course.Key == 1)
                         {
+                            totalGrade += getGrade2(course.Value.grade, ref numClasses);
+
                             if (R1C1.Text == "" && R1C2.Text == "" && R1C3.Text == "" && R1C4.Text == "")
                             {
                                 R1C1.Text = course.Value.code;
@@ -518,15 +636,25 @@ namespace RAMSS_v2
                             }
                         }
                     }
+                    GPATextBlock.Text = "GPA:            " + Math.Round((totalGrade / numClasses), 2);
+                    if (Math.Round((totalGrade / numClasses), 2) >= 1.67)
+                        statusTextBlock.Text = "Probationary Status: Clear";
+                    else if (Double.IsNaN(Math.Round((totalGrade / numClasses), 2)))
+                        statusTextBlock.Text = "Probationary Status: ";
+                    else
+                        statusTextBlock.Text = "Probationary Status: Probation";
                 }
                 else if (content.ToUpper().Equals("SEMESTER 8"))
                 {
                     clearBoard();
-
+                    int numClasses = 0;
+                    double totalGrade = 0;
                     foreach (var course in violet.completedCoursesY4)
                     {
                         if (course.Key == 2)
                         {
+                            totalGrade += getGrade2(course.Value.grade, ref numClasses);
+
                             if (R1C1.Text == "" && R1C2.Text == "" && R1C3.Text == "" && R1C4.Text == "")
                             {
                                 R1C1.Text = course.Value.code;
@@ -564,9 +692,19 @@ namespace RAMSS_v2
                             }
                         }
                     }
+                    GPATextBlock.Text = "GPA:            " + Math.Round((totalGrade / numClasses), 2);
+                    System.Diagnostics.Debug.WriteLine(Math.Round((totalGrade / numClasses), 2));
+                    if (Math.Round((totalGrade / numClasses), 2) >= 1.67)
+                        statusTextBlock.Text = "Probationary Status: Clear";
+                    else if (Double.IsNaN( Math.Round((totalGrade / numClasses), 2)))
+                        statusTextBlock.Text = "Probationary Status: ";
+                    else
+                        statusTextBlock.Text = "Probationary Status: Probation";
+
                 }
 
             }
+
         }
 
 
@@ -592,6 +730,10 @@ namespace RAMSS_v2
             R5C2.Text = "";
             R5C3.Text = "";
             R5C4.Text = "";
+            statusTextBlock.Text = "";
+            GPATextBlock.Text = "";
         }
+
+
     }
 }

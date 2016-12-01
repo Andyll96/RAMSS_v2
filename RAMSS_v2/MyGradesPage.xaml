@@ -87,12 +87,12 @@
                 </Grid.RowDefinitions>
                 <TextBlock Name="viewStatusTitle" CommonNavigationTransitionInfo.IsStaggerElement="True" Text="View Status" FontSize="35" Margin="30,0,0,0"  FontWeight="Light"/>
                 <Border Margin="0,50,0,0" CommonNavigationTransitionInfo.IsStaggerElement="True" Background="#0077c8">
-                    <TextBlock Grid.Row="0" FontWeight="Light"/>
+                    <TextBlock FontSize="40" Name="statusTextBlock" Grid.Row="0" FontWeight="Light"/>
                 </Border>
 
                 <TextBlock Grid.Row="1" CommonNavigationTransitionInfo.IsStaggerElement="True" Text="View GPA" FontSize="35" Margin="30,0,0,0"  FontWeight="Light"/>
                 <Border Grid.Row="1" CommonNavigationTransitionInfo.IsStaggerElement="True" Margin="0,50,0,0" Background="#0077c8">
-                    <TextBlock Grid.Row="0" FontWeight="Light"/>
+                    <TextBlock FontSize="40" Name="GPATextBlock" Grid.Row="0" FontWeight="Light"/>
                 </Border>
             </Grid>
             <StackPanel Orientation="Vertical" Grid.Column="1" Background="#ffa300">
