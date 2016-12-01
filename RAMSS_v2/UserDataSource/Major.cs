@@ -183,7 +183,7 @@ namespace RAMSS_v2.UserDataSource
 
             sem5Course1 = new Course("CPS510", "Database Systems I", "ENG 123", "n/a", "8:00am", "Monday");
             sem5Course1.prerequisites.Add(sem3Course2);
-            sem5Course2 = new Course("CPS721", "Artificial Intelligence I", "ENG 147", "n/a", "10:00am", "Tuesday");
+            sem5Course2 = new Course("CPS721", "Artificial Intelligence I", "ENG 147", "n/a", "10:00am", "Monday");
             sem5Course2.prerequisites.Add(sem3Course2);
             sem5Course2.prerequisites.Add(sem4Course3);
             sem5Course3 = new Course("PRL003", "PROFESSIONALLY RELATED 3", "ENG 789", "n/a", "1:00pm", "Wednesday");

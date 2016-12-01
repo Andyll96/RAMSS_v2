@@ -49,18 +49,29 @@ namespace RAMSS_v2.UserDataSource
             this.location = location;
             this.professor = professor;
             this.time = time;
-            this.dayOfWeek = dayOfWeek;
+            this.dayOfWeek = dayOfTheWeek;
         }
 
-        public String[] calendarInfo()
+        public String[] calendarInfo(Boolean calendarView)
         {
-            String[] info = { code, description, time, location, professor };
-            return info;
+            if(calendarView == false)
+            {
+                String[] info = { "\tCode: " + code + "\n\t\t","Class: " + description + "\n\t\t","Time: " + time + "\n\t\t","Location: " + location + "\n\t\t","Professor: " + professor + "\n\n"};
+                return info;
+            }
+            else
+            {
+                String[] info = { "Code: " + code + "\n\t", "Class: " + description + "\n\t", "Time: " + time + "\n\t", "Location: " + location + "\n\t", "Professor: " + professor + "\n\n" };
+                return info;
+            }
+            
         }
 
         public static implicit operator List<object>(Course v)
         {
             throw new NotImplementedException();
         }
+
+
     }
 }

@@ -27,16 +27,11 @@
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
 
-        <CalendarView CommonNavigationTransitionInfo.IsStaggerElement="True" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,100,0,0"/>
+        <CalendarView SelectionMode="Single" SelectedDatesChanged="calendar_SelectedDatesChanged" Name="calendar"  CommonNavigationTransitionInfo.IsStaggerElement="True" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,100,0,0"/>
         <TextBlock CommonNavigationTransitionInfo.IsStaggerElement="True" Margin="20,100,0,0" Text="Today's Events" Grid.Column="1" Height="Auto" FontSize="30" FontWeight="Light" />
         <ScrollViewer Margin="20,140,0,0" Grid.Column="1" VerticalScrollBarVisibility="Hidden" Grid.RowSpan="2">
-            <TextBlock CommonNavigationTransitionInfo.IsStaggerElement="True" FontSize="25" TextWrapping="WrapWholeWords" FontWeight="Light">
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque
-                eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut,
-                imperdiet a, venenatis vitae, justo. eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo
-                Nullam dictum felis eu pede mollis pretium.  eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo
-        </TextBlock>
+            <TextBlock Name="dayInfo" TextWrapping="WrapWholeWords" CommonNavigationTransitionInfo.IsStaggerElement="True" FontSize="20" FontWeight="Light"/>
         </ScrollViewer>
-        <Button CommonNavigationTransitionInfo.IsStaggerElement="True" Name="listViewButton" Content="List View" FontSize="50"  Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontWeight="Light"/>
+        <Button Name="listViewButton" Click="listViewButton_Click" CommonNavigationTransitionInfo.IsStaggerElement="True" Content="List View" FontSize="50"  Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontWeight="Light"/>
     </Grid>
 </Page>

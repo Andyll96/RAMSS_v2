@@ -115,6 +115,9 @@
     <Compile Include="CourseEnrollmentPage.xaml.cs">
       <DependentUpon>CourseEnrollmentPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CourseScheduleListViewPage.xaml.cs">
+      <DependentUpon>CourseScheduleListViewPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CourseSchedulePage.xaml.cs">
       <DependentUpon>CourseSchedulePage.xaml</DependentUpon>
     </Compile>
@@ -196,6 +199,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="CourseEnrollmentPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CourseScheduleListViewPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
